@@ -74,23 +74,3 @@ footer {
   padding-bottom: 10px;
   background-color: black;
 }
-
-/* Add this style to your existing styles.css or create a new CSS file */
-
-/* Style for Media Links */
-ul li a {
-  text-decoration: none;
-  color: var(--red); /* You can adjust the color */
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-ul li a:hover {
-  color: var(--red); /* Adjust hover color */
-}
-
-/* Style for Footer */
-footer {
-  padding: 10px;
-  text-align: center;
-}
