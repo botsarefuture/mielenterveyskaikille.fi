@@ -14,39 +14,43 @@
   </head>
   <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-danger">
-          <div class="container-fluid">
-            <a class="navbar-brand text-light" href="./"
-              >Mielenterveys kuuluu kaikille!</a
-            >
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon">☰</span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link text-light" href="index.html">Koti</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-light" href="info.html">Tietoa</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-light" href="products.html">Tuotteet</a>
-                </li>
-                <li><a class="nav-item active" href="for_media.html">Medialle</a></li>
-              </ul>
-            </div>
+      <nav class="navbar navbar-expand-lg bg-danger">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="./"
+            >Mielenterveys kuuluu kaikille!</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon">☰</span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-light" href="index.html">Koti</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="info.html">Tietoa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="products.html">Tuotteet</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link text-light" href="for_media.html"
+                  >Medialle</a
+                >
+              </li>
+            </ul>
           </div>
-        </nav>
-      </header>
+        </div>
+      </nav>
+    </header>
 
     <div class="marquee-container">
       <marquee class="blink">
@@ -61,16 +65,24 @@
       </marquee>
     </div>
 
-    <section>
-        <h2>Medialle</h2>
-        <p>
-          Resursseja medialle
-        </p>
-        <ul>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScZ39tYN5g8FcUB4LlUG8bJDfkEZnG9PtJEFvy3lfTDJ9bRCA/viewform?usp=sf_link">Tilaa lehdistö<strong>kuvat</strong> (Google Forms)</a></li>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeycfYSq4u7JSToMtjNMhID-VmcMzTiiPezo5mvZp-vmJVAiA/viewform?usp=sf_link">Tilaa lehdistö<strong>tiedotteet</strong> (Google Forms)</a></li>
-        </ul>
-      </section>
+    <section class="formedia">
+      <h2>Medialle</h2>
+      <p>Resursseja medialle</p>
+      <ul>
+        <li>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScZ39tYN5g8FcUB4LlUG8bJDfkEZnG9PtJEFvy3lfTDJ9bRCA/viewform?usp=sf_link"
+            >Tilaa lehdistö<strong>kuvat</strong> (Google Forms)</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeycfYSq4u7JSToMtjNMhID-VmcMzTiiPezo5mvZp-vmJVAiA/viewform?usp=sf_link"
+            >Tilaa lehdistö<strong>tiedotteet</strong> (Google Forms)</a
+          >
+        </li>
+      </ul>
+    </section>
     <footer style="background-color: var(--red); color: white">
       <p>© 2024 Mielenterveys kuuluu kaikille</p>
     </footer>
