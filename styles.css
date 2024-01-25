@@ -74,3 +74,14 @@ footer {
   padding-bottom: 10px;
   background-color: black;
 }
+
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  margin-right: 10px;
+  font-size: 20px;
+}
