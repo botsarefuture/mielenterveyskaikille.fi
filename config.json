@@ -1,0 +1,13 @@
+{
+    "navbarClass": "navbar navbar-expand-lg bg-primary container-fluid",
+    "brandHref": "./home.html",
+    "brandText": "Awesome Website",
+    "togglerButtonIcon": "<span class='navbar-toggler-icon'>☰</span>",
+    "links": [
+      { "text": "Home", "href": "home.html" },
+      { "text": "About", "href": "about.html" },
+      { "text": "Products", "href": "products.html" },
+      { "text": "Contact", "href": "contact.html" }
+    ]
+  }
+  
