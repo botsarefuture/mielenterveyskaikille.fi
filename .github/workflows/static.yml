@@ -43,7 +43,7 @@ jobs:
         uses: actions/deploy-pages@v4
       # Add a step to send a message to Telegram
       - name: Send Telegram Message
-        uses: appleboy/telegram-action@v0.2.0
+        uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
