@@ -1,7 +1,7 @@
 {
     "navbarClass": "navbar navbar-expand-lg bg-primary container-fluid",
-    "brandHref": "./home.html",
-    "brandText": "Awesome Website",
+    "brandHref": "/",
+    "brandText": "Mielenterveys kuuluu kaikille",
     "togglerButtonIcon": "<span class='navbar-toggler-icon'>☰</span>",
     "links": [
       { "text": "Koti", "href": "index.html" },
