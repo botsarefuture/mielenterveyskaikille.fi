@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Create the container div
-    const marqueeContainer = document.createElement('div');
-    marqueeContainer.classList.add('marquee-container');
+    const marqueeContainer = document.querySelector('marquee-container');
 
     // Create the marquee element
     const marquee = document.createElement('marquee');
