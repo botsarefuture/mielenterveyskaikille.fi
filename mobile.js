@@ -13,7 +13,7 @@ function isMobile() {
     if (isMobile()) {
       var currentUrl = window.location.pathname;
       
-      // Remove the initial domain from the pathname
+      // Remove the initial domain from the pathname before constructing the mobile URL
       currentUrl = removeInitialDomain(currentUrl);
 
       var mobileUrl = "/mobile" + currentUrl;
