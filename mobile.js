@@ -3,10 +3,19 @@ function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   }
 
+  // Remove the initial domain from the pathname
+  function removeInitialDomain(pathname) {
+    return pathname.replace(/^\/mielenterveyskaikille\.fi/, '');
+  }
+
   // Redirect to the mobile URL if on a mobile device
   function redirectMobile() {
     if (isMobile()) {
       var currentUrl = window.location.pathname;
+      
+      // Remove the initial domain from the pathname
+      currentUrl = removeInitialDomain(currentUrl);
+
       var mobileUrl = "/mobile" + currentUrl;
 
       // Check if the mobile version exists
