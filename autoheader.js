@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Create header elements
             const header = document.createElement("header");
             const nav = document.createElement("nav");
-            nav.className = config.navbarClass || "navbar navbar-expand-lg bg-danger container-fluid";
+            nav.className = config.navbarClass || "navbar navbar-expand-lg bg-dark container-fluid";
 
             // Navbar brand
             const brand = document.createElement("a");
