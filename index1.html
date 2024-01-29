@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mielenterveys kuuluu kaikille</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
+  <script src="mobile.js" defer></script>
+  <script src="autoheader.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000000;
+      text-align: center;
+      padding: 50px;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 2em;
+    }
+
+    .time-box {
+      background-color: #000000;
+      display: inline-block;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 77, 138, 0.8);
+    }
+
+    .time-label {
+      font-size: 1.5em;
+      color: #ffffff;
+      margin: 0;
+      text-shadow: 0 0 10px rgba(255, 77, 138, 0.8);
+    }
+
+    #statistics {
+      margin-top: 30px;
+      color: #ffffff;
+    }
+
+    .marquee-container {
+      overflow: hidden;
+    }
+
+    .blink {
+      animation: blink 10s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="marquee-container">
+    <marquee class="blink" style="color: #ffffff;">
+      Suomen mielenterveyspalvelut ovat kriisissä, ja tarvitsemme muutosta!
+      Apua ei saada ajoissa, ja monet kamppailevat vaikeuksien keskellä ilman
+      riittävää tukea. Yhdessä voimme tehdä eron. Liity mukaan
+      mielenosoitukseen 9.3.2024 klo 13 Senaatintorilla. Marssi kohti
+      Eduskuntataloa alkaa klo 14, ja siellä odottaa monipuolinen ohjelma.
+      Tule ilmaisemaan mielipiteesi ja vaatimaan parempia
+      mielenterveyspalveluita kaikille. Yhdessä olemme vahvoja, ja yhdessä
+      voimme muuttaa tulevaisuutta!
+    </marquee>
+  </div>
+
+  <section>
+    <h2>Aikaa mielenosoituksen alkuun</h2>
+    <div class="time-box">
+      <div class="time-label" id="days"></div>
+      <div class="time-label">Päivää</div>
+    </div>
+    <div class="time-box">
+      <div class="time-label" id="hours"></div>
+      <div class="time-label">Tuntia</div>
+    </div>
+    <div class="time-box">
+      <div class="time-label" id="minutes"></div>
+      <div class="time-label">Minuuttia</div>
+    </div>
+    <div class="time-box">
+      <div class="time-label" id="seconds"></div>
+      <div class="time-label">Sekuntia</div>
+    </div>
+    <p>
+      Suomen mielenterveyspalvelut ovat kriisissä, ja tarvitsemme muutosta!
+      Apua ei saada ajoissa, ja monet kamppailevat vaikeuksien keskellä ilman
+      riittävää tukea. Yhdessä voimme tehdä eron. Liity mukaan
+      mielenosoitukseen 9.3.2024 klo 13 Senaatintorilla. Marssi kohti
+      Eduskuntataloa alkaa klo 14, ja siellä odottaa monipuolinen ohjelma.
+      Tarkempi ohjelma julkaistaan lähempänä tapahtumaa.
+    </p>
+  </section>
+  
+
+  <footer>
+    <p>© 2024 Mielenterveys kuuluu kaikille</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/mielenterveyskaikille/" target="_blank"><i class="fa-brands fa-instagram fa-2xl"
+          style="color: #ffffff;"></i></i></a>
+      <a href="#" target="https://facebook.com/mielenterveyskaikille/"><i class="fa-brands fa-facebook fa-2xl"
+          style="color: #ffffff;"></i></a>
+      <a href="#" target="https://tiktok.com/mielenterveyskaikille/"><i class="fa-brands fa-tiktok fa-2xl"
+          style="color: #ffffff;"></i></a>
+      <a href="#" target="https://x.com/mtkaikille/"><i class="fa-brands fa-x-twitter fa-2xl"
+          style="color: #ffffff;"></i></a>
+      <a href="#" target="_blank"><i class="fa-brands fa-threads fa-2xl" style="color: #ffffff;"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Set the date we're counting down to
+    const countDownDate = new Date('March 9, 2024 13:00:00').getTime();
+
+    // Update the countdown every 1 second
+    const x = setInterval(function () {
+      // Get the current date and time
+      const now = new Date().getTime();
+
+      // Calculate the remaining time
+      const distance = countDownDate - now;
+
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      document.getElementById('days').innerHTML = days;
+      document.getElementById('hours').innerHTML = hours;
+      document.getElementById('minutes').innerHTML = minutes;
+      document.getElementById('seconds').innerHTML = seconds;
+
+      // If the countdown is over, display a message
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById('days').innerHTML = 'Tapahtuma on käynnissä!';
+        document.getElementById('hours').style.display = 'none';
+        document.getElementById('minutes').style.display = 'none';
+        document.getElementById('seconds').style.display = 'none';
+      }
+    }, 1000);
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
