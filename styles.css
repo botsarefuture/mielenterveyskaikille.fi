@@ -53,6 +53,10 @@ footer {
   font-family: sans-serif;
 }
 
+.navbar-nav {
+  color: black;
+}
+
 /* Added styles for the active link */
 .navbar-nav .nav-item.active .nav-link {
   color: var(--orange);
