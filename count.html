@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aikaa mielenosoituksen alkuun</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        #countdown {
+            font-size: 2em;
+            color: #e44d26;
+            margin-top: 20px;
+        }
+        #statistics {
+            margin-top: 30px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aikaa mielenosoituksen alkuun</h1>
+    <div id="countdown"></div>
+    <div id="statistics">
+        <p>Mental Health Statistics:</p>
+        <p>30,000 suicide attempts per year</p>
+        <p>1,000 suicides per year</p>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date('March 9, 2024 13:00:00').getTime();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+            // Get the current date and time
+            const now = new Date().getTime();
+
+            // Calculate the remaining time
+            const distance = countDownDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById('countdown').innerHTML = 'Tapahtuma on käynnissä!';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
