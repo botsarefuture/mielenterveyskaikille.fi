@@ -38,6 +38,10 @@ footer {
   margin-top: auto;
 }
 
+.navbar-toggler-icon {
+  color: white;
+}
+
 .marquee-container {
   display: flex;
   align-items: flex-start;
