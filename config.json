@@ -1,0 +1,13 @@
+{
+    "navbarClass": "navbar navbar-expand-lg bg-danger container-fluid",
+    "brandHref": "/",
+    "brandText": "Mielenterveys kuuluu kaikille",
+    "togglerButtonIcon": "<span class='navbar-toggler-icon'>☰</span>",
+    "links": [
+      { "text": "Koti", "href": "index.html" },
+      { "text": "Info", "href": "info.html" },
+      { "text": "Tuotteet", "href": "products.html" },
+      { "text": "Medialle", "href": "for_media.html" }
+    ]
+  }
+  

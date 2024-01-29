@@ -1,16 +1,16 @@
 :root {
   --red: #ed2024;
   --orange: #ffa500;
-  --neon-green: #39ff14; /* Neon green color */
+  --neon-green: #39ff14;
   --neon-pink: #ff6ec7;
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Anton", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f2f2f2;
-  color: #333;
+  background-color: black;
+  color: white;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -21,9 +21,8 @@ section {
   text-align: center;
 }
 
-
 h2 {
-  color: #333;
+  color: #fff;
 }
 
 p {
@@ -31,7 +30,7 @@ p {
 }
 
 footer {
-  background-color: #333;
+  background-color: black;
   color: white;
   text-align: center;
   padding: 1em;
@@ -39,11 +38,13 @@ footer {
   margin-top: auto;
 }
 
-/* the marquee */
 .marquee-container {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: black;
 }
 
 .blink {
@@ -69,9 +70,11 @@ footer {
   height: 2px; /* Adjust the thickness of the underline */
   background-color: var(--neon-green);
 }
+.social-icons {
+  margin-top: 10px;
+}
 
-.marquee-container {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: black;
+.social-icons a i {
+  color: white;
+  margin-right: 10px;
 }

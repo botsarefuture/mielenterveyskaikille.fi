@@ -1,0 +1,16 @@
+.formedia ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .formedia ul li a {
+    text-decoration: none;
+    color: var(--red); /* You can adjust the color */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .formedia ul li a:hover {
+    color: #ff6666; /* Change the color on hover as desired */
+  }
+  
