@@ -10,56 +10,10 @@
   <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
   <script src="mobile.js" defer></script>
   <script src="autoheader.js" defer></script>
+  <script src="countdown.js" defer></script>
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #000000;
-      text-align: center;
-      color: #ffffff;
-      margin: 0;
-    }
-
-    h1 {
-      color: #ffffff;
-      font-size: 2em;
-    }
-
-    .time-box {
-      background-color: #000000;
-      display: inline-block;
-      padding: 20px;
-      margin: 10px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 77, 138, 0.8);
-    }
-
-    .time-label {
-      font-size: 1.5em;
-      color: #ffffff;
-      margin: 0;
-      text-shadow: 0 0 10px rgba(255, 77, 138, 0.8);
-    }
-
-    #statistics {
-      margin-top: 30px;
-      color: #ffffff;
-    }
-
-    .marquee-container {
-      overflow: hidden;
-    }
-
-    .blink {
-      animation: blink 10s infinite;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="countdown.css">
 </head>
 
 <body>
@@ -125,38 +79,7 @@
   </footer>
 
   <script>
-    // Set the date we're counting down to
-    const countDownDate = new Date('March 9, 2024 13:00:00').getTime();
-
-    // Update the countdown every 1 second
-    const x = setInterval(function () {
-      // Get the current date and time
-      const now = new Date().getTime();
-
-      // Calculate the remaining time
-      const distance = countDownDate - now;
-
-      // Calculate days, hours, minutes, and seconds
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Display the countdown
-      document.getElementById('days').innerHTML = days;
-      document.getElementById('hours').innerHTML = hours;
-      document.getElementById('minutes').innerHTML = minutes;
-      document.getElementById('seconds').innerHTML = seconds;
-
-      // If the countdown is over, display a message
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById('days').innerHTML = 'Tapahtuma on käynnissä!';
-        document.getElementById('hours').style.display = 'none';
-        document.getElementById('minutes').style.display = 'none';
-        document.getElementById('seconds').style.display = 'none';
-      }
-    }, 1000);
+    
   </script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
