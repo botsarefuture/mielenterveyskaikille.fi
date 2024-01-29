@@ -61,7 +61,11 @@ footer {
   background-color: black;
 }
 
-
+/* Added styles for the active link */
+.navbar-nav .nav-item.active .nav-link {
+  color: var(--orange);
+  position: relative;
+}
 
 .navbar-nav .nav-item.active .nav-link::after {
   content: "";
