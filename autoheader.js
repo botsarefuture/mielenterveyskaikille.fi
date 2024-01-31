@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             brand.className = "navbar-brand text-light";
             brand.href = config.brandHref || "./";
             brand.textContent = config.brandText || "Mielenterveys kuuluu kaikille!";
-            brand.style = "font-family: 'Anton', sans-serif;"
+            brand.style = "font-family: 'Anton', sans-serif;";
             nav.appendChild(brand);
 
             // Navbar toggler button
