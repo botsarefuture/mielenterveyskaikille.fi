@@ -16,6 +16,15 @@ body {
   min-height: 100vh;
 }
 
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+  font-family: "Anton", sans-serif;
+
+}
+
+
 section {
   margin: 2em;
   text-align: center;
