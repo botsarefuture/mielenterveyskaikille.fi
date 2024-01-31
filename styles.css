@@ -16,6 +16,10 @@ body {
   min-height: 100vh;
 }
 
+.navbar-brand {
+  font-family: "Anton", sans-serif;
+}
+
 .navbar-collapse {
   flex-basis: 100%;
   flex-grow: 1;
