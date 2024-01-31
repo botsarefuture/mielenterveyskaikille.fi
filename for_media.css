@@ -4,8 +4,8 @@
   }
   
   .formedia ul li a {
-    text-decoration: none;
-    color: var(--red); /* You can adjust the color */
+    text-decoration: underline var(--neon-green);
+    color: white; /* You can adjust the color */
     font-weight: bold;
     transition: color 0.3s ease-in-out;
   }
