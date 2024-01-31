@@ -4,7 +4,7 @@
   }
   
   .formedia ul li a {
-    text-decoration: underline var(--neon-green);
+    /*text-decoration: underline var(--neon-green);*/
     color: white; /* You can adjust the color */
     transition: color 0.3s ease-in-out;
   }
