@@ -39,7 +39,20 @@
     body {
       background-color: black;
       color: white;
-      min-height: 100vh;
+      min-height: 100vh;}
+    
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li:before {
+      content: '\2022'; /* Use a bullet point instead of default list style */
+      color: var(--neon-pink);
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
     }
   </style>
 </head>
