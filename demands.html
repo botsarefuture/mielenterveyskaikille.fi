@@ -68,10 +68,12 @@
     .demand-title {
       font-size: 24px;
       margin-bottom: 8px;
+      cursor: pointer;
     }
 
     .demand-description {
       font-size: 18px;
+      display: none;
     }
   </style>
   
@@ -93,14 +95,14 @@
 
   <section>
     <h2>Vaatimukset</h2>
-    <div class="demand">
-      <div class="demand-title">Investointeja</div>
+    <details class="demand">
+      <summary class="demand-title">Investointeja</summary>
       <div class="demand-description">Ensimmäinen vaatimus liittyy lisäinvestointeihin mielenterveyspalveluihin.</div>
-    </div>
-    <div class="demand">
-      <div class="demand-title">Toinen vaatimus</div>
+    </details>
+    <details class="demand">
+      <summary class="demand-title">Toinen vaatimus</summary>
       <div class="demand-description">Toinen vaatimus koskee jotakin tärkeää. Lisää tähän kuvaus.</div>
-    </div>
+    </details>
     <!-- Add more demands with the 'demand' class -->
   </section>
   
