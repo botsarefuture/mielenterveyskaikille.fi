@@ -7,7 +7,8 @@
       { "text": "Koti", "href": "index.html" },
       { "text": "Info", "href": "info.html" },
       { "text": "Tuotteet", "href": "products.html" },
-      { "text": "Medialle", "href": "for_media.html" }
+      { "text": "Medialle", "href": "for_media.html" },
+      { "text": "Tukijat", "href": "supporters.html"}
     ]
   }
   
