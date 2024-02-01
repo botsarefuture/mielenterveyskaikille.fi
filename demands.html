@@ -63,17 +63,22 @@
       border: 2px solid var(--neon-pink);
       padding: 10px;
       margin-bottom: 10px;
+      cursor: pointer;
     }
 
     .demand-title {
       font-size: 24px;
       margin-bottom: 8px;
-      cursor: pointer;
     }
 
     .demand-description {
       font-size: 18px;
       display: none;
+    }
+
+    .click-to-show {
+      font-size: 14px;
+      color: gray;
     }
   </style>
 
@@ -97,10 +102,12 @@
     <h2>Vaatimukset</h2>
     <div class="demand" onclick="toggleDescription(this)">
       <div class="demand-title">Investointeja</div>
+      <div class="click-to-show">Klikkaa tästä näyttääksesi kuvauksen</div>
       <div class="demand-description">Ensimmäinen vaatimus liittyy lisäinvestointeihin mielenterveyspalveluihin.</div>
     </div>
     <div class="demand" onclick="toggleDescription(this)">
       <div class="demand-title">Toinen vaatimus</div>
+      <div class="click-to-show">Klikkaa tästä näyttääksesi kuvauksen</div>
       <div class="demand-description">Toinen vaatimus koskee jotakin tärkeää. Lisää tähän kuvaus.</div>
     </div>
     <!-- Add more demands with the 'demand' class -->
