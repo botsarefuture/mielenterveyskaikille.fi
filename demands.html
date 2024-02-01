@@ -60,6 +60,18 @@
       font-family: 'Anton', sans-serif;
       color: var(--neon-pink);
       /* Add any other styles you want for demands */
+      border: 2px solid var(--neon-pink);
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .demand-title {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .demand-description {
+      font-size: 18px;
     }
   </style>
   
@@ -81,12 +93,15 @@
 
   <section>
     <h2>Vaatimukset</h2>
-    <p>Vaadimme mielenosoituksella:</p>
-    <ul>
-      <li class="demand">Investointeja</li>
-      <li class="demand">Toinen vaatimus</li>
-      <!-- Add more demands with the 'demand' class -->
-    </ul>
+    <div class="demand">
+      <div class="demand-title">Investointeja</div>
+      <div class="demand-description">Ensimmäinen vaatimus liittyy lisäinvestointeihin mielenterveyspalveluihin.</div>
+    </div>
+    <div class="demand">
+      <div class="demand-title">Toinen vaatimus</div>
+      <div class="demand-description">Toinen vaatimus koskee jotakin tärkeää. Lisää tähän kuvaus.</div>
+    </div>
+    <!-- Add more demands with the 'demand' class -->
   </section>
   
 
