@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             nav.appendChild(brand);
 
             // Language selector
-            if (config.multilingualSite || False === True) {
+            if (config.multilingualSite === True) {
 
                 const languageSelector = document.createElement("select");
                 languageSelector.id = "language-selector";
