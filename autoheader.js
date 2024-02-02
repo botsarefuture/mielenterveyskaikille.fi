@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             nav.appendChild(brand);
 
             // Language selector
-            if (config.multilingualSite === True) {
+            if (config.multilingualSite || false == true) {
 
                 const languageSelector = document.createElement("select");
                 languageSelector.id = "language-selector";
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Append header to the body
             document.body.insertBefore(header, document.body.firstChild);
-            if (config.multilingualSite == True) {
+            if (config.multilingualSite || false == true) {
                 // Your class-based JavaScript code here (MultilingualSite class instantiation)
                 class MultilingualSite {
                     constructor(languageSelectorId) {
