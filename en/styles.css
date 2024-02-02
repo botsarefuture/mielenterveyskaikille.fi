@@ -1,0 +1,104 @@
+:root {
+  --red: #ed2024;
+  --orange: #ffa500;
+  --neon-green: #39ff14;
+  --neon-pink: #ff6ec7;
+}
+
+body {
+  font-family: "Anton", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar-brand {
+  font-family: "Anton", sans-serif;
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+
+}
+
+.nav-item {
+  font-family: "Anton", sans-serif;
+
+}
+
+section {
+  margin: 2em;
+  text-align: center;
+}
+
+h2 {
+  color: #fff;
+}
+
+p {
+  line-height: 1.5;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+  margin-top: auto;
+}
+
+.navbar-toggler-icon {
+  color: white;
+}
+
+.marquee-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: black;
+}
+
+.blink {
+  animation: blinker 1.5s linear infinite;
+  color: white;
+  font-family: sans-serif;
+}
+
+.header {
+  background-color: black;
+  font-family: "Anton", sans-serif;
+}
+
+/* Added styles for the active link */
+.navbar-nav .nav-item.active .nav-link {
+  color: var(--orange);
+  position: relative;
+}
+
+.navbar-nav .nav-item.active .nav-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -4px; /* Adjust the distance from the text */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust the thickness of the underline */
+  background-color: #efa4b4;
+}
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a i {
+  color: white;
+  margin-right: 10px;
+}
