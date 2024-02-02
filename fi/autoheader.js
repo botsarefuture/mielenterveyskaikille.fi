@@ -124,9 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 const browserLanguage = navigator.language.substr(0, 2);
 
                 // Check if the user has already chosen a different language
-                if (storedLanguage && ['en', 'fi', 'sv'].includes(storedLanguage)) {
+                if (storedLanguage && ['en', 'fi'].includes(storedLanguage)) {
                     this.languageSelector.value = storedLanguage;
-                } else if (['en', 'fi', 'sv'].includes(browserLanguage)) {
+                } else if (['en', 'fi'].includes(browserLanguage)) {
                     // Set the browser language as the preferred language if not chosen by the user
                     this.languageSelector.value = browserLanguage;
                     // Save the preferred language to local storage
