@@ -4,11 +4,11 @@
     "brandText": "Mielenterveys kuuluu kaikille",
     "togglerButtonIcon": "<span class='navbar-toggler-icon'>☰</span>",
     "links": [
-      { "text": "Koti", "href": "index.html" },
+      { "text": "Home", "href": "index.html" },
       { "text": "Info", "href": "info.html" },
-      { "text": "Tuotteet", "href": "products.html" },
-      { "text": "Medialle", "href": "for_media.html" },
-      { "text": "Tukijat", "href": "supporters.html"}
+      { "text": "Products", "href": "products.html" },
+      { "text": "For the media", "href": "for_media.html" },
+      { "text": "Supporters", "href": "supporters.html"}
     ]
   }
   
