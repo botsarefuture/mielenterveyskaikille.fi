@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
             languageSelector.innerHTML = `
                 <option value="en">English</option>
                 <option value="fi">Finnish</option>
-                <option value="sv">Swedish</option>
             `;
             nav.appendChild(languageSelector);
 
