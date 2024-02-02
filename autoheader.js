@@ -97,23 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     this.languageSelector.addEventListener("change", this.handleLanguageChange.bind(this));
                 }
 
-                setPreferredLanguage() {
-                    const storedLanguage = localStorage.getItem("selectedLanguage");
-                    const browserLanguage = navigator.language.substr(0, 2);
-
-                    // Check if the user has already chosen a different language
-                    if (storedLanguage && ['en', 'fi', 'sv'].includes(storedLanguage)) {
-                        this.languageSelector.value = storedLanguage;
-                    } else if (['en', 'fi', 'sv'].includes(browserLanguage)) {
-                        // Set the browser language as the preferred language if not chosen by the user
-                        this.languageSelector.value = browserLanguage;
-                        // Save the preferred language to local storage
-                        localStorage.setItem("selectedLanguage", browserLanguage);
-                    }
-
-                    handleLanguageChange()
-                }
-
                 handleLanguageChange() {
                     const selectedLanguage = this.languageSelector.value;
                     const currentPath = window.location.pathname;
@@ -134,8 +117,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     window.location.href = newPath;
                 }
-            }
+            
 
+            setPreferredLanguage() {
+                const storedLanguage = localStorage.getItem("selectedLanguage");
+                const browserLanguage = navigator.language.substr(0, 2);
+
+                // Check if the user has already chosen a different language
+                if (storedLanguage && ['en', 'fi', 'sv'].includes(storedLanguage)) {
+                    this.languageSelector.value = storedLanguage;
+                } else if (['en', 'fi', 'sv'].includes(browserLanguage)) {
+                    // Set the browser language as the preferred language if not chosen by the user
+                    this.languageSelector.value = browserLanguage;
+                    // Save the preferred language to local storage
+                    localStorage.setItem("selectedLanguage", browserLanguage);
+                    handleLanguageChange();
+                }
+            }
+        }
             // Create an instance of the MultilingualSite class
             const multilingualSite = new MultilingualSite("language-selector");
         })
