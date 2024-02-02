@@ -98,9 +98,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 setPreferredLanguage() {
+                    const storedLanguage = localStorage.getItem("selectedLanguage");
                     const preferredLanguage = navigator.language.substr(0, 2);
-                    if (['en', 'fi', 'sv'].includes(preferredLanguage)) {
+
+                    // Check if the user has already chosen a different language
+                    if (storedLanguage && ['en', 'fi', 'sv'].includes(storedLanguage)) {
+                        this.languageSelector.value = storedLanguage;
+                    } else if (['en', 'fi', 'sv'].includes(preferredLanguage)) {
+                        // Set the preferred language if not chosen by the user
                         this.languageSelector.value = preferredLanguage;
+                        // Save the preferred language to local storage
+                        localStorage.setItem("selectedLanguage", preferredLanguage);
                     }
                 }
 
@@ -118,6 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     } else {
                         newPath = `/${selectedLanguage}${currentPath}`;
                     }
+
+                    // Save the selected language to local storage
+                    localStorage.setItem("selectedLanguage", selectedLanguage);
 
                     window.location.href = newPath;
                 }
