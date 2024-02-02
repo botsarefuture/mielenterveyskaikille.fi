@@ -17,14 +17,16 @@ document.addEventListener("DOMContentLoaded", function () {
             nav.appendChild(brand);
 
             // Language selector
-            const languageSelector = document.createElement("select");
-            languageSelector.id = "language-selector";
-            languageSelector.className = "form-select";
-            languageSelector.innerHTML = `
+            if (config.multilingualSite || False === True) {
+
+                const languageSelector = document.createElement("select");
+                languageSelector.id = "language-selector";
+                languageSelector.className = "form-select";
+                languageSelector.innerHTML = `
                 <option value="en">English</option>
-                <option value="fi">Finnish</option>
-            `;
-            nav.appendChild(languageSelector);
+                <option value="fi">Finnish</option>`;
+                nav.appendChild(languageSelector);
+            }
 
             // Navbar toggler button
             const togglerButton = document.createElement("button");
@@ -77,65 +79,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Append header to the body
             document.body.insertBefore(header, document.body.firstChild);
+            if (config.multilingualSite == True) {
+                // Your class-based JavaScript code here (MultilingualSite class instantiation)
+                class MultilingualSite {
+                    constructor(languageSelectorId) {
+                        this.languageSelector = document.getElementById(languageSelectorId);
 
-            // Your class-based JavaScript code here (MultilingualSite class instantiation)
-            class MultilingualSite {
-                constructor(languageSelectorId) {
-                    this.languageSelector = document.getElementById(languageSelectorId);
+                        if (!this.languageSelector) {
+                            console.error("Language selector not found.");
+                            return;
+                        }
 
-                    if (!this.languageSelector) {
-                        console.error("Language selector not found.");
-                        return;
+                        this.setupEventListeners();
+                        this.setPreferredLanguage();
                     }
 
-                    this.setupEventListeners();
-                    this.setPreferredLanguage();
-                }
-
-                setupEventListeners() {
-                    this.languageSelector.addEventListener("change", this.handleLanguageChange.bind(this));
-                }
-
-                handleLanguageChange() {
-                    const selectedLanguage = this.languageSelector.value;
-                    const currentPath = window.location.pathname;
-
-                    let newPath;
-
-                    const regex = /^\/[a-z]{2}\//;
-                    const hasLanguagePrefix = regex.test(currentPath);
-
-                    if (hasLanguagePrefix) {
-                        newPath = currentPath.replace(regex, `/${selectedLanguage}/`);
-                    } else {
-                        newPath = `/${selectedLanguage}${currentPath}`;
+                    setupEventListeners() {
+                        this.languageSelector.addEventListener("change", this.handleLanguageChange.bind(this));
                     }
 
-                    // Save the selected language to local storage
-                    localStorage.setItem("selectedLanguage", selectedLanguage);
+                    handleLanguageChange() {
+                        const selectedLanguage = this.languageSelector.value;
+                        const currentPath = window.location.pathname;
 
-                    window.location.href = newPath;
+                        let newPath;
+
+                        const regex = /^\/[a-z]{2}\//;
+                        const hasLanguagePrefix = regex.test(currentPath);
+
+                        if (hasLanguagePrefix) {
+                            newPath = currentPath.replace(regex, `/${selectedLanguage}/`);
+                        } else {
+                            newPath = `/${selectedLanguage}${currentPath}`;
+                        }
+
+                        // Save the selected language to local storage
+                        localStorage.setItem("selectedLanguage", selectedLanguage);
+
+                        window.location.href = newPath;
+                    }
+
+
+                    setPreferredLanguage() {
+                        const storedLanguage = localStorage.getItem("selectedLanguage");
+                        const browserLanguage = navigator.language.substr(0, 2);
+
+                        // Check if the user has already chosen a different language
+                        if (storedLanguage && ['en', 'fi'].includes(storedLanguage)) {
+                            this.languageSelector.value = storedLanguage;
+                        } else if (['en', 'fi'].includes(browserLanguage)) {
+                            // Set the browser language as the preferred language if not chosen by the user
+                            this.languageSelector.value = browserLanguage;
+                            // Save the preferred language to local storage
+                            localStorage.setItem("selectedLanguage", browserLanguage);
+                            this.handleLanguageChange();
+                        }
+                    }
                 }
-            
+                // Create an instance of the MultilingualSite class
+                const multilingualSite = new MultilingualSite("language-selector");
+            }})
 
-            setPreferredLanguage() {
-                const storedLanguage = localStorage.getItem("selectedLanguage");
-                const browserLanguage = navigator.language.substr(0, 2);
-
-                // Check if the user has already chosen a different language
-                if (storedLanguage && ['en', 'fi'].includes(storedLanguage)) {
-                    this.languageSelector.value = storedLanguage;
-                } else if (['en', 'fi'].includes(browserLanguage)) {
-                    // Set the browser language as the preferred language if not chosen by the user
-                    this.languageSelector.value = browserLanguage;
-                    // Save the preferred language to local storage
-                    localStorage.setItem("selectedLanguage", browserLanguage);
-                    this.handleLanguageChange();
-                }
-            }
-        }
-            // Create an instance of the MultilingualSite class
-            const multilingualSite = new MultilingualSite("language-selector");
-        })
-        .catch(error => console.error('Error loading configuration:', error));
+    .catch(error => console.error('Error loading configuration:', error));
 });
