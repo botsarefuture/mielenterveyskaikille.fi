@@ -16,6 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
             brand.style = "font-family: 'Anton', sans-serif;";
             nav.appendChild(brand);
 
+            // Language selector
+            const languageSelector = document.createElement("select");
+            languageSelector.id = "language-selector";
+            languageSelector.className = "form-select";
+            languageSelector.innerHTML = `
+                <option value="en">English</option>
+                <option value="fi">Finnish</option>
+                <option value="sv">Swedish</option>
+            `;
+            nav.appendChild(languageSelector);
+
             // Navbar toggler button
             const togglerButton = document.createElement("button");
             togglerButton.className = "navbar-toggler";
@@ -67,6 +78,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Append header to the body
             document.body.insertBefore(header, document.body.firstChild);
+
+            // Your class-based JavaScript code here (MultilingualSite class instantiation)
+            class MultilingualSite {
+                constructor(languageSelectorId) {
+                    this.languageSelector = document.getElementById(languageSelectorId);
+
+                    if (!this.languageSelector) {
+                        console.error("Language selector not found.");
+                        return;
+                    }
+
+                    this.setupEventListeners();
+                    this.setPreferredLanguage();
+                }
+
+                setupEventListeners() {
+                    this.languageSelector.addEventListener("change", this.handleLanguageChange.bind(this));
+                }
+
+                setPreferredLanguage() {
+                    const preferredLanguage = navigator.language.substr(0, 2);
+                    if (['en', 'fi', 'sv'].includes(preferredLanguage)) {
+                        this.languageSelector.value = preferredLanguage;
+                    }
+                }
+
+                handleLanguageChange() {
+                    const selectedLanguage = this.languageSelector.value;
+                    const currentPath = window.location.pathname;
+
+                    let newPath;
+
+                    const regex = /^\/[a-z]{2}\//;
+                    const hasLanguagePrefix = regex.test(currentPath);
+
+                    if (hasLanguagePrefix) {
+                        newPath = currentPath.replace(regex, `/${selectedLanguage}/`);
+                    } else {
+                        newPath = `/${selectedLanguage}${currentPath}`;
+                    }
+
+                    window.location.href = newPath;
+                }
+            }
+
+            // Create an instance of the MultilingualSite class
+            const multilingualSite = new MultilingualSite("language-selector");
         })
         .catch(error => console.error('Error loading configuration:', error));
 });
