@@ -110,6 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         // Save the preferred language to local storage
                         localStorage.setItem("selectedLanguage", browserLanguage);
                     }
+
+                    handleLanguageChange()
                 }
 
                 handleLanguageChange() {
