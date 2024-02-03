@@ -8,7 +8,9 @@
       { "text": "Info", "href": "info.html" },
       { "text": "Tuotteet", "href": "products.html" },
       { "text": "Medialle", "href": "for_media.html" },
-      { "text": "Tukijat", "href": "supporters.html"}
+      { "text": "Tukijat", "href": "supporters.html"},
+      { "text": "Vaatimukset", "href": "demands.html"}
+
     ]
   }
   
