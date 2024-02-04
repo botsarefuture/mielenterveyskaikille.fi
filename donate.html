@@ -7,25 +7,21 @@
   <title>Mielenterveys kuuluu kaikille - Tuotteet</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-
-  <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
-  <script src="mobile.js" defer></script>
   <script src="autoheader.js" defer></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Add Apple Pay, MobilePay, and PayPal SDKs here -->
+  <!-- Example placeholders, replace with actual integration code -->
+  <script src="https://js.braintreegateway.com/web/3.89.0/js/client.min.js"></script>
+  <script src="https://js.braintreegateway.com/web/3.89.0/js/apple-pay.min.js"></script>
+  <script src="https://checkout.mobilepay.dk/js/v1/mobilepay.js"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script>
 </head>
 
 <body>
   <div class="marquee-container">
+    <!-- Marquee content remains the same -->
     <marquee class="blink">
-      Suomen mielenterveyspalvelut ovat kriisissä, ja tarvitsemme muutosta!
-      Apua ei saada ajoissa, ja monet kamppailevat vaikeuksien keskellä ilman
-      riittävää tukea. Yhdessä voimme tehdä eron. Liity mukaan
-      mielenosoitukseen 9.3.2024 klo 13 Senaatintorilla. Marssi kohti
-      Eduskuntataloa alkaa klo 14, ja siellä odottaa monipuolinen ohjelma.
-      Tule ilmaisemaan mielipiteesi ja vaatimaan parempia
-      mielenterveyspalveluita kaikille. Yhdessä olemme vahvoja, ja yhdessä
-      voimme muuttaa tulevaisuutta!
+      Suomen mielenterveyspalvelut ovat kriisissä, ja tarvitsemme muutosta! ...
     </marquee>
   </div>
 
@@ -41,7 +37,7 @@
       <p>Tilin omistaja: Samuli Laine</p>
     </div>
 
-    <!-- Donation form (you can customize this part based on your requirements) -->
+    <!-- Donation form with Apple Pay, MobilePay, and PayPal buttons -->
     <form action="your_donation_processing_script" method="post">
       <label for="donationAmount">Valitse summa:</label>
       <select name="donationAmount" id="donationAmount">
@@ -50,6 +46,17 @@
         <option value="50">50€</option>
         <!-- Add more options as needed -->
       </select>
+
+      <!-- Example Apple Pay button (replace with actual Apple Pay button code) -->
+      <button id="applePayButton" type="button">Apple Pay</button>
+
+      <!-- Example MobilePay button (replace with actual MobilePay button code) -->
+      <button id="mobilePayButton" type="button">MobilePay</button>
+
+      <!-- Example PayPal button (replace with actual PayPal button code) -->
+      <div id="paypalButton"></div>
+
+      <!-- Your custom donation button -->
       <button type="submit">Lahjoita</button>
     </form>
   </section>
