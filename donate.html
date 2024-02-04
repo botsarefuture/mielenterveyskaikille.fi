@@ -49,14 +49,8 @@
         <!-- Add more options as needed -->
       </select>
 
-      <!-- Example Apple Pay button (replace with actual Apple Pay button code) -->
-      <button id="applePayButton" type="button">Apple Pay</button>
-
       <!-- Example MobilePay button (replace with actual MobilePay button code) -->
-      <button id="mobilePayButton" type="button">MobilePay</button>
-
-      <!-- Example PayPal button (replace with actual PayPal button code) -->
-      <div id="paypalButton"></div>
+      <button id="mobilePayButton" type="button" onclick="initiateMobilePay()">MobilePay</button>
 
       <!-- Your custom donation button -->
       <button type="submit">Lahjoita</button>
@@ -82,6 +76,31 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Function to initiate MobilePay payment
+    function initiateMobilePay() {
+      var payment = new MobilePay.Payment();
+
+      // Set the payment parameters
+      payment.setProductId("YourProductID");
+      payment.setAmount(document.getElementById("donationAmount").value);
+      payment.setDescription("Donation");
+
+      // Call the MobilePay API to create the payment
+      payment.create();
+
+      // Handle the response from MobilePay
+      payment.onComplete(function (result) {
+        if (result) {
+          // Payment successful, you can handle further processing here
+          alert("Payment successful!");
+        } else {
+          // Payment canceled or failed
+          alert("Payment canceled or failed.");
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>
