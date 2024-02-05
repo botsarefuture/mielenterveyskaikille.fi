@@ -5,6 +5,10 @@ body {
     margin: 0;
   }
 
+  section {
+    margin: 0 auto;
+    text-align: center;
+  }
   h1 {
     color: #ffffff;
     font-size: 2em;
