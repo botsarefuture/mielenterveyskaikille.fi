@@ -18,28 +18,15 @@ body {
   min-height: 100vh;
 }
 
-.navbar-brand {
-  font-family: "Anton", sans-serif;
-}
-
 .navbar-collapse {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
 }
 
+.navbar-brand,
 .nav-item {
   font-family: "Anton", sans-serif;
-
-}
-
-section {
-  margin: 2em;
-  text-align: center;
-}
-
-h2 {
-  color: #fff;
 }
 
 p {
@@ -55,10 +42,8 @@ footer {
   margin-top: auto;
 }
 
-footer p {
-  color: white;
-}
-
+h2,
+footer p,
 .navbar-toggler-icon {
   color: white;
 }
@@ -72,14 +57,7 @@ footer p {
   background-color: black;
 }
 
-.blink {
-  animation: blinker 1.5s linear infinite;
-  color: white;
-  font-family: sans-serif;
-}
-
 .header {
-  background-color: black;
   font-family: "Anton", sans-serif;
 }
 
@@ -109,4 +87,11 @@ footer p {
 .social-icons a i {
   color: white;
   margin-right: 10px;
+}
+
+section {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
 }

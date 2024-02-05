@@ -1,0 +1,49 @@
+/* Custom style for demands */
+.demand {
+    font-family: 'Anton', sans-serif;
+    color: white;
+    /* Changed text color to white */
+    border: 2px solid white;
+    /* Changed border color to white */
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .demand-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .demand-description {
+    font-size: 18px;
+    display: none;
+  }
+
+  .click-to-show {
+    font-size: 14px;
+    color: gray;
+    text-align: center;
+  }
+
+  h2 {
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    /* Changed text color to white */
+  }
+  section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  section ul li:before {
+    content: '';
+    color: white;
+    /* Changed bullet point color to white */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
