@@ -53,6 +53,7 @@ footer p,
   align-items: flex-start;
   justify-content: center;
   padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
   padding-bottom: 10px;
   background-color: black;
 }
@@ -93,4 +94,9 @@ section {
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
+}
+
+p {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
 }
