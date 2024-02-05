@@ -24,7 +24,10 @@ body {
   align-items: center;
 }
 
-.navbar-brand,
+.navbar-brand {
+  font-family: "Anton", sans-serif;
+
+}
 .nav-item {
   font-family: "Anton", sans-serif;
 }
@@ -42,8 +45,16 @@ footer {
   margin-top: auto;
 }
 
-h2,
-footer p,
+h2 {
+  color: white;
+
+}
+
+footer p {
+  color: white;
+
+}
+
 .navbar-toggler-icon {
   color: white;
 }
