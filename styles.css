@@ -112,3 +112,23 @@ p {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom CSS */
+.donate-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.donate-btn {
+  background-color: var(--orange); /* Use your preferred color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.donate-btn:hover {
+  background-color: var(--neon-green); /* Change color on hover */
+}
