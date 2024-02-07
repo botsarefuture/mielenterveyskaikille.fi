@@ -16,7 +16,7 @@ function isMobile() {
       // Remove the initial domain from the pathname before constructing the mobile URL
       currentUrl = removeInitialDomain(currentUrl);
 
-      var mobileUrl = "/mobile" + currentUrl;
+      var mobileUrl = currentUrl;
 
       // Check if the mobile version exists
       fetch(mobileUrl, { method: 'HEAD' })
