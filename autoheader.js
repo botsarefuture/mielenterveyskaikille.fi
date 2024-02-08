@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add Google Tag Manager script
     const gtagScript1 = document.createElement("script");
     gtagScript1.async = true;
-    gtagScript1.src = "https://www.googletagmanager.com/gtag/js?id=G-H01RVV2S0V";
+    gtagScript1.src = "https://www.googletagmanager.com/gtag/js?id=G-FPN2HKBMCE";
     document.head.appendChild(gtagScript1);
 
     const gtagScript2 = document.createElement("script");
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-H01RVV2S0V');
+        gtag('config', 'G-FPN2HKBMCE');
      `;
     document.head.appendChild(gtagScript2);
 
