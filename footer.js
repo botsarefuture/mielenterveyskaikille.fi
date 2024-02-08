@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('config.json')
+    fetch('footer.json')
       .then(response => response.json())
       .then(data => {
         const footer = document.createElement('footer');
