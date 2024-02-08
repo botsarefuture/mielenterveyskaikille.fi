@@ -1,13 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Load Google Fonts stylesheet
+    const fontLink = document.createElement("link");
+    fontLink.rel = "stylesheet";
+    fontLink.href = "https://fonts.googleapis.com/css2?family=Anton&display=swap";
+    document.head.appendChild(fontLink);
+
     // Load configuration from external JSON file
     fetch('config.json')
         .then(response => response.json())
         .then(config => {
             // Create header elements
             const header = document.createElement("header");
-            header.style = "text-align: left;";
+            header.style = "text-align: center;"; // Align the header content to center
             const nav = document.createElement("nav");
             nav.className = config.navbarClass || "navbar navbar-expand-lg bg-dark container-fluid";
+            nav.style = "display: flex; justify-content: center;"; // Center the navbar items horizontally
 
             // Navbar brand
             const brand = document.createElement("a");
@@ -68,66 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Append header to the body
             document.body.insertBefore(header, document.body.firstChild);
-            if (config.multilingualSite || false == true) {
-                // Your class-based JavaScript code here (MultilingualSite class instantiation)
-                class MultilingualSite {
-                    constructor(languageSelectorId) {
-                        this.languageSelector = document.getElementById(languageSelectorId);
-
-                        if (!this.languageSelector) {
-                            console.error("Language selector not found.");
-                            return;
-                        }
-
-                        this.setupEventListeners();
-                        this.setPreferredLanguage();
-                    }
-
-                    setupEventListeners() {
-                        this.languageSelector.addEventListener("change", this.handleLanguageChange.bind(this));
-                    }
-
-                    handleLanguageChange() {
-                        const selectedLanguage = this.languageSelector.value;
-                        const currentPath = window.location.pathname;
-
-                        let newPath;
-
-                        const regex = /^\/[a-z]{2}\//;
-                        const hasLanguagePrefix = regex.test(currentPath);
-
-                        if (hasLanguagePrefix) {
-                            newPath = currentPath.replace(regex, `/${selectedLanguage}/`);
-                        } else {
-                            newPath = `/${selectedLanguage}${currentPath}`;
-                        }
-
-                        // Save the selected language to local storage
-                        localStorage.setItem("selectedLanguage", selectedLanguage);
-
-                        window.location.href = newPath;
-                    }
-
-
-                    setPreferredLanguage() {
-                        const storedLanguage = localStorage.getItem("selectedLanguage");
-                        const browserLanguage = navigator.language.substr(0, 2);
-
-                        // Check if the user has already chosen a different language
-                        if (storedLanguage && ['en', 'fi'].includes(storedLanguage)) {
-                            this.languageSelector.value = storedLanguage;
-                        } else if (['en', 'fi'].includes(browserLanguage)) {
-                            // Set the browser language as the preferred language if not chosen by the user
-                            this.languageSelector.value = browserLanguage;
-                            // Save the preferred language to local storage
-                            localStorage.setItem("selectedLanguage", browserLanguage);
-                            this.handleLanguageChange();
-                        }
-                    }
-                }
-                // Create an instance of the MultilingualSite class
-                const multilingualSite = new MultilingualSite("language-selector");
-            }})
+        })
 
     .catch(error => console.error('Error loading configuration:', error));
 });
