@@ -59,19 +59,9 @@ footer p {
   color: white;
 }
 
-.marquee-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  padding-bottom: 10px;
-  background-color: black;
-}
-
 .header {
   font-family: "Anton", sans-serif;
-  color: black;
+  background-color: black;
 }
 
 /* Added styles for the active link */

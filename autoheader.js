@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(config => {
             // Create header elements
             const header = document.createElement("header");
-            header.style = "text-align: center;"; // Align the header content to center
+            header.style = "text-align: center; background-color: black;"; // Add background color style
             const nav = document.createElement("nav");
             nav.className = config.navbarClass || "navbar navbar-expand-lg bg-dark container-fluid";
             nav.style = "display: flex; justify-content: center;"; // Center the navbar items horizontally
