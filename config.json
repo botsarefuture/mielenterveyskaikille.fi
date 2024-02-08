@@ -6,27 +6,27 @@
   "links": [
     {
       "text": "Koti",
-      "href": "index.html"
+      "href": "/"
     },
     {
       "text": "Info",
-      "href": "info.html"
+      "href": "info"
     },
     {
       "text": "Tuotteet",
-      "href": "products.html"
+      "href": "products"
     },
     {
       "text": "Medialle",
-      "href": "for_media.html"
+      "href": "for_media"
     },
     {
       "text": "Tukijat",
-      "href": "supporters.html"
+      "href": "supporters"
     },
     {
       "text": "Vaatimukset",
-      "href": "demands.html"
+      "href": "demands"
     }
   ]
 }
