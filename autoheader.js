@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(config => {
             // Create header elements
             const header = document.createElement("header");
+            header.style = "text-align: left;";
             const nav = document.createElement("nav");
             nav.className = config.navbarClass || "navbar navbar-expand-lg bg-dark container-fluid";
 
@@ -15,18 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
             brand.textContent = config.brandText || "Mielenterveys kuuluu kaikille!";
             brand.style = "font-family: 'Anton', sans-serif;";
             nav.appendChild(brand);
-
-            // Language selector
-            if (config.multilingualSite || false == true) {
-
-                const languageSelector = document.createElement("select");
-                languageSelector.id = "language-selector";
-                languageSelector.className = "form-select";
-                languageSelector.innerHTML = `
-                <option value="en">English</option>
-                <option value="fi">Finnish</option>`;
-                nav.appendChild(languageSelector);
-            }
 
             // Navbar toggler button
             const togglerButton = document.createElement("button");
