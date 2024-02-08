@@ -11,6 +11,21 @@ document.addEventListener("DOMContentLoaded", function () {
     stylesLink.href = "styles.css";
     document.head.appendChild(stylesLink);
 
+    // Add Google Tag Manager script
+    const gtagScript1 = document.createElement("script");
+    gtagScript1.async = true;
+    gtagScript1.src = "https://www.googletagmanager.com/gtag/js?id=G-H01RVV2S0V";
+    document.head.appendChild(gtagScript1);
+
+    const gtagScript2 = document.createElement("script");
+    gtagScript2.textContent = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-H01RVV2S0V');
+     `;
+    document.head.appendChild(gtagScript2);
+
     // Load configuration from external JSON file
     fetch('config.json')
         .then(response => response.json())
@@ -84,5 +99,5 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.insertBefore(header, document.body.firstChild);
         })
 
-    .catch(error => console.error('Error loading configuration:', error));
+        .catch(error => console.error('Error loading configuration:', error));
 });
