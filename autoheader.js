@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
     fontLink.href = "https://fonts.googleapis.com/css2?family=Anton&display=swap";
     document.head.appendChild(fontLink);
 
+    // Load styles.css stylesheet
+    const stylesLink = document.createElement("link");
+    stylesLink.rel = "stylesheet";
+    stylesLink.href = "styles.css";
+    document.head.appendChild(stylesLink);
+
     // Load configuration from external JSON file
     fetch('config.json')
         .then(response => response.json())
@@ -44,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Navbar links
             const navList = document.createElement("ul");
             navList.className = "navbar-nav me-auto mb-2 mb-lg-0";
+            navList.style = "align-items: center;"
 
             const links = config.links || [
                 { text: "Koti", href: "index.html" },
