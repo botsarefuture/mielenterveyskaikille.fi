@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", function () {
     stylesLink.href = "styles.css";
     document.head.appendChild(stylesLink);
 
+    // Add add meta
+    const metaTags = document.createElement("script");
+    metaTags.defer = true;
+    metaTags.src = "addMetaTags.js";
+    document.head.appendChild(metaTags);
+
     // Add Google Tag Manager script
     const gtagScript1 = document.createElement("script");
     gtagScript1.async = true;
@@ -27,77 +33,81 @@ document.addEventListener("DOMContentLoaded", function () {
     document.head.appendChild(gtagScript2);
 
     // Load configuration from external JSON file
-    fetch('config.json')
-        .then(response => response.json())
-        .then(config => {
-            // Create header elements
-            const header = document.createElement("header");
-            header.style = "text-align: center; background-color: black;"; // Add background color style
-            const nav = document.createElement("nav");
-            nav.className = config.navbarClass || "navbar navbar-expand-lg bg-dark container-fluid";
-            nav.style = "display: flex; justify-content: center;"; // Center the navbar items horizontally
+fetch('config.json')
+.then(response => response.json())
+.then(config => {
+    // Create header elements
+    const header = document.createElement("header");
+    header.style = "text-align: center; background-color: black;"; // Add background color style
+    const nav = document.createElement("nav");
+    nav.className = config.navbarClass || "navbar navbar-expand-lg bg-dark container-fluid";
+    nav.style = "display: flex; justify-content: center;"; // Center the navbar items horizontally
 
-            // Navbar brand
-            const brand = document.createElement("a");
-            brand.className = "navbar-brand text-light";
-            brand.href = config.brandHref || "./";
-            brand.textContent = config.brandText || "Mielenterveys kuuluu kaikille!";
-            brand.style = "font-family: 'Anton', sans-serif;";
-            nav.appendChild(brand);
+    // Navbar brand
+    const brand = document.createElement("a");
+    brand.className = "navbar-brand text-light";
+    brand.href = config.brandHref || "./";
+    brand.textContent = config.brandText || "Mielenterveys kuuluu kaikille!";
+    brand.style = "font-family: 'Anton', sans-serif;";
+    nav.appendChild(brand);
 
-            // Navbar toggler button
-            const togglerButton = document.createElement("button");
-            togglerButton.className = "navbar-toggler";
-            togglerButton.type = "button";
-            togglerButton.setAttribute("data-toggle", "collapse");
-            togglerButton.setAttribute("data-target", "#navbarSupportedContent");
-            togglerButton.setAttribute("aria-controls", "navbarSupportedContent");
-            togglerButton.setAttribute("aria-expanded", "false");
-            togglerButton.setAttribute("aria-label", "Toggle navigation");
-            togglerButton.innerHTML = config.togglerButtonIcon || '<span class="navbar-toggler-icon">☰</span>';
-            nav.appendChild(togglerButton);
+    // Navbar toggler button
+    const togglerButton = document.createElement("button");
+    togglerButton.className = "navbar-toggler";
+    togglerButton.type = "button";
+    togglerButton.setAttribute("data-toggle", "collapse");
+    togglerButton.setAttribute("data-target", "#navbarSupportedContent");
+    togglerButton.setAttribute("aria-controls", "navbarSupportedContent");
+    togglerButton.setAttribute("aria-expanded", "false");
+    togglerButton.setAttribute("aria-label", "Toggle navigation");
+    togglerButton.innerHTML = config.togglerButtonIcon || '<span class="navbar-toggler-icon">☰</span>';
+    nav.appendChild(togglerButton);
 
-            // Navbar collapse
-            const collapseDiv = document.createElement("div");
-            collapseDiv.className = "collapse navbar-collapse";
-            collapseDiv.id = "navbarSupportedContent";
+    // Navbar collapse
+    const collapseDiv = document.createElement("div");
+    collapseDiv.className = "collapse navbar-collapse";
+    collapseDiv.id = "navbarSupportedContent";
 
-            // Navbar links
-            const navList = document.createElement("ul");
-            navList.className = "navbar-nav me-auto mb-2 mb-lg-0";
-            navList.style = "align-items: center;"
+    // Navbar links
+    const navList = document.createElement("ul");
+    navList.className = "navbar-nav me-auto mb-2 mb-lg-0";
+    navList.style = "align-items: center;"
 
-            const links = config.links || [
-                { text: "Koti", href: "index.html" },
-                { text: "Tietoa", href: "info.html" },
-                { text: "Tuotteet", href: "products.html" },
-                { text: "Medialle", href: "for_media.html" },
-            ];
+    const links = config.links || [
+        { text: "Koti", href: "index.html" },
+        { text: "Tietoa", href: "info.html" },
+        { text: "Tuotteet", href: "products.html" },
+        { text: "Medialle", href: "for_media.html" },
+    ];
 
-            links.forEach((link) => {
-                const listItem = document.createElement("li");
-                listItem.className = "nav-item";
+    links.forEach((link) => {
+        const listItem = document.createElement("li");
+        listItem.className = "nav-item";
 
-                // Check if the link is active
-                if (window.location.href.endsWith(link.href)) {
-                    listItem.classList.add("active");
-                }
+        if (link.hasOwnProperty("class")) {
+            listItem.className = `nav-item ${link.class}`;
+        }
 
-                const anchor = document.createElement("a");
-                anchor.className = "nav-link text-light";
-                anchor.href = link.href;
-                anchor.textContent = link.text;
-                listItem.appendChild(anchor);
-                navList.appendChild(listItem);
-            });
+        // Check if the link is active
+        if (window.location.href.endsWith(link.href)) {
+            listItem.classList.add("active");
+        }
 
-            collapseDiv.appendChild(navList);
-            nav.appendChild(collapseDiv);
-            header.appendChild(nav);
+        const anchor = document.createElement("a");
+        anchor.className = "nav-link text-light";
+        anchor.href = link.href;
+        anchor.textContent = link.text;
+        listItem.appendChild(anchor);
+        navList.appendChild(listItem);
+    });
 
-            // Append header to the body
-            document.body.insertBefore(header, document.body.firstChild);
-        })
+    collapseDiv.appendChild(navList);
+    nav.appendChild(collapseDiv);
+    header.appendChild(nav);
 
-        .catch(error => console.error('Error loading configuration:', error));
+    // Append header to the body
+    document.body.insertBefore(header, document.body.firstChild);
+})
+
+.catch(error => console.error('Error loading configuration:', error));
 });
