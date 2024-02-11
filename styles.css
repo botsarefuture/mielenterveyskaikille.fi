@@ -130,6 +130,6 @@ p {
 }
 
 /* Adjusting positioning for the "lahjoita" button */
-.navbar-nav.navbar-right {
-  margin-left: auto; /* Pushes the "lahjoita" button to the right */
+.navbar-nav.navbar-left {
+  margin-right: auto; /* Pushes the "lahjoita" button to the right */
 }
