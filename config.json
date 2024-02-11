@@ -30,7 +30,8 @@
     },
     {
       "text": "Lahjoita",
-      "href": "donate"
+      "href": "donate",
+      "class": "navbar-left"
     }
   ]
 }

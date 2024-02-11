@@ -78,6 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 const listItem = document.createElement("li");
                 listItem.className = "nav-item";
 
+                if (link.hasOwnProperty("class")) {
+                    listItem.className = `nav-item ${link.class}`;
+                }
+
                 // Check if the link is active
                 if (window.location.href.endsWith(link.href)) {
                     listItem.classList.add("active");
