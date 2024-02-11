@@ -27,11 +27,6 @@
     {
       "text": "Vaatimukset",
       "href": "demands"
-    },
-    {
-      "text": "Lahjoita",
-      "href": "donate",
-      "class": "navbar-left"
     }
   ]
 }
