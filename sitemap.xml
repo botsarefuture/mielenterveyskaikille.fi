@@ -7,9 +7,6 @@
         <loc>https://mielenterveyskaikille.fi/demands</loc>
     </url>
     <url>
-        <loc>https://mielenterveyskaikille.fi/</loc>
-    </url>
-    <url>
         <loc>https://mielenterveyskaikille.fi/for_media</loc>
     </url>
     <url>
@@ -17,6 +14,9 @@
     </url>
     <url>
         <loc>https://mielenterveyskaikille.fi/products</loc>
+    </url>
+    <url>
+        <loc>https://mielenterveyskaikille.fi/donate</loc>
     </url>
     <url>
         <loc>https://mielenterveyskaikille.fi/program</loc>
