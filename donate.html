@@ -10,14 +10,17 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
   <!-- Meta tags added dynamically -->
-  <meta name="description" content="Osallistu mielenosoitukseen Senaatintorilla 9.3.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta name="description"
+    content="Osallistu mielenosoitukseen Senaatintorilla 9.3.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
   <meta property="og:title" content="Mielenterveys kuuluu kaikille" />
-  <meta property="og:description" content="Osallistu mielenosoitukseen Senaatintorilla 9.3.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta property="og:description"
+    content="Osallistu mielenosoitukseen Senaatintorilla 9.3.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mielenterveyskaikille.fi/" />
   <meta property="og:image" content="https://mielenterveyskaikille.fi/mielenterveys1.svg" />
   <meta name="twitter:title" content="Mielenterveys kuuluu kaikille" />
-  <meta name="twitter:description" content="Osallistu mielenosoitukseen Senaatintorilla 9.3.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta name="twitter:description"
+    content="Osallistu mielenosoitukseen Senaatintorilla 9.3.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
   <meta name="twitter:image" content="https://mielenterveyskaikille.fi/mielenterveys1.svg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
@@ -45,14 +48,25 @@
       height: 300px;
       border: 2px solid #000;
       position: relative;
+      display: inline-block;
+      margin: 20px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
     .mercury {
       width: 100%;
-      background-color: red;
+      background-color: #ff3333;
       position: absolute;
       bottom: 0;
       transition: height 0.5s ease;
+    }
+
+    .amount-raised {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -61,9 +75,12 @@
   <!-- Main content section -->
   <section>
     <h2 style="text-align: center;">Miten voin tukea mielenosoitusta?</h2>
-    <p>Mielenosoituksen järjestämiseksi tarvitaan monenlaisia asioita, kuten julisteita, banderolleja ja äänentoistolaitteita, joiden hankkiminen tai vuokraaminen vie rahaa.</p>
-    <p>Mielenosoituksen järjestämiseksi tarvitsemme lisäksi vapaaehtoisia: <a href="https://docs.google.com/forms/d/e/1FAIpQLSeD6dXOpftkNEH_gcZ5UiZPqILUKhaSWgHKs_5MQ9GZWEAYuQ/viewform?usp=sf_link">ilmoittaudu vapaaehtoiseksi tästä</a>.</p>
-    
+    <p>Mielenosoituksen järjestämiseksi tarvitaan monenlaisia asioita, kuten julisteita, banderolleja ja
+      äänentoistolaitteita, joiden hankkiminen tai vuokraaminen vie rahaa.</p>
+    <p>Mielenosoituksen järjestämiseksi tarvitsemme lisäksi vapaaehtoisia: <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeD6dXOpftkNEH_gcZ5UiZPqILUKhaSWgHKs_5MQ9GZWEAYuQ/viewform?usp=sf_link">ilmoittaudu
+        vapaaehtoiseksi tästä</a>.</p>
+
     <h3 style="text-align: center;">Mitä teemme lahjoituksesi avulla?</h3>
     <p>Jokainen euro vie meidät lähemmäs onnistunutta mielenosoitusta. <strong>JOKAINEN EURO AUTTAA ❤️</strong></p>
 
@@ -72,7 +89,8 @@
       <p>Tilinumero: FI97 1714 2901 7397 98</p>
       <p>Tilin omistaja: Samuli Laine</p>
       <p><strong>Pienkeräyslupanumero:</strong> RA/2024/212</p>
-      <a href="https://qr.mobilepay.fi/box/65c143a8-5556-411e-b396-8e1a50387b0f/pay-in"><img style="width: 20%" src="static/Untitled 1.png"/></a>
+      <a href="https://qr.mobilepay.fi/box/65c143a8-5556-411e-b396-8e1a50387b0f/pay-in"><img style="width: 20%"
+          src="static/Untitled 1.png" /></a>
       <p>Mobilepay box: <a href="https://qr.mobilepay.fi/box/65c143a8-5556-411e-b396-8e1a50387b0f/pay-in">2647QB</a></p>
     </div>
 
@@ -90,6 +108,7 @@
   <div class="thermometer">
     <div class="mercury" style="height: 10%;"></div>
   </div>
+  <div class="amount-raised">100€ kerätty 10 000€ tavoitteesta</div>
 
   <!-- Bootstrap JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -99,18 +118,24 @@
   <!-- Custom Script -->
   <script>
     // Add functionality to the donate button
-    document.querySelector('.donate-btn').addEventListener('click', function() {
+    document.querySelector('.donate-btn').addEventListener('click', function () {
       // Redirect users to the donation page or provide necessary information
       window.location.href = 'https://qr.mobilepay.fi/box/65c143a8-5556-411e-b396-8e1a50387b0f/pay-in'; // TODO: REPLACE THIS WITH ACTUAL MOBILEPAYBOX
       alert('Kiitos halustasi auttaa! Ole hyvä ja tee lahjoitus.');
-      
-      // Update the thermometer meter visually
-      const currentHeight = document.querySelector('.mercury').style.height;
-      const currentAmount = parseFloat(currentHeight) * 100; // Assuming 100% represents 10000€
-      const newAmount = currentAmount + 1; // Increase by 1€
-      const newHeight = (newAmount / 10000) * 100; // Convert to percentage
-      document.querySelector('.mercury').style.height = `${newHeight}%`;
     });
+
+
+    // Update the thermometer meter visually
+    const currentHeight = document.querySelector('.mercury').style.height;
+    const currentAmount = parseFloat(currentHeight) * 100; // Assuming 100% represents 10000€
+    const newAmount = currentAmount; // Increase by 1€
+    const newHeight = (newAmount / 10000) * 100; // Convert to percentage
+    document.querySelector('.mercury').style.height = `${newHeight}%`;
+
+    // Update the amount raised text
+    const amountRaisedText = document.querySelector('.amount-raised');
+    amountRaisedText.textContent = `${newAmount}€ kerätty 10 000€ tavoitteesta`;
+
   </script>
 </body>
 
