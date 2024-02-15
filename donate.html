@@ -37,6 +37,24 @@
   <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
   <script src="autoheader.js" defer></script>
   <script src="footer.js" defer></script>
+
+  <!-- Custom CSS for thermometer meter -->
+  <style>
+    .thermometer {
+      width: 100px;
+      height: 300px;
+      border: 2px solid #000;
+      position: relative;
+    }
+
+    .mercury {
+      width: 100%;
+      background-color: red;
+      position: absolute;
+      bottom: 0;
+      transition: height 0.5s ease;
+    }
+  </style>
 </head>
 
 <body>
@@ -68,6 +86,11 @@
     <br>
   </section>
 
+  <!-- Thermometer meter for money raised -->
+  <div class="thermometer">
+    <div class="mercury" style="height: 10%;"></div>
+  </div>
+
   <!-- Bootstrap JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -80,6 +103,13 @@
       // Redirect users to the donation page or provide necessary information
       window.location.href = 'https://qr.mobilepay.fi/box/65c143a8-5556-411e-b396-8e1a50387b0f/pay-in'; // TODO: REPLACE THIS WITH ACTUAL MOBILEPAYBOX
       alert('Kiitos halustasi auttaa! Ole hyvä ja tee lahjoitus.');
+      
+      // Update the thermometer meter visually
+      const currentHeight = document.querySelector('.mercury').style.height;
+      const currentAmount = parseFloat(currentHeight) * 100; // Assuming 100% represents 10000€
+      const newAmount = currentAmount + 1; // Increase by 1€
+      const newHeight = (newAmount / 10000) * 100; // Convert to percentage
+      document.querySelector('.mercury').style.height = `${newHeight}%`;
     });
   </script>
 </body>
