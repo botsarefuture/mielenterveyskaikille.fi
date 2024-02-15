@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mielenterveys kuuluu kaikille - Ohjelma</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mielenterveys kuuluu kaikille - Järjestäjät</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
   <script src="autoheader.js" defer></script>
   <script src="footer.js" defer></script>
@@ -35,82 +37,77 @@
     }
   </script>
   <link rel="stylesheet" href="for_media.css" />
+
   <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Anton', sans-serif;
+      text-align: center;
+      font-size: 40px;
     }
 
-    th,
-    td {
-      border: 1px solid #ddd;
-      padding: 8px;
+    section {
+      max-width: 800px;
+      margin: 0 auto;
+      margin-top: 20px;
       text-align: left;
     }
 
-    th {
-      background-color: #007bff;
-      color: black;
+    section:nth-child(2) {
+      text-align: center;
     }
 
-    tr:nth-child(even) {
-      background-color: grey;
+
+    marquee {
+      text-align: left;
     }
 
-    table {
-      margin-left: 5%;
-      margin-right: 5%;
-      align-self: center;
+    section ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    section ul li:before {
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    section li {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    p {
+      font-family: Arial, Helvetica, sans-serif;
     }
   </style>
 </head>
 
 <body>
+
+
   <section>
-    <h2 style="text-align: center;">Mielenosoituksen ohjelma</h2>
-    <table>
-      <tr>
-        <th>Aika</th>
-        <th>Paikka</th>
-        <th>Aktiviteetti</th>
-      </tr>
-      <tr>
-        <td>13:00 - 14:00</td>
-        <td>Senaatintori</td>
-        <td>Kokoontuminen</td>
-      </tr>
-      <tr>
-        <td>13:00 - 13:15</td>
-        <td>Senaatintori</td>
-        <td>Alkupuhe</td>
-      </tr>
-      <tr>
-        <td>13:45 - 14:00</td>
-        <td>Senaatintori</td>
-        <td>Lähtövalmistelut, huudatatusta</td>
-      </tr>
-      <tr>
-        <td>14:00</td>
-        <td>Senaatintorilta</td>
-        <td>Marssi lähtee liikkeelle</td>
-      </tr>
-      <tr>
-        <td>14:45 - 15:00</td>
-        <td>Eduskuntatalo</td>
-        <td>Puhe 1</td>
-      </tr>
-      <tr>
-        <td>15:00 - 15:15</td>
-        <td>Eduskuntatalo</td>
-        <td>Puhe 2</td>
-      </tr>
-      <tr>
-        <td>16:00</td>
-        <td>Eduskuntatalo</td>
-        <td>Mielenosoitus päättyy (viimeistään)</td>
-      </tr>
-    </table>
+    <h2>Järjestäjät</h2>
+    <p>Tätä sivulta löydät listan mielenosoituksta järjestävistä ihmisistä</p>
+    <ul>
+      <li>Samuli Laine</li>
+      <li><a href="mailto:verso.vuorenmaa@luova.club">Verso Vuorenmaa</a></li>
+      <li><strong>+ 12 muuta</strong></li>
+    </ul>
   </section>
+
+  <section>
+    <h2>Tule mukaan järjestämään</h2>
+    <centered>
+      <p>Ota yhteyttä: <a href="mailto:mielenterveyskaikille@proton.me">mielenterveyskaikille@proton.me</a></p>
+      <p>Tai liity Telegram ryhmäämme: <a href="https://t.me/mielenterveyskaikille">https://t.me/mielenterveyskaikille</a></p>
+    </centered>
+  </section>
+
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
