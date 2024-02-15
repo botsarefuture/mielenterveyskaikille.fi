@@ -121,7 +121,7 @@
     function updateThermometer() {
       const currentHeight = document.querySelector('.mercury').style.height;
       const currentAmount = parseFloat(currentHeight) * 100; // Assuming 100% represents 10000€
-      const newAmount = currentAmount; // Increase by 1€
+      const newAmount = 100; // Increase by 1€
       const newHeight = (newAmount / 10000) * 100; // Convert to percentage
       document.querySelector('.mercury').style.height = `${newHeight}%`;
       const amountRaisedText = document.querySelector('.amount-raised');
