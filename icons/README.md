@@ -22,6 +22,6 @@ Insert the following code in the `head` section of your pages:
     <meta name="application-name" content="Mielenterveys kuuluu kaikille">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="/icons/browserconfig.xml?v=2">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#f87c56">
 
 *Optional* - Check your favicon with the [favicon checker](https://realfavicongenerator.net/favicon_checker)
