@@ -116,7 +116,7 @@ p {
 }
 
 .donate-btn {
-  background-color: var(--orange); /* Use your preferred color */
+  background-color: var(--neon-green); /* Use your preferred color */
   color: white;
   padding: 10px 20px;
   font-size: 18px;
