@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mielenterveys kuuluu kaikille - Tue toimintaa</title>
+  <title>Mielenterveys kuuluu kaikille - Tue mielenosoitusta</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
@@ -99,7 +99,22 @@
     <h3 style="text-align: center;">Mitä teemme lahjoituksesi avulla?</h3>
     <p>Jokainen euro vie meidät lähemmäs onnistunutta mielenosoitusta. <strong>JOKAINEN EURO AUTTAA ❤️</strong></p>
 
-    <!-- Bank account information -->
+
+    <p>Kulut:</p>
+    <ul>
+      <li>Markkinointi- ja painokulut (julisteet, esitteet ja mainokset digitaalisissa medioissa)</li>
+      <li>Nettisivut (domain, mahd. palvelinmaksut)</li>
+      <li>Oheistuotteet (Esim. hupparit, lippikset, kangaskassit)</li>
+      <li>Tapahtuma logistiikka</li>
+      <li>Tapahtuma infrastukruuri (Äänentoisto, rekvisiitta, kyltit, banderollit sekä
+        mahdolliset teltat)</li>
+      <li>Ennakoimattomat ja muut mahdolliset kulut</li>
+    </ul>
+
+    <p>Toissijaisesti (jäljelle jäävät) tuotot (joita ei voi käyttää ensisijaiseen käyttötarkoitukseen) käytetään mielenterveyttä tukevaan toimintaan, esimerkiksi
+      lahjoittamalla jäljelle jäänyt summa mielenterveysjärjestöille.</p>      
+
+      <!-- Bank account information -->
     <div>
       <p>Tilinumero: FI97 1714 2901 7397 98</p>
       <p>Tilin omistaja: Samuli Laine</p>
@@ -119,13 +134,6 @@
     <br>
   </section>
 
-  <!-- Thermometer meter for money raised -->
-<!-- 
- <div id="thermometer" class="thermometer">
-    <div class="mercury" style="height: 10%;"></div>
-  </div>
-  <div class="amount-raised">100€ kerätty 10 000€ tavoitteesta</div>-->
-
   <!-- Bootstrap JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -133,17 +141,6 @@
 
   <!-- Custom Script -->
   <script>
-    // Function to update thermometer meter and amount raised
-    function updateThermometer() {
-      const currentHeight = document.querySelector('.mercury').style.height;
-      const currentAmount = parseFloat(currentHeight) * 100; // Assuming 100% represents 10000€
-      const newAmount = 100; // Increase by 1€
-      const newHeight = (newAmount / 10000) * 100; // Convert to percentage
-      document.querySelector('.mercury').style.height = `${newHeight}%`;
-      const amountRaisedText = document.querySelector('.amount-raised');
-      amountRaisedText.textContent = `${newAmount}€ kerätty 10 000€ tavoitteesta`;
-    }
-
     // Add functionality to the donate button
     document.querySelector('.donate-btn').addEventListener('click', function () {
       window.location.href = 'https://qr.mobilepay.fi/box/65c143a8-5556-411e-b396-8e1a50387b0f/pay-in';
