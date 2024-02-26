@@ -24,9 +24,6 @@ const x = setInterval(function () {
   // If the countdown is over, display a message
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById('days').innerHTML = 'Tapahtuma on käynnissä!';
-    document.getElementById('hours').style.display = 'none';
-    document.getElementById('minutes').style.display = 'none';
-    document.getElementById('seconds').style.display = 'none';
+    document.getElementById('al').style.display = 'none';
   }
 }, 1000);
