@@ -44,11 +44,15 @@ fetch('config.json')
     nav.style = "display: flex; justify-content: center;"; // Center the navbar items horizontally
 
     // Navbar brand
-    const brand = document.createElement("a");
-    brand.className = "navbar-brand text-light";
-    brand.href = config.brandHref || "./";
-    brand.textContent = config.brandText || "Mielenterveys kuuluu kaikille!";
-    brand.style = "font-family: 'Anton', sans-serif;";
+    const brand = document.createElement("h1");
+    brand.className = "navbar-brand";
+    brand.style = "color: white; max-width: 100%;";
+    const brandSpan = document.createElement("span");
+    brandSpan.style = "color: var(--red);";
+    brandSpan.textContent = "KUULUU KAIKILLE!";
+    brand.appendChild(document.createTextNode("MIELENTERVEYS "));
+    brand.appendChild(brandSpan);
+    brand.style.fontFamily = "'Anton', sans-serif;";
     nav.appendChild(brand);
 
     // Navbar toggler button
