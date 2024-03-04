@@ -48,3 +48,24 @@ body {
       opacity: 0;
     }
   }
+
+  .btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #c44f33;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f5693a;
+}
