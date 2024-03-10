@@ -24,5 +24,6 @@ const x = setInterval(function () {
   // If the countdown is over, display a message
   if (distance < 0) {
     clearInterval(x);
+    document.getElementsByName('al').style.display = 'none';
   }
 }, 1000);
