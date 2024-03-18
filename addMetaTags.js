@@ -3,7 +3,7 @@ function addMetaTags() {
     // Meta description
     var metaDescription = document.createElement('meta');
     metaDescription.name = 'description';
-    metaDescription.content = 'Osallistu mielenosoitukseen Senaatintorilla 9.3.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!';
+    metaDescription.content = 'Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!';
     document.head.appendChild(metaDescription);
 
     // Open Graph meta tags
@@ -14,7 +14,7 @@ function addMetaTags() {
 
     var ogDescription = document.createElement('meta');
     ogDescription.setAttribute('property', 'og:description');
-    ogDescription.content = 'Osallistu mielenosoitukseen Senaatintorilla 9.3.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!';
+    ogDescription.content = 'Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!';
     document.head.appendChild(ogDescription);
 
     var ogType = document.createElement('meta');
@@ -40,7 +40,7 @@ function addMetaTags() {
 
     var twitterDescription = document.createElement('meta');
     twitterDescription.name = 'twitter:description';
-    twitterDescription.content = 'Osallistu mielenosoitukseen Senaatintorilla 9.3.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!';
+    twitterDescription.content = 'Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!';
     document.head.appendChild(twitterDescription);
 
     var twitterImage = document.createElement('meta');
