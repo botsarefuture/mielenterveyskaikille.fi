@@ -6,27 +6,27 @@
   "links": [
     {
       "text": "Home",
-      "href": "/"
+      "href": "/en//en/"
     },
     {
       "text": "Info",
-      "href": "info"
+      "href": "/en/info"
     },
     {
       "text": "For media",
-      "href": "for_media"
+      "href": "/en/for_media"
     },
     {
       "text": "Supporters",
-      "href": "supporters"
+      "href": "/en/supporters"
     },
     {
       "text": "Demands",
-      "href": "demands"
+      "href": "/en/demands"
     },
     {
       "text": "Donate",
-      "href": "donate"
+      "href": "/en/donate"
     }
   ]
 }
