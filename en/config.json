@@ -5,7 +5,7 @@
   "togglerButtonIcon": "<span class='navbar-toggler-icon'>☰</span>",
   "links": [
     {
-      "text": "Koti",
+      "text": "Home",
       "href": "/"
     },
     {
@@ -13,19 +13,19 @@
       "href": "info"
     },
     {
-      "text": "Medialle",
+      "text": "For media",
       "href": "for_media"
     },
     {
-      "text": "Tukijat",
+      "text": "Supporters",
       "href": "supporters"
     },
     {
-      "text": "Vaatimukset",
+      "text": "Demands",
       "href": "demands"
     },
     {
-      "text": "Lahjoita",
+      "text": "Donate",
       "href": "donate"
     }
   ]
