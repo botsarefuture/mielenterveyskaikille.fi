@@ -1,0 +1,32 @@
+{
+  "navbarClass": "navbar navbar-expand-lg container-fluid",
+  "brandHref": "/",
+  "brandText": "MIELENTERVEYS KUULUU KAIKILLE",
+  "togglerButtonIcon": "<span class='navbar-toggler-icon'>☰</span>",
+  "links": [
+    {
+      "text": "Koti",
+      "href": "/"
+    },
+    {
+      "text": "Info",
+      "href": "info"
+    },
+    {
+      "text": "Medialle",
+      "href": "for_media"
+    },
+    {
+      "text": "Tukijat",
+      "href": "supporters"
+    },
+    {
+      "text": "Vaatimukset",
+      "href": "demands"
+    },
+    {
+      "text": "Lahjoita",
+      "href": "donate"
+    }
+  ]
+}
