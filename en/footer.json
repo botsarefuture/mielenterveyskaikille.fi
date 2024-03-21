@@ -1,0 +1,26 @@
+{
+    "footerText": "Mental health belongs to everyone",
+    "socialMedia": {
+      "instagram": {
+        "url": "https://instagram.com/mielenterveyskaikille/",
+        "iconClass": "fa-brands fa-instagram fa-2xl",
+        "iconColor": "#ffffff"
+      },
+      "facebook": {
+        "url": "https://facebook.com/mielenterveyskaikille/",
+        "iconClass": "fa-brands fa-facebook fa-2xl",
+        "iconColor": "#ffffff"
+      },
+      "tiktok": {
+        "url": "https://tiktok.com/mielenterveyskaikille/",
+        "iconClass": "fa-brands fa-tiktok fa-2xl",
+        "iconColor": "#ffffff"
+      },
+      "twitter": {
+        "url": "https://x.com/mtkaikille/",
+        "iconClass": "fa-brands fa-x-twitter fa-2xl",
+        "iconColor": "#ffffff"
+      }
+    }
+  }
+  
