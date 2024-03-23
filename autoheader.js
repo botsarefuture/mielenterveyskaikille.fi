@@ -110,17 +110,33 @@ fetch('config.json')
 
     // Configuration object for supported languages and their URLs
     const languageConfig = {
-        FI: '/',
-        EN: '/en/'
+        FI: {"url": "/", "name_in_lang": {"FI": "Suomeksi", "EN": "In Finnish", "SV": "På Finska"}},
+        EN: {"url": "/en/", "name_in_lang": {"FI": "Englanniksi", "EN": "In English", "SV": "På Engelska"}}
     };
 
     // Function to switch between languages
     function switchLanguage(language) {
-        const currentPath = window.location.pathname;
-        const targetUrl = languageConfig[language] + currentPath.substr(1); // Remove the initial "/" from current path
-        if (targetUrl && window.location.pathname !== targetUrl) {
-            window.location.href = targetUrl;
+        const currentLang = window.location.pathname.split("/", 2)[1];
+        console.log(currentLang)
+        if (currentLang == "") {
+            lang = "FI"
         }
+    
+        if (currentLang == "en") {
+            lang = "EN"
+        }
+    
+        if (lang === "EN") {
+            // Remove "/en/" from the beginning of the URL
+            window.location.href = window.location.href.replace(/^\/en\//, '/');
+    
+        } else if (lang === "FI") {
+            // Add "/en" before the current pathname
+            var currentPath = window.location.pathname;
+            window.location.href = "/en" + currentPath;
+        }
+        
+    
     }
 
     // Create language switch buttons
@@ -131,12 +147,6 @@ fetch('config.json')
         languageButton.addEventListener("click", () => switchLanguage(language));
         nav.appendChild(languageButton);
     });
-
-    // Underline the current language
-    const currentLanguage = Object.keys(languageConfig).find(language => window.location.pathname.startsWith(languageConfig[language]));
-    if (currentLanguage) {
-        nav.querySelector(`button:nth-child(${Object.keys(languageConfig).indexOf(currentLanguage) + 1})`).classList.add('active');
-    }
 
     header.appendChild(nav);
 

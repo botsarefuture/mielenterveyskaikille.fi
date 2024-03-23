@@ -133,11 +133,11 @@ fetch('config.json')
     });
 
     // Underline the current language
-    const currentLanguage = Object.keys(languageConfig).find(language => window.location.pathname.startsWith(languageConfig[language]));
+    const currentLanguage = Object.keys(languageConfig).find(language => window.location.pathname.split("/", 2)[1]);
     if (currentLanguage) {
         nav.querySelector(`button:nth-child(${Object.keys(languageConfig).indexOf(currentLanguage) + 1})`).classList.add('active');
     }
-    
+
     header.appendChild(nav);
 
     // Append header to the body
