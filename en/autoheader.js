@@ -132,7 +132,7 @@ fetch('config.json')
         // Replace the language prefix in the pathname with the desired language
         if (currentLang === "en") {
             newPath = newPath.replace("/en/", `/${language.toLowerCase()}/`);
-            if (language == "FI") {
+            if (language == FI) {
                 newPath = newPath.replace("/en/", "/");
             }
         } else {
