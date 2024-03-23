@@ -134,7 +134,6 @@ fetch('config.json')
     });
 
     // Append language switch button to the navbar
-    const nav = document.querySelector("nav");
     nav.appendChild(languageSwitchButton);
 
     header.appendChild(nav);
