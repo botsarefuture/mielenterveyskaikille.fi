@@ -114,29 +114,21 @@ fetch('config.json')
         EN: {"url": "/en/", "name_in_lang": {"FI": "Englanniksi", "EN": "In English", "SV": "På Engelska"}}
     };
 
-    // Function to switch between languages
     function switchLanguage(language) {
-        const currentLang = window.location.pathname.split("/", 2)[1];
-        console.log(currentLang)
-        if (currentLang == "") {
-            lang = "FI"
-        }
-    
-        if (currentLang == "en") {
-            lang = "EN"
-        }
-    
-        if (lang === "EN") {
-            // Remove "/en/" from the beginning of the URL
-            window.location.href = window.location.href.replace(/^\/en\//, '/');
-    
-        } else if (lang === "FI") {
-            // Add "/en" before the current pathname
-            var currentPath = window.location.pathname;
-            window.location.href = "/en" + currentPath;
-        }
+        const currentLang = window.location.pathname.split("/")[1]; // Get the first part of the pathname
+        let lang = "FI"; // Default language
         
+        if (currentLang === "en") {
+            lang = "EN";
+        }
     
+        if (language === lang) {
+            return; // No need to switch if it's already in the desired language
+        }
+    
+        const newPath = languageConfig[language].url + window.location.pathname.substr(3); // Get the current path without the language prefix
+    
+        window.location.href = newPath;
     }
 
     // Create language switch buttons
