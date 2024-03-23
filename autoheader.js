@@ -1,4 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
+    function switchLanguage(language) {
+        const currentUrl = window.location.href;
+        if (language === 'finnish') {
+            if (!currentUrl.includes('/en/')) {
+                window.location.href = 'https://mielenterveyskaikille.fi';
+            }
+        } else if (language === 'english') {
+            if (!currentUrl.includes('/en/')) {
+                window.location.href = 'https://mielenterveyskaikille.fi/en/';
+            }
+        }
+    }
+
+    // Create language switch button
+    const languageSwitchButton = document.createElement("button");
+    languageSwitchButton.textContent = "Switch Language";
+    languageSwitchButton.addEventListener("click", function () {
+        const currentUrl = window.location.href;
+        if (currentUrl.includes('/en/')) {
+            switchLanguage('finnish');
+        } else {
+            switchLanguage('english');
+        }
+    });
+
+    // Append language switch button to the navbar
+    const nav = document.querySelector("nav");
+    nav.appendChild(languageSwitchButton);
+
     // Load Google Fonts stylesheet
     const fontLink = document.createElement("link");
     fontLink.rel = "stylesheet";
