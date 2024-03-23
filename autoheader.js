@@ -119,7 +119,7 @@ fetch('config.json')
 
     // Create language switch button
     const languageSwitchButton = document.createElement("button");
-    languageSwitchButton.textContent = "Switch Language";
+    languageSwitchButton.textContent = "In English";
     languageSwitchButton.addEventListener("click", switchLanguage);
 
     // Append language switch button to the navbar

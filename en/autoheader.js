@@ -107,6 +107,24 @@ fetch('config.json')
 
     collapseDiv.appendChild(navList);
     nav.appendChild(collapseDiv);
+
+    function switchLanguage() {
+        const currentUrl = window.location.href;
+        if (currentUrl.includes('/en/')) {
+            window.location.href = currentUrl.replace('/en/', '/');
+        } else {
+            window.location.href = currentUrl.replace(/(https?:\/\/[^\/]+)(\/.*)/, '$1/en$2');
+        }
+    }
+
+    // Create language switch button
+    const languageSwitchButton = document.createElement("button");
+    languageSwitchButton.textContent = "Suomeksi";
+    languageSwitchButton.addEventListener("click", switchLanguage);
+
+    // Append language switch button to the navbar
+    nav.appendChild(languageSwitchButton);
+
     header.appendChild(nav);
 
     // Append header to the body
