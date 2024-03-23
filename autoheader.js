@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load styles.css stylesheet
     const stylesLink = document.createElement("link");
     stylesLink.rel = "stylesheet";
-    stylesLink.href = "styles.css";
+    stylesLink.href = "/styles.css";
     document.head.appendChild(stylesLink);
 
     // Add add meta
