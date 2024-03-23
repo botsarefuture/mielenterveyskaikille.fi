@@ -108,23 +108,36 @@ fetch('config.json')
     collapseDiv.appendChild(navList);
     nav.appendChild(collapseDiv);
 
-    function switchLanguage() {
-        const currentUrl = window.location.href;
-        if (currentUrl.includes('/en/')) {
-            window.location.href = currentUrl.replace('/en/', '/');
-        } else {
-            window.location.href = currentUrl.replace(/(https?:\/\/[^\/]+)(\/.*)/, '$1/en$2');
+    // Configuration object for supported languages and their URLs
+    const languageConfig = {
+        FI: '/',
+        EN: '/en/'
+    };
+
+    // Function to switch between languages
+    function switchLanguage(language) {
+        const currentPath = window.location.pathname;
+        const targetUrl = languageConfig[language] + currentPath.substr(1); // Remove the initial "/" from current path
+        if (targetUrl && window.location.pathname !== targetUrl) {
+            window.location.href = targetUrl;
         }
     }
 
-    // Create language switch button
-    const languageSwitchButton = document.createElement("button");
-    languageSwitchButton.textContent = "Suomeksi";
-    languageSwitchButton.addEventListener("click", switchLanguage);
+    // Create language switch buttons
 
-    // Append language switch button to the navbar
-    nav.appendChild(languageSwitchButton);
+    Object.keys(languageConfig).forEach(language => {
+        const languageButton = document.createElement("button");
+        languageButton.textContent = language;
+        languageButton.addEventListener("click", () => switchLanguage(language));
+        nav.appendChild(languageButton);
+    });
 
+    // Underline the current language
+    const currentLanguage = Object.keys(languageConfig).find(language => window.location.pathname.startsWith(languageConfig[language]));
+    if (currentLanguage) {
+        nav.querySelector(`button:nth-child(${Object.keys(languageConfig).indexOf(currentLanguage) + 1})`).classList.add('active');
+    }
+    
     header.appendChild(nav);
 
     // Append header to the body
