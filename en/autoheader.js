@@ -145,6 +145,7 @@ fetch('config.json')
     Object.keys(languageConfig).forEach(language => {
         const languageButton = document.createElement("button");
         languageButton.textContent = language;
+        languageButton.classList += "language-button";
         languageButton.addEventListener("click", () => switchLanguage(language));
         nav.appendChild(languageButton);
     });
