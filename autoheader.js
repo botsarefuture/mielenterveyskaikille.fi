@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load styles.css stylesheet
     const stylesLink = document.createElement("link");
     stylesLink.rel = "stylesheet";
-    stylesLink.href = "styles.css";
+    stylesLink.href = "/styles.css";
     document.head.appendChild(stylesLink);
 
     // Add add meta
@@ -107,6 +107,49 @@ fetch('config.json')
 
     collapseDiv.appendChild(navList);
     nav.appendChild(collapseDiv);
+
+    // Configuration object for supported languages and their URLs
+    const languageConfig = {
+        FI: {"url": "/", "name_in_lang": {"FI": "Suomeksi", "EN": "In Finnish", "SV": "På Finska"}},
+        EN: {"url": "/en/", "name_in_lang": {"FI": "Englanniksi", "EN": "In English", "SV": "På Engelska"}}
+    };
+
+    function switchLanguage(language) {
+        const currentLang = window.location.pathname.split("/")[1]; // Get the current language from the URL
+        let lang = "FI"; // Default language
+        
+        if (currentLang === "en") {
+            lang = "EN";
+        }
+    
+        if (language === lang) {
+            return; // No need to switch if it's already in the desired language
+        }
+    
+        // Construct the new URL based on the desired language
+        let newPath = window.location.pathname;
+    
+        // Replace the language prefix in the pathname with the desired language
+        if (currentLang === "en") {
+            newPath = newPath.replace("/en/", "/");
+        } else {
+            newPath = `/${language.toLowerCase()}${newPath}`;
+        }
+    
+        // Redirect to the new URL
+        window.location.href = newPath;
+    }
+
+    // Create language switch buttons
+
+    Object.keys(languageConfig).forEach(language => {
+        const languageButton = document.createElement("button");
+        languageButton.textContent = language;
+        languageButton.classList += "language-button";
+        languageButton.addEventListener("click", () => switchLanguage(language));
+        nav.appendChild(languageButton);
+    });
+
     header.appendChild(nav);
 
     // Append header to the body
