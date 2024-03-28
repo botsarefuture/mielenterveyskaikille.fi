@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mielenterveys kuuluu kaikille - Tue mielenosoitusta</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+  <!-- Site icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="194x194" href="/icons/favicon-194x194.png?v=2">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-chrome-192x192.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png?v=2">
+  <link rel="manifest" href="/icons/site.webmanifest?v=2">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg?v=2" color="#000000">
+  <link rel="shortcut icon" href="/icons/favicon.ico?v=2">
+  <meta name="apple-mobile-web-app-title" content="Mielenterveys kuuluu kaikille">
+  <meta name="application-name" content="Mielenterveys kuuluu kaikille">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-config" content="/icons/browserconfig.xml?v=2">
+  <meta name="theme-color" content="#f87c56">
+
+  <!-- Meta tags added dynamically -->
+  <meta name="description"
+    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta property="og:title" content="Mielenterveys kuuluu kaikille" />
+  <meta property="og:description"
+    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mielenterveyskaikille.fi/" />
+  <meta property="og:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
+  <meta name="twitter:title" content="Mielenterveys kuuluu kaikille" />
+  <meta name="twitter:description"
+    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta name="twitter:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Mielenterveys kuuluu kaikille",
+      "startDate": "2024-03-09T13:00:00",
+      "endDate": "2024-03-09T17:00:00",
+      "location": {
+        "@type": "Place",
+        "name": "Senaatintori",
+        "address": ""
+      }
+    }
+  </script>
+  <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
+  <script src="autoheader.js" defer></script>
+  <script src="footer.js" defer></script>
+
+  <!-- Custom CSS for thermometer meter -->
+  <style>
+    .thermometer {
+      width: 100px;
+      height: 300px;
+      border: 2px solid #000;
+      position: relative;
+      display: inline-block;
+      margin: 20px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .mercury {
+      width: 100%;
+      background-color: #ff3333;
+      position: absolute;
+      bottom: 0;
+      transition: height 0.5s ease;
+    }
+
+    .amount-raised {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Main content section -->
+  <section>
+    <h2 style="text-align: center;">Miten voin tukea mielenosoitusta?</h2>
+    <p>Mielenosoituksen järjestämiseksi tarvitaan monenlaisia asioita, kuten julisteita, banderolleja ja
+      äänentoistolaitteita, joiden hankkiminen tai vuokraaminen vie rahaa.</p>
+    <p>Mielenosoituksen järjestämiseksi tarvitsemme lisäksi vapaaehtoisia: <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeD6dXOpftkNEH_gcZ5UiZPqILUKhaSWgHKs_5MQ9GZWEAYuQ/viewform?usp=sf_link">ilmoittaudu
+        vapaaehtoiseksi tästä</a>.</p>
+
+    <h3 style="text-align: center;">Mitä teemme lahjoituksesi avulla?</h3>
+    <p>Jokainen euro vie meidät lähemmäs onnistunutta mielenosoitusta. <strong>JOKAINEN EURO AUTTAA ❤️</strong></p>
+
+    <!-- Bank account information -->
+    <div>
+      <p>Tilinumero: FI97 1714 2901 7397 98</p>
+      <p>Tilin omistaja: Samuli Laine</p>
+      <p><strong>Pienkeräyslupanumero:</strong> RA/2024/212</p>
+      <a href="https://qr.mobilepay.fi/box/65c143a8-5556-411e-b396-8e1a50387b0f/pay-in"><img style="width: 20%"
+          src="https://mielenterveyskaikille.fi/static/Untitled%201.png" /></a>
+      <p>Mobilepay box: <a href="https://qr.mobilepay.fi/box/65c143a8-5556-411e-b396-8e1a50387b0f/pay-in">2647QB</a></p>
+    </div>
+
+    <!-- Donation Call to Action -->
+    <div class="donate-section">
+      <h3>Haluatko auttaa?</h3>
+      <p>Jos haluat tukea toimintaamme, ole hyvä ja harkitse lahjoituksen tekemistä.</p>
+      <button class="btn btn-primary donate-btn">Lahjoita tästä</button>
+    </div>
+    <br>
+    <br>
+  </section>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Custom Script -->
+  <script>
+    // Add functionality to the donate button
+    document.querySelector('.donate-btn').addEventListener('click', function () {
+      window.location.href = 'https://qr.mobilepay.fi/box/65c143a8-5556-411e-b396-8e1a50387b0f/pay-in';
+    });
+  </script>
+</body>
+
+</html>
