@@ -133,3 +133,23 @@ p {
 .navbar-nav.navbar-left {
   margin-right: auto; /* Pushes the "lahjoita" button to the right */
 }
+
+
+/* Add this CSS to styles.css */
+.navbar button.language-button {
+  margin: 0 5px; /* Add some margin between buttons */
+  padding: 8px 12px; /* Add padding to make the buttons more clickable */
+  border: 2px solid var(--red); /* Add a border */
+  border-radius: 20px; /* Add border-radius for rounded corners */
+  background-color: transparent; /* Set background color to transparent */
+  color: var(--red); /* Set text color */
+  font-family: 'Anton', sans-serif; /* Apply custom font */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add transition effect */
+}
+
+.navbar button:hover {
+  background-color: var(--red-light); /* Change background color on hover */
+  color: white; /* Change text color on hover */
+  border-color: var(--red-light); /* Change border color on hover */
+}

@@ -5,12 +5,8 @@
   "togglerButtonIcon": "<span class='navbar-toggler-icon'>☰</span>",
   "links": [
     {
-      "text": "Etusivu",
+      "text": "Koti",
       "href": "/"
-    },
-    {
-      "text": "Vaatimukset",
-      "href": "demands"
     },
     {
       "text": "Info",
@@ -23,6 +19,10 @@
     {
       "text": "Tukijat",
       "href": "supporters"
+    },
+    {
+      "text": "Vaatimukset",
+      "href": "demands"
     },
     {
       "text": "Lahjoita",
