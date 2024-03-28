@@ -9,6 +9,10 @@
       "href": "/"
     },
     {
+      "text": "Vaatimukset",
+      "href": "demands"
+    },
+    {
       "text": "Info",
       "href": "info"
     },
@@ -19,14 +23,6 @@
     {
       "text": "Tukijat",
       "href": "supporters"
-    },
-    {
-      "text": "Vaatimukset",
-      "href": "demands"
-    },
-    {
-      "text": "Lahjoita",
-      "href": "donate"
     }
   ]
 }

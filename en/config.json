@@ -9,6 +9,10 @@
       "href": "/en/"
     },
     {
+      "text": "Demands",
+      "href": "/en/demands"
+    },
+    {
       "text": "Info",
       "href": "/en/info"
     },
@@ -19,14 +23,6 @@
     {
       "text": "Supporters",
       "href": "/en/supporters"
-    },
-    {
-      "text": "Demands",
-      "href": "/en/demands"
-    },
-    {
-      "text": "Donate",
-      "href": "/en/donate"
     }
   ]
 }
