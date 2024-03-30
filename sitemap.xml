@@ -7,9 +7,6 @@
         <loc>https://mielenterveyskaikille.fi/demands</loc>
     </url>
     <url>
-        <loc>https://mielenterveyskaikille.fi/for_media</loc>
-    </url>
-    <url>
         <loc>https://mielenterveyskaikille.fi/info</loc>
     </url>
     <url>
@@ -17,5 +14,20 @@
     </url>
     <url>
         <loc>https://mielenterveyskaikille.fi/supporters</loc>
+    </url>
+    <url>
+        <loc>https://mielenterveyskaikille.fi/en/</loc>
+    </url>
+    <url>
+        <loc>https://mielenterveyskaikille.fi/en/demands</loc>
+    </url>
+    <url>
+        <loc>https://mielenterveyskaikille.fi/en/info</loc>
+    </url>
+    <url>
+        <loc>https://mielenterveyskaikille.fi/en/products</loc>
+    </url>
+    <url>
+        <loc>https://mielenterveyskaikille.fi/en/supporters</loc>
     </url>
 </urlset>
