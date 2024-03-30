@@ -5,13 +5,15 @@
   --neon-pink: #ff6ec7;
   --color-1: #d3927e;
   --color-2: #f87c56;
+  --green: #4caf50;
+
 }
 
 body {
   font-family: "Anton", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--color-2);
+  background-color: var(--green);
   color: white;
   display: flex;
   flex-direction: column;
