@@ -1,0 +1,54 @@
+name: Create Release on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate Release Notes
+        id: release_notes
+        run: |
+          git fetch --depth=1 origin main
+          echo "::set-output name=notes::$(git log --pretty=format:'- %s' origin/main..HEAD)"
+
+      - name: Get Previous Release Tag
+        id: get_previous_tag
+        run: |
+          previous_tag=$(git describe --tags --abbrev=0)
+          echo "::set-output name=previous_tag::$previous_tag"
+
+      - name: Calculate Version
+        id: calculate_version
+        run: |
+          # Parse previous version components
+          previous_tag=${{ steps.get_previous_tag.outputs.previous_tag }}
+          publish_number=$(echo "$previous_tag" | cut -d '.' -f 1 | cut -c 2-)
+          fix_number=$(echo "$previous_tag" | cut -d '.' -f 2)
+          release_number=$(echo "$previous_tag" | cut -d '.' -f 3)
+
+          # Increment release number
+          release_number=$((release_number + 1))
+
+          # Update version
+          version="V${publish_number}.${fix_number}.${release_number}"
+          echo "::set-output name=version::$version"
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.calculate_version.outputs.version }}
+          release_name: Release ${{ steps.calculate_version.outputs.version }}
+          body: ${{ steps.release_notes.outputs.notes }}
+          draft: false
+          prerelease: false
