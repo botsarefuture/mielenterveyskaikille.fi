@@ -20,6 +20,10 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
+      - name: Get Current Date and Time
+        id: get_datetime
+        run: echo "::set-output name=date_time::$(date +'%d.%m.%Y %H:%M')"
+
       - name: Get Previous Release Tag
         id: get_previous_tag
         run: |
@@ -70,8 +74,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
-          tag_name: ${{ steps.get_new_version.outputs.version || steps.increment_release_number.outputs.next_version }}
-          release_name: Release ${{ steps.get_new_version.outputs.version || steps.increment_release_number.outputs.next_version }}
+          tag_name: ${{ steps.get_datetime.outputs.date_time }} (${GITHUB_SHA:0:8})
+          release_name: Release ${{ steps.get_datetime.outputs.date_time }} (${GITHUB_SHA:0:8})
           body: |
             ${{ steps.release_notes.outputs.notes }}
           draft: false
