@@ -13,33 +13,40 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set up Git
+        run: git config --global user.name "GitHub Actions" && git config --global user.email "actions@github.com"
+
+      - name: Get Previous Release Tag
+        id: get_previous_tag
+        run: |
+          if git describe --tags --abbrev=0 > /dev/null 2>&1; then
+            echo "::set-output name=previous_tag::$(git describe --tags --abbrev=0)"
+          else
+            echo "::set-output name=previous_tag::none"
+          fi
+
+      - name: Calculate Version
+        id: calculate_version
+        run: |
+          previous_tag=${{ steps.get_previous_tag.outputs.previous_tag }}
+          if [ "$previous_tag" != "none" ]; then
+            publish_number=$(echo "$previous_tag" | cut -d '.' -f 1 | cut -c 2-)
+            fix_number=$(echo "$previous_tag" | cut -d '.' -f 2)
+            release_number=$(echo "$previous_tag" | cut -d '.' -f 3)
+            release_number=$((release_number + 1))
+          else
+            publish_number=1
+            fix_number=0
+            release_number=1
+          fi
+          version="V${publish_number}.${fix_number}.${release_number}"
+          echo "::set-output name=version::$version"
+
       - name: Generate Release Notes
         id: release_notes
         run: |
           git fetch --depth=1 origin main
           echo "::set-output name=notes::$(git log --pretty=format:'- %s' origin/main..HEAD)"
-
-      - name: Get Previous Release Tag
-        id: get_previous_tag
-        run: |
-          previous_tag=$(git describe --tags --abbrev=0)
-          echo "::set-output name=previous_tag::$previous_tag"
-
-      - name: Calculate Version
-        id: calculate_version
-        run: |
-          # Parse previous version components
-          previous_tag=${{ steps.get_previous_tag.outputs.previous_tag }}
-          publish_number=$(echo "$previous_tag" | cut -d '.' -f 1 | cut -c 2-)
-          fix_number=$(echo "$previous_tag" | cut -d '.' -f 2)
-          release_number=$(echo "$previous_tag" | cut -d '.' -f 3)
-
-          # Increment release number
-          release_number=$((release_number + 1))
-
-          # Update version
-          version="V${publish_number}.${fix_number}.${release_number}"
-          echo "::set-output name=version::$version"
 
       - name: Create Release
         id: create_release
