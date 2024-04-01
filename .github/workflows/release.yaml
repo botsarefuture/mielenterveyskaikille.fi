@@ -23,58 +23,14 @@ jobs:
       - name: Get Current Date and Time
         id: get_datetime
         run: echo "::set-output name=date_time::$(date +'%d.%m.%Y %H:%M')"
-
-      - name: Get Previous Release Tag
-        id: get_previous_tag
-        run: |
-          if git describe --tags --abbrev=0 > /dev/null 2>&1; then
-            echo "::set-output name=previous_tag::$(git describe --tags --abbrev=0)"
-          else
-            echo "::set-output name=previous_tag::none"
-          fi
-
-      - name: Calculate Version
-        id: calculate_version
-        run: |
-          previous_tag=${{ steps.get_previous_tag.outputs.previous_tag }}
-          if [ "$previous_tag" != "none" ]; then
-            publish_number=$(echo "$previous_tag" | cut -d '.' -f 1 | cut -c 2-)
-            fix_number=$(echo "$previous_tag" | cut -d '.' -f 2)
-            release_number=$(echo "$previous_tag" | cut -d '.' -f 3)
-            release_number=$((release_number + 1))
-          else
-            publish_number=1
-            fix_number=0
-            release_number=1
-          fi
-          version="V${publish_number}.${fix_number}.${release_number}"
-          echo "::set-output name=version::$version"
-
-      - name: Check if Tag Exists
-        id: check_tag_exists
-        run: git tag -l "${{ steps.calculate_version.outputs.version }}" || echo ""
-
-      - name: Increment Release Number If Tag Exists
-        if: steps.check_tag_exists.outputs.stdout != ''
-        run: |
-          version="${{ steps.calculate_version.outputs.version }}"
-          IFS='.' read -r -a parts <<< "$version"
-          release_number="$((parts[2] + 1))"
-          next_version="${parts[0]}.${parts[1]}.$release_number"
-          echo "::set-output name=next_version::$next_version"
-
-      - name: Get New Release Version
-        id: get_new_version
-        if: steps.check_tag_exists.outputs.stdout == ''
-        run: echo "${{ steps.calculate_version.outputs.version }}"
-
+        
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
-          tag_name: ${{ steps.get_datetime.outputs.date_time }} (${GITHUB_SHA:0:8})
+          tag_name: ${{ steps.get_datetime.outputs.date_time }}
           release_name: Release ${{ steps.get_datetime.outputs.date_time }} (${GITHUB_SHA:0:8})
           body: |
             ${{ steps.release_notes.outputs.notes }}
