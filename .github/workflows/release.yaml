@@ -53,18 +53,16 @@ jobs:
       - name: Increment Release Number If Tag Exists
         if: steps.check_tag_exists.outputs.stdout != ''
         run: |
-          previous_tag=${{ steps.get_previous_tag.outputs.previous_tag }}
-          publish_number=$(echo "$previous_tag" | cut -d '.' -f 1 | cut -c 2-)
-          fix_number=$(echo "$previous_tag" | cut -d '.' -f 2)
-          release_number=$(echo "$previous_tag" | cut -d '.' -f 3)
-          release_number=$((release_number + 1))
-          echo "V${publish_number}.${fix_number}.${release_number}" > .github/release_version
+          version="${{ steps.calculate_version.outputs.version }}"
+          IFS='.' read -r -a parts <<< "$version"
+          release_number="$((parts[2] + 1))"
+          next_version="${parts[0]}.${parts[1]}.$release_number"
+          echo "::set-output name=next_version::$next_version"
 
       - name: Get New Release Version
-        if: steps.check_tag_exists.outputs.stdout == ''
         id: get_new_version
-        run: |
-          echo "${{ steps.calculate_version.outputs.version }}" > .github/release_version
+        if: steps.check_tag_exists.outputs.stdout == ''
+        run: echo "${{ steps.calculate_version.outputs.version }}"
 
       - name: Create Release
         id: create_release
@@ -72,8 +70,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
-          tag_name: ${{ steps.get_new_version.outputs.version }}
-          release_name: Release ${{ steps.get_new_version.outputs.version }}
+          tag_name: ${{ steps.get_new_version.outputs.version || steps.increment_release_number.outputs.next_version }}
+          release_name: Release ${{ steps.get_new_version.outputs.version || steps.increment_release_number.outputs.next_version }}
           body: |
             ${{ steps.release_notes.outputs.notes }}
           draft: false
