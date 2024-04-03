@@ -17,14 +17,11 @@ const x = setInterval(function () {
   const months = Math.floor(days / 30.4375);
 
   // Step 3: Calculate remaining days after considering months
-  const daysLeft = days % 30.4375;
-
-  // Step 4: Calculate hours
-  const hours = Math.floor(distance / (1000 * 60 * 60));
+  const days = days % 30.4375;
 
 
   // Step 6: Calculate remaining hours after considering days
-  const hoursLeft = hours % 24;
+  const hours = hours % 24;
 
   // Step 7: Calculate minutes
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
