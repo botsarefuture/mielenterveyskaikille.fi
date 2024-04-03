@@ -9,9 +9,15 @@ const x = setInterval(function () {
   // Calculate the remaining time
   const distance = countDownDate - now;
 
-  // Calculate days, hours, minutes, and seconds
-  // Step 1: Calculate days
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  // Calculate months and days
+  // Step 1: Calculate total days
+  const totalDays = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  // Step 2: Calculate months
+  const months = Math.floor(totalDays / 30.4375);
+
+  // Step 3: Calculate remaining days after considering months
+  const days = totalDays % 30.4375;
 
   // Calculate remaining hours after considering days
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -23,6 +29,7 @@ const x = setInterval(function () {
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the countdown
+  document.getElementById('months').innerHTML = months;
   document.getElementById('days').innerHTML = days;
   document.getElementById('hours').innerHTML = hours;
   document.getElementById('minutes').innerHTML = minutes;
