@@ -22,8 +22,6 @@ const x = setInterval(function () {
   // Step 4: Calculate hours
   const hours = Math.floor(distance / (1000 * 60 * 60));
 
-  // Step 5: Calculate days
-  const days = Math.floor(hours / 24);
 
   // Step 6: Calculate remaining hours after considering days
   const hoursLeft = hours % 24;
