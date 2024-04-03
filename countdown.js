@@ -17,7 +17,7 @@ const x = setInterval(function () {
   const months = Math.floor(days / 30.4375);
 
   // Step 3: Calculate remaining days after considering months
-  const days = days % 30.4375;
+  const daysLeft = days % 30.4375;
 
 
   // Step 6: Calculate remaining hours after considering days
@@ -31,7 +31,7 @@ const x = setInterval(function () {
 
   // Display the countdown
   document.getElementById('months').innerHTML = months;
-  document.getElementById('days').innerHTML = days;
+  document.getElementById('days').innerHTML = daysLeft;
   document.getElementById('hours').innerHTML = hours;
   document.getElementById('minutes').innerHTML = minutes;
   document.getElementById('seconds').innerHTML = seconds;
