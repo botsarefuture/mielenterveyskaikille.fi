@@ -30,7 +30,7 @@ const x = setInterval(function () {
 
   // Display the countdown
   document.getElementById('months').innerHTML = months;
-  document.getElementById('days').innerHTML = days;
+  document.getElementById('days').innerHTML = days.toFixed(0);
   document.getElementById('hours').innerHTML = hours;
   document.getElementById('minutes').innerHTML = minutes;
   document.getElementById('seconds').innerHTML = seconds;
