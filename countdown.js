@@ -17,7 +17,7 @@ const x = setInterval(function () {
   const months = Math.floor(totalDays / 30.4375);
 
   // Step 3: Calculate remaining days after considering months
-  const days = totalDays % 30.4375;
+  const days = Math.floor(totalDays % 30.4375); // Truncate decimal part
 
   // Calculate remaining hours after considering days
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
