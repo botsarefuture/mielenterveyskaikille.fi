@@ -19,9 +19,12 @@ const x = setInterval(function () {
   // Step 3: Calculate remaining days after considering months
   const daysLeft = days % 30.4375;
 
+  // Step 4: Calculate hours
+  const hours = Math.floor(distance / (1000 * 60 * 60));
+
 
   // Step 6: Calculate remaining hours after considering days
-  const hours = hours % 24;
+  const hoursLeft = hours % 24;
 
   // Step 7: Calculate minutes
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -32,7 +35,7 @@ const x = setInterval(function () {
   // Display the countdown
   document.getElementById('months').innerHTML = months;
   document.getElementById('days').innerHTML = daysLeft;
-  document.getElementById('hours').innerHTML = hours;
+  document.getElementById('hours').innerHTML = hoursLeft;
   document.getElementById('minutes').innerHTML = minutes;
   document.getElementById('seconds').innerHTML = seconds;
 
