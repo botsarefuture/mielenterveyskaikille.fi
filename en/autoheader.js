@@ -152,6 +152,51 @@ fetch('config.json')
 
     header.appendChild(nav);
 
+     // Function to create cookie
+    function createCookie(name, value, days) {
+        var expires;
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toGMTString();
+        }
+        else {
+            expires = "";
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    // Function to get cookie value
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Check if the language check cookie exists
+    var languageChecked = getCookie("language_checked");
+
+    // If the language check cookie doesn't exist, check user's preferred language and redirect
+    if (!languageChecked) {
+        var userLanguage = navigator.language || navigator.userLanguage;
+        var preferredLanguage = userLanguage.substring(0, 2).toUpperCase(); // Get the first two letters for language code
+        var supportedLanguages = ["FI", "EN"]; // Add more supported languages if needed
+
+        // Check if the user's preferred language is supported
+        if (supportedLanguages.includes(preferredLanguage)) {
+            // Create cookie to indicate language check
+            createCookie("language_checked", "true", 365); // Cookie lasts for a year
+
+            switchLanguage(preferredLanguage.toLowerCase());
+            // Redirect to the user's preferred language page
+        }
+    }
+    
     // Append header to the body
     document.body.insertBefore(header, document.body.firstChild);
 })
