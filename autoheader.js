@@ -122,7 +122,7 @@ fetch('config.json')
             lang = "EN";
         }
     
-        if (language === lang) {
+        if (language.toUpperCase() === lang || language === lang) {
             return; // No need to switch if it's already in the desired language
         }
     
@@ -130,10 +130,12 @@ fetch('config.json')
         let newPath = window.location.pathname;
     
         // Replace the language prefix in the pathname with the desired language
-        if (currentLang === "en") {
+        if (currentLang === "en" && language === "fi") {
             newPath = newPath.replace("/en/", "/");
         } else {
+            if (language !== "FI") {
             newPath = `/${language.toLowerCase()}${newPath}`;
+            }
         }
     
         // Redirect to the new URL
