@@ -78,19 +78,37 @@
     h3 {
       color: black;
     }
+    
+    .filter {
+      margin-bottom: 20px;
+    }
   </style>
 
+  <div class="filter">
+    <label for="role-filter">Suodata roolin perusteella:</label>
+    <select id="role-filter">
+      <option value="kaikki">Kaikki</option>
+      <option value="viestintä">Viestintä</option>
+      <option value="logistiikka">Logistiikka</option>
+      <option value="ohjelma">Ohjelma</option>
+      <option value="rahoitus">Rahoitus</option>
+      <option value="tapahtuma-infrastruktuuri">Tapahtuma-infrastruktuuri</option>
+      <option value="yhteistyöt">Yhteistyöt</option>
+      <option value="ydintiimi">Ydintiimi</option>
+    </select>
+  </div>
+
   <section class="grid-container">
-    <div class="card">
+    <div class="card viestintä">
       <h3>Nimi 1</h3>
-      <p><span class="role">Rooli:</span> Tehtävänimike 1</p>
-      <p>Kuvaus: Tässä voisi olla lyhyt kuvaus henkilöstä 1.</p>
+      <p><span class="role">Rooli:</span> Viestintä</p>
+      <p>Kuvaus: Tässä voisi olla lyhyt kuvaus henkilöstä 1 viestintäroolista.</p>
       <p>Sähköposti: nimi1@example.com</p>
     </div>
-    <div class="card">
+    <div class="card logistiikka">
       <h3>Nimi 2</h3>
-      <p><span class="role">Rooli:</span> Tehtävänimike 2</p>
-      <p>Kuvaus: Tässä voisi olla lyhyt kuvaus henkilöstä 2.</p>
+      <p><span class="role">Rooli:</span> Logistiikka</p>
+      <p>Kuvaus: Tässä voisi olla lyhyt kuvaus henkilöstä 2 logistiikkaroolista.</p>
       <p>Sähköposti: nimi2@example.com</p>
     </div>
     <!-- Add more contact cards as needed -->
@@ -99,6 +117,18 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Filter contacts based on role
+    $('#role-filter').change(function() {
+      var selectedRole = $(this).val();
+      if (selectedRole === 'kaikki') {
+        $('.card').show();
+      } else {
+        $('.card').hide();
+        $('.' + selectedRole).show();
+      }
+    });
+  </script>
 </body>
 
 </html>
