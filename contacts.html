@@ -22,14 +22,17 @@
   <meta name="theme-color" content="#4caf50">
 
   <!-- Meta tags added dynamically -->
-  <meta name="description" content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta name="description"
+    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
   <meta property="og:title" content="Mielenterveys kuuluu kaikille" />
-  <meta property="og:description" content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta property="og:description"
+    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mielenterveyskaikille.fi/" />
   <meta property="og:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
   <meta name="twitter:title" content="Mielenterveys kuuluu kaikille" />
-  <meta name="twitter:description" content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta name="twitter:description"
+    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
   <meta name="twitter:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
@@ -69,7 +72,7 @@
       padding: 20px;
       text-align: center;
     }
-    
+
     h3 {
       color: black;
     }
@@ -78,13 +81,33 @@
       font-style: italic;
       color: #555;
     }
-    
+
     .filter-container {
       display: flex;
+      justify-content: center;
+      /* Center horizontally */
       align-items: center;
+      /* Center vertically */
       margin-bottom: 20px;
     }
-    
+
+    .search-container {
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      /* Adjust the border-radius to make it look circular */
+      padding: 10px 20px;
+      /* Adjust padding for better appearance */
+    }
+
+    .search-container input {
+      border: none;
+      /* Remove border of input */
+      outline: none;
+      /* Remove outline */
+      width: 300px;
+      /* Adjust width as needed */
+    }
+
     .filter-container select,
     .search-container input {
       margin-right: 10px;
@@ -102,14 +125,16 @@
     <div class="card">
       <h3>Verso Vuorenmaa</h3>
       <p><span class="role">Rooli:</span> Ohjelma-, yhteistyö-, moderaatio- ja nettisivukoordinaattori</p>
-      <p>Olen 15 vuotias ADHD taustainen, nuori transnainen, jolla on henkilökohtaista kokemusta mielenterveysongelmista.</p>
+      <p>Olen 15-vuotias, ja minulla on ADHD-tausta. Olen nuori transnainen, joka on kokenut henkilökohtaisesti
+        mielenterveysongelmia.</p>
       <p>Sähköposti: <a href="mailto:verso@mielenterveyskaikille.fi">verso@mielenterveyskaikille.fi</a></p>
     </div>
     <div class="card">
-      <h3>Nimi 2</h3>
-      <p><span class="role">Rooli:</span> Logistiikka</p>
-      <p>Kuvaus: Tässä voisi olla lyhyt kuvaus henkilöstä 2 logistiikkaroolista.</p>
-      <p>Sähköposti: nimi2@example.com</p>
+      <h3>Minna Salonen</h3>
+      <p><span class="role">Rooli:</span> Facebook viestintäkoordinaattori</p>
+      <p>Olen helsinkiläinen sosiaalipsykologi ja koulutettu kokemusasiantuntija. Minua kiinnostavat erityisesti
+        työelämän mielenterveyskysymykset. Minulla on omakohtaista kokemusta masennuksesta.</p>
+      <p>Sähköposti: <a href="mailto:minna@mielenterveyskaikille.fi">minna@mielenterveyskaikille.fi</a></p>
     </div>
     <!-- Add more contact cards as needed -->
   </section>
@@ -119,9 +144,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
     // Filter contacts based on search input
-    $('#search-bar').on('keyup', function() {
+    $('#search-bar').on('keyup', function () {
       var searchTerm = $(this).val().toLowerCase();
-      $('.card').each(function() {
+      $('.card').each(function () {
         var name = $(this).find('h3').text().toLowerCase();
         if (name.includes(searchTerm)) {
           $(this).show();
