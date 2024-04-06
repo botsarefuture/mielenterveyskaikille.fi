@@ -136,7 +136,7 @@
   <div class="filter-container">
     <div class="search-container">
       <label for="search-bar">Haku:</label>
-      <input type="text" id="search-bar" placeholder="Hae nimiä...">
+      <input type="text" id="search-bar" placeholder="Hae nimiä tai rooleja...">
     </div>
   </div>
 
@@ -183,7 +183,8 @@
       var searchTerm = $(this).val().toLowerCase();
       $('.card').each(function () {
         var name = $(this).find('h3').text().toLowerCase();
-        if (name.includes(searchTerm)) {
+        var role = $(this).find('.role').text().toLowerCase();
+        if (name.includes(searchTerm) || role.includes(searchTerm)) {
           $(this).show();
         } else {
           $(this).hide();
