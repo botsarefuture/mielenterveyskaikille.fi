@@ -93,6 +93,9 @@
     }
 
     .search-container {
+      display: flex;
+      align-items: center;
+      /* Center vertically */
       border: 1px solid #ddd;
       border-radius: 20px;
       /* Adjust the border-radius to make it look circular */
@@ -100,8 +103,18 @@
       /* Adjust padding for better appearance */
       background-color: white;
       /* Set background color to white */
-      margin-top: 10px;
-      /* Move the container 10px lower */
+    }
+
+    .search-container label {
+      margin-right: 10px;
+      /* Adjust margin between label and input */
+      color: black;
+      /* Set text color to black */
+      display: flex;
+      /* Use flexbox */
+      align-items: center;
+      /* Center vertically */
+      margin-bottom: 0;
     }
 
     .search-container input {
@@ -109,8 +122,8 @@
       /* Remove border of input */
       outline: none;
       /* Remove outline */
-      width: 300px;
-      /* Adjust width as needed */
+      flex: 1;
+      /* Take up remaining space */
       color: black;
       /* Set text color to black */
     }
