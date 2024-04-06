@@ -8,14 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load styles.css stylesheet
     const stylesLink = document.createElement("link");
     stylesLink.rel = "stylesheet";
-    stylesLink.href = "/styles.css";
+    stylesLink.href = "/static/css/styles.css";
     document.head.appendChild(stylesLink);
-
-    // Add add meta
-    const metaTags = document.createElement("script");
-    metaTags.defer = true;
-    metaTags.src = "addMetaTags.js";
-    document.head.appendChild(metaTags);
 
     // Add Google Tag Manager script
     const gtagScript1 = document.createElement("script");

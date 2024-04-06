@@ -1,0 +1,49 @@
+/* Font Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Anton", sans-serif;
+}
+
+/* General Section Styles */
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: left;
+}
+
+section:nth-child(2) {
+  text-align: center;
+}
+
+/* Marquee Styles */
+marquee {
+  text-align: left;
+}
+
+/* List Styles */
+section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+section ul li:before {
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Text Styles */
+section li, p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Link Styles */
+a.supporters, a:hover {
+  color: #ffffff; /* Change link color */
+  text-decoration: underline white; /* Add underline for normal links */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+a:hover {
+  color: #000000; /* Change link color on hover */
+}
