@@ -96,29 +96,16 @@
       <label for="search-bar">Haku:</label>
       <input type="text" id="search-bar" placeholder="Hae nimiä...">
     </div>
-    <div class="filter">
-      <label for="role-filter">Suodata roolin perusteella:</label>
-      <select id="role-filter">
-        <option value="kaikki">Kaikki</option>
-        <option value="viestintä">Viestintä</option>
-        <option value="logistiikka">Logistiikka</option>
-        <option value="ohjelma">Ohjelma</option>
-        <option value="rahoitus">Rahoitus</option>
-        <option value="tapahtuma-infrastruktuuri">Tapahtuma-infrastruktuuri</option>
-        <option value="yhteistyöt">Yhteistyöt</option>
-        <option value="ydintiimi">Ydintiimi</option>
-      </select>
-    </div>
   </div>
 
   <section class="grid-container">
-    <div class="card viestintä">
-      <h3>Nimi 1</h3>
-      <p><span class="role">Rooli:</span> Viestintä</p>
-      <p>Kuvaus: Tässä voisi olla lyhyt kuvaus henkilöstä 1 viestintäroolista.</p>
-      <p>Sähköposti: nimi1@example.com</p>
+    <div class="card">
+      <h3>Verso Vuorenmaa</h3>
+      <p><span class="role">Rooli:</span> Ohjelma-, yhteistyö-, moderaatio- ja nettisivukoordinaattori</p>
+      <p>Olen 15 vuotias ADHD taustainen, nuori transnainen, jolla on henkilökohtaista kokemusta mielenterveysongelmista.</p>
+      <p>Sähköposti: <a href="mailto:verso@mielenterveyskaikille.fi">verso@mielenterveyskaikille.fi</a></p>
     </div>
-    <div class="card logistiikka">
+    <div class="card">
       <h3>Nimi 2</h3>
       <p><span class="role">Rooli:</span> Logistiikka</p>
       <p>Kuvaus: Tässä voisi olla lyhyt kuvaus henkilöstä 2 logistiikkaroolista.</p>
@@ -131,17 +118,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
-    // Filter contacts based on role
-    $('#role-filter').change(function() {
-      var selectedRole = $(this).val();
-      if (selectedRole === 'kaikki') {
-        $('.card').show();
-      } else {
-        $('.card').hide();
-        $('.' + selectedRole).show();
-      }
-    });
-
     // Filter contacts based on search input
     $('#search-bar').on('keyup', function() {
       var searchTerm = $(this).val().toLowerCase();
