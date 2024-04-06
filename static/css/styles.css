@@ -1,0 +1,169 @@
+:root {
+  --red: #ed2024;
+  --orange: #ffa500;
+  --neon-green: #39ff14;
+  --neon-pink: #ff6ec7;
+  --color-1: #d3927e;
+  --color-2: #f87c56;
+  --green: #4caf50;
+}
+
+body {
+  font-family: "Anton", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--green);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-family: "Anton", sans-serif;
+}
+.nav-item {
+  font-family: "Anton", sans-serif;
+}
+
+p {
+  line-height: 1.5;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+  margin-top: auto;
+}
+
+h2 {
+  color: white;
+}
+
+footer p {
+  color: white;
+}
+
+.navbar-toggler-icon {
+  color: white;
+}
+
+.header {
+  font-family: "Anton", sans-serif;
+  background-color: black;
+}
+
+/* Added styles for the active link */
+.navbar-nav .nav-item.active .nav-link {
+  color: var(--orange);
+  position: relative;
+}
+
+.navbar-nav .nav-item.active .nav-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  /* Adjust the distance from the text */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  /* Adjust the thickness of the underline */
+  background-color: #efa4b4;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a i {
+  color: white;
+  margin-right: 10px;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+  section {
+    margin: 5%;
+  }
+}
+
+p {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom CSS */
+.donate-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.donate-btn {
+  background-color: var(--neon-green); /* Use your preferred color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.donate-btn:hover {
+  background-color: var(--neon-green); /* Change color on hover */
+}
+
+/* Adjusting positioning for the "lahjoita" button */
+.navbar-nav.navbar-left {
+  margin-right: auto; /* Pushes the "lahjoita" button to the right */
+}
+
+/* Add this CSS to styles.css */
+.navbar button.language-button {
+  margin: 0 5px; /* Add some margin between buttons */
+  padding: 8px 12px; /* Add padding to make the buttons more clickable */
+  border: 2px solid var(--red); /* Add a border */
+  border-radius: 20px; /* Add border-radius for rounded corners */
+  background-color: transparent; /* Set background color to transparent */
+  color: var(--red); /* Set text color */
+  font-family: "Anton", sans-serif; /* Apply custom font */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add transition effect */
+}
+
+.navbar button:hover {
+  background-color: var(--red-light); /* Change background color on hover */
+  color: white; /* Change text color on hover */
+  border-color: var(--red-light); /* Change border color on hover */
+}
+
+.section-frame {
+    border: 2px solid #000000; /* Changed border color */
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #000000; /* Background color */
+
+}
+.section-content {
+    margin-top: 20px;
+}
+.section-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Border radius for the image */
+}
