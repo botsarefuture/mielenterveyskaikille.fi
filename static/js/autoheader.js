@@ -11,12 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     stylesLink.href = "/static/css/styles.css";
     document.head.appendChild(stylesLink);
 
-    // Add add meta
-    const metaTags = document.createElement("script");
-    metaTags.defer = true;
-    metaTags.src = "addMetaTags.js";
-    document.head.appendChild(metaTags);
-
     // Add Google Tag Manager script
     const gtagScript1 = document.createElement("script");
     gtagScript1.async = true;
