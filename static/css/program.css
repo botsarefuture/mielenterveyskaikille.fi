@@ -1,44 +1,44 @@
 table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+  width: 100%;
+  border-collapse: collapse;
+}
 
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
 
-  th {
-    background-color: #007bff;
-    color: black;
-  }
+th {
+  background-color: #007bff;
+  color: black;
+}
 
-  tr:nth-child(even) {
-    background-color: grey;
-  }
+tr:nth-child(even) {
+  background-color: grey;
+}
 
-  table {
-    margin-left: 5%;
-    margin-right: 5%;
-    align-self: center;
-  }
+table {
+  margin-left: 5%;
+  margin-right: 5%;
+  align-self: center;
+}
 
-  .event-group {
-    background-color: #007bff;
-    color: black;
-  }
+.event-group {
+  background-color: #007bff;
+  color: black;
+}
 
-  .event-group td {
-    background-color: white;
-  }
+.event-group td {
+  background-color: white;
+}
 
-  .paljastetaan-pian {
-    font-style: italic; /* Add your specific style here */
-    color: red; /* Add your specific style here */
-  }
+.paljastetaan-pian {
+  font-style: italic; /* Add your specific style here */
+  color: red; /* Add your specific style here */
+}
 
-  .section {
-    margin-bottom: 5%;
-  }
+.section {
+  margin-bottom: 5%;
+}
