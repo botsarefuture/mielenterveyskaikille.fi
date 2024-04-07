@@ -161,20 +161,7 @@ full recovery.
     <!-- Add more demands with the 'demand' class -->
   </section>
 
-  <script>
-    function toggleDescription(element) {
-      var description = element.querySelector('.demand-description');
-      var clickToShow = element.querySelector('.click-to-show');
-      if (description.style.display === 'none' || description.style.display === '') {
-        description.style.display = 'block';
-        clickToShow.innerHTML = 'Click here to hide the full demand';
-      } else {
-        description.style.display = 'none';
-        clickToShow.innerHTML = 'Click here to display the full demand';
-      }
-    }
-
-  </script>
+  <script src="/static/js/demands.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
