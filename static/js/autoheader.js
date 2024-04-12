@@ -110,12 +110,24 @@ fetch('config.json')
 
     function switchLanguage(language) {
         const currentLang = window.location.pathname.split("/")[1]; // Get the current language from the URL
+
+        let _need = languageConfig[language].url
+        
+        let _to_replace = languageConfig[currentLang.toUpperCase()].url
+
+        window.location.pathname.replace(_to_replace, _need)
+
+        // IF EVERYTHING WORKS, NOTHING HAPPENS BEYOND THIS LINE
+
+        console.error("Something is wrong lol, look autoheader line 120 comment :3")
+
+
         let lang = "FI"; // Default language
         
         if (currentLang === "en") {
             lang = "EN";
         }
-    
+        
         if (language.toUpperCase() === lang || language === lang) {
             return; // No need to switch if it's already in the desired language
         }
@@ -124,7 +136,7 @@ fetch('config.json')
         let newPath = window.location.pathname;
     
         // Replace the language prefix in the pathname with the desired language
-        if (currentLang === "en" && language === "fi") {
+        if (language === "fi") {
             newPath = newPath.replace("/en/", "/");
         } else {
             if (language !== "FI") {
