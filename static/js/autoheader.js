@@ -122,7 +122,7 @@ fetch('config.json')
         
         let _to_replace = currentLang;
 
-        window.Location.pathname = _replace(window.location.pathname.replace(_to_replace, _need));
+        window.location.pathname = _replace(window.location.pathname.replace(_to_replace, _need));
 
         // IF EVERYTHING WORKS, NOTHING HAPPENS BEYOND THIS LINE
 
