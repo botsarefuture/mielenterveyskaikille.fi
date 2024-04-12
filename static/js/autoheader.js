@@ -111,15 +111,15 @@ fetch('config.json')
     function switchLanguage(language) {
         const currentLang = window.location.pathname.split("/")[1]; // Get the current language from the URL
 
-        let _need = languageConfig[language]["url"]
+        let _need = languageConfig[language]["url"];
         
-        let _to_replace = currentLang | languageConfig[currentLang.toUpperCase()]["url"]
+        let _to_replace = currentLang;
 
-        window.location.pathname.replace(_to_replace, _need)
+        window.location.pathname.replace(_to_replace, _need);
 
         // IF EVERYTHING WORKS, NOTHING HAPPENS BEYOND THIS LINE
 
-        console.error("Something is wrong lol, look autoheader line 120 comment :3")
+        console.error("Something is wrong lol, look autoheader line 120 comment :3");
 
 
         let lang = "FI"; // Default language
