@@ -108,6 +108,13 @@ fetch('config.json')
         EN: {"url": "/en/", "name_in_lang": {"FI": "Englanniksi", "EN": "In English", "SV": "På Engelska"}}
     };
 
+    function _replace(string) {
+        while (string.includes("//")) {
+            string = string.replace("//", "/");
+        }
+        return string;
+    }
+
     function switchLanguage(language) {
         const currentLang = window.location.pathname.split("/")[1]; // Get the current language from the URL
 
@@ -115,37 +122,11 @@ fetch('config.json')
         
         let _to_replace = currentLang;
 
-        window.location.pathname.replace(_to_replace, _need);
+        window.Location.pathname = _replace(window.location.pathname.replace(_to_replace, _need));
 
         // IF EVERYTHING WORKS, NOTHING HAPPENS BEYOND THIS LINE
 
         console.error("Something is wrong lol, look autoheader line 120 comment :3");
-
-
-        let lang = "FI"; // Default language
-        
-        if (currentLang === "en") {
-            lang = "EN";
-        }
-        
-        if (language.toUpperCase() === lang || language === lang) {
-            return; // No need to switch if it's already in the desired language
-        }
-    
-        // Construct the new URL based on the desired language
-        let newPath = window.location.pathname;
-    
-        // Replace the language prefix in the pathname with the desired language
-        if (language === "fi") {
-            newPath = newPath.replace("/en/", "/");
-        } else {
-            if (language !== "FI") {
-            newPath = `/${language.toLowerCase()}${newPath}`;
-            }
-        }
-    
-        // Redirect to the new URL
-        window.location.href = newPath;
     }
 
     // Create language switch buttons
