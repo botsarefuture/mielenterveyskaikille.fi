@@ -113,7 +113,7 @@ fetch('config.json')
 
         let _need = languageConfig[language]["url"]
         
-        let _to_replace = languageConfig[currentLang.toUpperCase()]["url"]
+        let _to_replace = currentLang | languageConfig[currentLang.toUpperCase()]["url"]
 
         window.location.pathname.replace(_to_replace, _need)
 
