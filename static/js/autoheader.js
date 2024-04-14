@@ -149,8 +149,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 let _to_replace = currentLang;
 
-                window.location.pathname = _replace(window.location.pathname.replace(_to_replace, _need));
+                console.log(`${_need}${window.location.pathname}`);
 
+                if (currentLang !== "en") {
+                    console.log("Finnish");
+                    url = _replace(`${_need}${window.location.pathname}`.toString());
+                    console.log(url);
+                    window.location.pathname = url;
+                }
+
+                else {
+                    window.location.pathname = _replace(window.location.pathname.replace(_to_replace, _need));
+                }
                 // IF EVERYTHING WORKS, NOTHING HAPPENS BEYOND THIS LINE
 
                 console.error("Something is wrong lol, look autoheader line 120 comment :3");
