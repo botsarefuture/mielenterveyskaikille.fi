@@ -1,120 +1,235 @@
 <!DOCTYPE html>
-<html lang="fi">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mielenterveys kuuluu kaikille - Ohjelma</title>
-
-  <!-- Imports -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
-  <script src="/static/js/autoheader.js" defer></script>
-  <script src="/static/js/footer.js" defer></script>
-  <link rel="stylesheet" href="/static/css/program.css">
-
-
-  <!-- Site icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=2">
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png?v=2">
-  <link rel="icon" type="image/png" sizes="194x194" href="/icons/favicon-194x194.png?v=2">
-  <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-chrome-192x192.png?v=2">
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png?v=2">
-  <link rel="manifest" href="/icons/site.webmanifest?v=2">
-  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg?v=2" color="#000000">
-  <link rel="shortcut icon" href="/icons/favicon.ico?v=2">
-  <meta name="apple-mobile-web-app-title" content="Mielenterveys kuuluu kaikille">
-  <meta name="application-name" content="Mielenterveys kuuluu kaikille">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-config" content="/icons/browserconfig.xml?v=2">
-  <meta name="theme-color" content="#4caf50">
-
-  <!-- Meta tags added dynamically -->
-  <meta name="description" content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
-  <meta property="og:title" content="Mielenterveys kuuluu kaikille" />
-  <meta property="og:description" content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mielenterveyskaikille.fi/" />
-  <meta property="og:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
-  <meta name="twitter:title" content="Mielenterveys kuuluu kaikille" />
-  <meta name="twitter:description" content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
-  <meta name="twitter:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">
+<meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mental Health for All - Program</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/60c01f192e.js"></script>
+    <script defer src="/static/js/autoheader.js"></script>
+    <script defer src="/static/js/footer.js"></script>
+    <link href="/icons/apple-touch-icon.png?v=2" rel="apple-touch-icon" sizes="180x180" />
+    <link href="/icons/favicon-32x32.png?v=2" rel="icon" sizes="32x32" type="image/png" />
+    <link href="/icons/favicon-194x194.png?v=2" rel="icon" sizes="194x194" type="image/png" />
+    <link href="/icons/android-chrome-192x192.png?v=2" rel="icon" sizes="192x192" type="image/png" />
+    <link href="/icons/favicon-16x16.png?v=2" rel="icon" sizes="16x16" type="image/png" />
+    <link href="/icons/site.webmanifest?v=2" rel="manifest" />
+    <link color="#000000" href="/icons/safari-pinned-tab.svg?v=2" rel="mask-icon" />
+    <link href="/icons/favicon.ico?v=2" rel="shortcut icon" />
+    <meta content="Mental Health for All" name="apple-mobile-web-app-title" />
+    <meta content="Mental Health for All" name="application-name" />
+    <meta content="#ffffff" name="msapplication-TileColor" />
+    <meta content="/icons/browserconfig.xml?v=2" name="msapplication-config" />
+    <meta content="#4caf50" name="theme-color" />
+    <!-- Meta tags added dynamically -->
+    <meta
+        content="Join the protest at Senate Square on 6/3/2024 and demand change to Finland's mental health services. Join us and show your support!"
+        name="description" />
+    <meta content="Mental Health for All" property="og:title" />
+    <meta
+        content="Join the protest at Senate Square on 6/3/2024 and demand change to Finland's mental health services. Join us and show your support!"
+        property="og:description" />
+    <meta content="website" property="og:type" />
+    <meta content="https://mentalhealthforall.fi/" property="og:url" />
+    <meta content="https://mentalhealthforall.fi/static/mentalhealth1.svg" property="og:image" />
+    <meta content="Mental Health for All" name="twitter:title" />
+    <meta
+        content="Join the protest at Senate Square on 6/3/2024 and demand change to Finland's mental health services. Join us and show your support!"
+        name="twitter:description" />
+    <meta content="https://mentalhealthforall.fi/static/mentalhealth1.svg" name="twitter:image" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Event",
-      "name": "Mielenterveys kuuluu kaikille",
+      "name": "Mental Health for All",
       "startDate": "2024-03-09T13:00:00",
-      "endDate": "2024-03-09T15:30:00",
+      "endDate": "2024-03-09T17:00:00",
       "location": {
         "@type": "Place",
-        "name": "Senaatintori",
+        "name": "Senate Square",
         "address": ""
       }
     }
   </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program</title>
+    <link rel="stylesheet" type="text/css" href="https://mentalhealthforall.fi/static/css/program.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .event-group {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .event-group td {
+            background-color: #fff;
+            font-weight: normal;
+        }
+
+        .soon-revealed {
+            font-style: italic;
+            color: red;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
-
 <body>
-  <section>
-    <h2 style="text-align: center;">Mielenosoituksen ohjelma</h2>
+    <h1>Program</h1>
     <table>
-      <tr>
-        <th>Aika</th>
-        <th>Paikka</th>
-        <th>Aktiviteetti</th>
-      </tr>
-      <tr class="event-group">
-        <td>16:00 - 16:45</td>
-        <td rowspan="4">Senaatintori</td>
-        <td>Kokoontuminen</td>
-      </tr>
-      <tr class="event-group">
-        <td>16:00 - 16:05</td>
-        <td>Aloituspuheenvuoro</td>
-      </tr>
-      <tr class="event-group">
-        <td>16:05 - 16:15</td>
-        <td>Olavi Sydänmaanlakka puhuu</td>
-      </tr>
-      <tr class="event-group paljastetaan-pian">
-        <td>16:15 - 16:25</td>
-        <td>Paljastetaan pian</td>
-      </tr>
-      <tr class="event-group">
-        <td>16:25 - 16:35</td>
-        <td>Paljastetaan pian</td>
-      </tr>
-      <tr class="event-group">
-        <td>16:35 - 16:45</td>
-        <td>Huutojen harjoittelua ja lähtöohjeet</td>
-      </tr>
-      <tr>
-        <td>16:45</td>
-        <td>Senaatintorilta</td>
-        <td>Marssi lähtee kohti jatkojen paikkaa</td>
-      </tr>
-      <tr class="event-group">
-        <td>17:15 - 22:00</td>
-        <td rowspan="5">Jatkot</td>
-        <td>Yeesi ry:n asiantuntija Erika Karstinen puhuu</td>
-      </tr>
-      <tr class="event-group">
-        <td>17:15 - 17:20</td>
-        <td>Avauspuheenvuoro</td>
-      </tr>
-      <tr class="event-group">
-        <td>20:00 - 20:45</td>
-        <td>Bigfoot babies-yhtye esiintyy</td>
-      </tr>
+        <tr>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Activity</th>
+        </tr>
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
+            
+                <tr class="event-group">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+        
     </table>
-  </section>
-  <br>
-  <br>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
