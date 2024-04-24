@@ -37,13 +37,28 @@ section li, p {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Link Styles */
-a.supporters, a:hover {
-  color: #ffffff; /* Change link color */
-  text-decoration: underline white; /* Add underline for normal links */
-  transition: color 0.3s ease; /* Smooth color transition */
+/* General Link Styles */
+a {
+  color: #0000ff; /* Default link color */
+  text-decoration: underline; /* Underline for all links */
+  transition: color 0.3s ease
+
+; /* Smooth transition on color changes */
 }
 
+/* Link Hover Styles */
 a:hover {
-  color: #000000; /* Change link color on hover */
+  color: #ff0000; /* Change to red when hovering */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+/* Supporters Link Styles */
+a {
+  color: #ffffff; /* White links by default */
+  text-decoration: underline; /* Underline for supporters links */
+}
+
+/* Supporters Link Hover Styles */
+a:hover {
+  color: #000000; /* Change to black on hover */
 }
