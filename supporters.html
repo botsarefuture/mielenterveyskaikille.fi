@@ -6,8 +6,8 @@
     <title>Mielenterveys kuuluu kaikille - Tukijat</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/60c01f192e.js"></script>
-    <script defer="" src="/static/js/autoheader.js"></script>
-    <script defer="" src="/static/js/footer.js"></script>
+    <script defer src="/static/js/autoheader.js"></script>
+    <script defer src="/static/js/footer.js"></script>
     <link href="/icons/apple-touch-icon.png?v=2" rel="apple-touch-icon" sizes="180x180" />
     <link href="/icons/favicon-32x32.png?v=2" rel="icon" sizes="32x32" type="image/png" />
     <link href="/icons/favicon-194x194.png?v=2" rel="icon" sizes="194x194" type="image/png" />
@@ -22,110 +22,107 @@
     <meta content="/icons/browserconfig.xml?v=2" name="msapplication-config" />
     <meta content="#4caf50" name="theme-color" />
     <link href="/static/css/supporters.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <section>
-        <h2>Tukijat</h2>
+    <!-- Added ID to serve as the parent for all collapsible sections -->
+    <div id="accordion">
+        <section>
+            <h2>Tukijat</h2>
 
-        <!-- Business Supporters -->
-        <div class="card">
-            <div class="card-header" id="headingBusiness">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseBusiness" aria-expanded="true" aria-controls="collapseBusiness">
-                        Yritykset
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseBusiness" class="collapse" aria-labelledby="headingBusiness" data-parent="#accordion">
-                <div class="card-body">
-                    <ul>
-                        <li><a href="https://Techat.fi">Techat Oy</a></li>
-                        <li>ALFAMETA</li>
-                        <!-- Add more business supporters here -->
-                    </ul>
+            <!-- Business Supporters -->
+            <div class="card">
+                <div class="card-header" id="headingBusiness">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseBusiness" aria-expanded="true" aria-controls="collapseBusiness" data-parent="#accordion">
+                            Yritykset
+                        </button>
+                    </h5>
                 </div>
-            </div>
-        </div>
-
-        <!-- Communities -->
-        <div class="card">
-            <div class="card-header" id="headingCommunity">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseCommunity" aria-expanded="false" aria-controls="collapseCommunity">
-                        Yhteisöt
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseCommunity" class="collapse" aria-labelledby="headingCommunity" data-parent="#accordion">
-                <div class="card-body">
-                    <ul>
-                        <li><a href="https://adhd-liitto.fi">ADHD-liitto ry</a></li>
-                        <li>Chillauskeskus</li>
-                        <!-- Add more community supporters here -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Unions -->
-        <div class="card">
-            <div class="card-header" id="headingUnion">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseUnion" aria-expanded="false" aria-controls="collapseUnion">
-                        Ammattiliitot
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseUnion" class="collapse" aria-labelledby="headingUnion" data-parent="#accordion">
-                <div class="card-body">
-                    <ul>
-                        <li><a href="https://jhl.fi">JHL ry</a></li>
-                        <li><a href="https://tehy.fi">Tehyn Pirkanmaan sairaanhoitopiirin ammattiosasto ry</a></li>
-                        <!-- Add more union supporters here -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mental Health Organizations -->
-        <div class="card">
-            <div class="card-header" id="headingMentalHealth">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseMentalHealth" aria-expanded="false" aria-controls="collapseMentalHealth">
-                        Mielenterveystoimijat
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseMentalHealth" class="collapse" aria-labelledby="headingMentalHealth" data-parent="#accordion">
-                <div class="card-body">
-                    <ul>
-                        <li><a href="https://mtkl.fi">MIELENTERVEYDEN KESKUSLIITTO RY</a></li>
-                        <li><a href="https://mielenterveyspooli.fi">Mielenterveyspooli</a></li>
-                        <!-- Add more mental health organizations here -->
-                    </ul>
-                    <div>
-                        <!-- You can add videos or other extra information here -->
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div id="collapseBusiness" class="collapse" aria-labelledby="headingBusiness" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="https://Techat.fi">Techat Oy</a></li>
+                            <li>ALFAMETA</li>
+                            <!-- Add more business supporters here -->
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </section>
-    
-    <section>
-        <h2>Tule tukijaksi</h2>
-        <centered>
-            <p>Ota yhteyttä: <a href="mailto:info@mielenterveyskaikille.fi">info@mielenterveyskaikille.fi</a></p>
-        </centered>
-    </section>
+            <!-- Communities -->
+            <div class="card">
+                <div class="card-header" id="headingCommunity">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseCommunity" aria-expanded="false" aria-controls="collapseCommunity" data-parent="#accordion">
+                            Yhteisöt
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseCommunity" class="collapse" aria-labelledby="headingCommunity" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="https://adhd-liitto.fi">ADHD-liitto ry</a></li>
+                            <li>Chillauskeskus</li>
+                            <!-- Add more community supporters here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <!-- Unions -->
+            <div class="card">
+                <div class="card-header" id="headingUnion">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseUnion" aria-expanded="false" aria-controls="collapseUnion" data-parent="#accordion">
+                            Ammattiliitot
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseUnion" class="collapse" aria-labelledby="headingUnion" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="https://jhl.fi">JHL ry</a></li>
+                            <li><a href="https://tehy.fi">Tehyn Pirkanmaan sairaanhoitopiirin ammattiosasto ry</a></li>
+                            <!-- Add more union supporters here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mental Health Organizations -->
+            <div class="card">
+                <div class="card-header" id="headingMentalHealth">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseMentalHealth" aria-expanded="false" aria-controls="collapseMentalHealth" data-parent="#accordion">
+                            Mielenterveystoimijat
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseMentalHealth" class="collapse" aria-labelledby="headingMentalHealth" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="https://mtkl.fi">MIELENTERVEYDEN KESKUSLIITTO RY</a></li>
+                            <li><a href="https://mielenterveyspooli.fi">Mielenterveyspooli</a></li>
+                            <!-- Add more mental health organizations here -->
+                        </ul>
+                        <div>
+                            <!-- Additional content or videos -->
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tule tukijaksi</h2>
+            <div>
+                <p>Ota yhteyttä: <a href="mailto:info@mielenterveyskaikille.fi">info@mielenterveyskaikille.fi</a></p>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
