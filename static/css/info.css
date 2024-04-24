@@ -42,12 +42,12 @@ h2 {
   }
 
 /* Supporters Link Styles */
-a {
+section.a {
   color: #ffffff; /* White links by default */
   text-decoration: underline; /* Underline for supporters links */
 }
 
 /* Supporters Link Hover Styles */
-a:hover {
+section.a:hover {
   color: #000000; /* Change to black on hover */
 }
