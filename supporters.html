@@ -6,8 +6,6 @@
     <title>Mielenterveys kuuluu kaikille - Tukijat</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/60c01f192e.js"></script>
-    <script defer src="/static/js/autoheader.js"></script>
-    <script defer src="/static/js/footer.js"></script>
     <link href="/icons/apple-touch-icon.png?v=2" rel="apple-touch-icon" sizes="180x180" />
     <link href="/icons/favicon-32x32.png?v=2" rel="icon" sizes="32x32" type="image/png" />
     <link href="/icons/favicon-194x194.png?v=2" rel="icon" sizes="194x194" type="image/png" />
@@ -21,14 +19,20 @@
         body {
             color: black;
         }
+        .logo {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Tukijat</h2>
         
-        <!-- Using Bootstrap's accordion for collapsible sections -->
+        <!-- Accordion to organize supporters by type -->
         <div class="accordion" id="supportersAccordion">
+
+            <!-- Business Supporters -->
             <div class="card">
                 <div class="card-header" id="headingBusiness">
                     <h5 class="mb-0">
@@ -39,20 +43,36 @@
                 </div>
                 <div id="collapseBusiness" class="collapse" aria-labelledby="headingBusiness" data-parent="#supportersAccordion">
                     <div class="card-body">
-                        <ul>
-                            <li><a href="https://Techat.fi">Techat Oy</a></li>
-                            <li>ALFAMETA</li>
-                        </ul>
-                        <!-- Example of a section with additional content like text and videos -->
-                        <div>
-                            <p>Tässä on enemmän tietoa ALFAMETAn toiminnasta.</p>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                        <!-- Grid system to organize supporter boxes -->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="/path/to/techat_logo.png" alt="Techat Oy Logo" class="logo" />
+                                    <div class="card-body">
+                                        <h5>Techat Oy</h5>
+                                        <p>Techat Oy on suomalainen IT-yritys, joka tukee mielenterveystyötä.</p>
+                                        <a href="https://techat.fi" target="_blank">Lue lisää</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="/path/to/alfameta_logo.png" alt="ALFAMETA Logo" class="logo" />
+                                    <div class="card-body">
+                                        <h5>ALFAMETA</h5>
+                                        <p>ALFAMETA tarjoaa monipuolisia ratkaisuja mielenterveyden tueksi.</p>
+                                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more business supporter boxes here -->
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Additional supporter section -->
+
+            <!-- Communities -->
             <div class="card">
                 <div class="card-header" id="headingCommunity">
                     <h5 class="mb-0">
@@ -63,20 +83,51 @@
                 </div>
                 <div id="collapseCommunity" class="collapse" aria-labelledby="headingCommunity" data-parent="#supportersAccordion">
                     <div class="card-body">
-                        <ul>
-                            <li><a href="https://adhd-liitto.fi">ADHD-liitto ry</a></li>
-                            <li>Chillauskeskus</li>
-                        </ul>
-                        <!-- Additional content section -->
-                        <div>
-                            <p>Tässä on enemmän tietoa yhteisöjen toiminnasta.</p>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/ANOTHER_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="/path/to/adhd_liitto_logo.png" alt="ADHD-liitto Logo" class="logo" />
+                                    <div class="card-body">
+                                        <h5>ADHD-liitto ry</h5>
+                                        <p>ADHD-liitto ry tukee ADHD-potilaita ja heidän perheitään.</p>
+                                        <a href="https://adhd-liitto.fi" target="_blank">Lue lisää</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more community supporter boxes here -->
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Continue with other sections for unions, mental health organizations, etc. -->
+
+            <!-- Unions -->
+            <div class="card">
+                <div class="card-header" id="headingUnion">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseUnion" aria-expanded="false" aria-controls="collapseUnion">
+                        Ammattiliitot
+                    </button>
+                    </h5>
+                </div>
+                <div id="collapseUnion" class="collapse" aria-labelledby="headingUnion" data-parent="#supportersAccordion">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="/path/to/jhl_logo.png" alt="JHL ry Logo" class="logo" />
+                                    <div class="card-body">
+                                        <h5>JHL ry</h5>
+                                        <p>JHL ry tukee mielenterveystyötä ammattiliittona.</p>
+                                        <a href="https://jhl.fi" target="_blank">Lue lisää</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more union supporter boxes here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add additional supporter categories here -->
         </div>
     </div>
 
