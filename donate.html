@@ -4,10 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mielenterveys kuuluu kaikille - Tue mielenosoitusta</title>
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <title>Mielenterveys kuuluu kaikille - Lahjoita</title>
 
   <!-- Site icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=2">
@@ -24,68 +21,82 @@
   <meta name="msapplication-config" content="/icons/browserconfig.xml?v=2">
   <meta name="theme-color" content="#4caf50">
 
-  <!-- Meta tags added dynamically -->
-  <meta name="description"
-    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
-  <meta property="og:title" content="Mielenterveys kuuluu kaikille" />
-  <meta property="og:description"
-    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <!-- Meta tags -->
+  <meta name="description" content="Lahjoita tukeaksesi mielenterveystyötä Suomessa. Yhdessä voimme tehdä muutoksen." />
+  <meta property="og:title" content="Mielenterveys kuuluu kaikille - Lahjoita" />
+  <meta property="og:description" content="Lahjoita tukeaksesi mielenterveystyötä Suomessa. Yhdessä voimme tehdä muutoksen." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mielenterveyskaikille.fi/" />
+  <meta property="og:url" content="https://mielenterveyskaikille.fi/donate" />
   <meta property="og:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
-  <meta name="twitter:title" content="Mielenterveys kuuluu kaikille" />
-  <meta name="twitter:description"
-    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta name="twitter:title" content="Mielenterveys kuuluu kaikille - Lahjoita" />
+  <meta name="twitter:description" content="Lahjoita tukeaksesi mielenterveystyötä Suomessa. Yhdessä voimme tehdä muutoksen." />
   <meta name="twitter:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "Mielenterveys kuuluu kaikille",
-      "startDate": "2024-03-09T13:00:00",
-      "endDate": "2024-03-09T17:00:00",
-      "location": {
-        "@type": "Place",
-        "name": "Senaatintori",
-        "address": ""
-      }
-    }
-  </script>
+
+  <!-- CSS & JS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
   <script src="/static/js/autoheader.js" defer></script>
   <script src="/static/js/footer.js" defer></script>
-
-  <!-- Custom CSS for thermometer meter -->
-  <style>
-    .thermometer {
-      width: 100px;
-      height: 300px;
-      border: 2px solid #000;
-      position: relative;
-      display: inline-block;
-      margin: 20px;
-      background-color: #f2f2f2;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .mercury {
-      width: 100%;
-      background-color: #ff3333;
-      position: absolute;
-      bottom: 0;
-      transition: height 0.5s ease;
-    }
-
-    .amount-raised {
-      text-align: center;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-  </style>
+  <link href="/static/css/donate.css" rel="stylesheet">
 </head>
 
+<body>
+  <header>
+    <h1>Mielenterveys kuuluu kaikille - Lahjoita</h1>
+    <p>Tue mielenterveyspalveluja ja auta meitä luomaan parempi tulevaisuus. Jokainen lahjoitus merkitsee.</p>
+  </header>
 
+  <section>
+    <h2>Miksi lahjoittaa?</h2>
+    <p>
+      Mielenterveys on perusoikeus. Lahjoituksesi auttaa meitä tarjoamaan parempia palveluja, lisäämään tietoisuutta ja tukemaan mielenterveyden tutkimusta. Jokainen lahjoitus menee suoraan mielenterveyspalveluiden ja -projektien rahoittamiseen.
+    </p>
+  </section>
+
+  <section>
+    <h2>Kuinka lahjoittaa?</h2>
+    <p>
+      Voit lahjoittaa usealla tavalla:
+    </p>
+    <ul>
+      <li>Luottokortilla tai pankkikortilla</li>
+      <li>Suoralla tilisiirrolla</li>
+      <li>MobilePay-sovelluksella</li>
+    </ul>
+    <p>
+      Alla olevista painikkeista voit valita sopivimman lahjoitustavan.
+    </p>
+    <div class="donation-buttons">
+      <button class="btn btn-primary">Lahjoita luottokortilla</button>
+    </div>
+    <h1>Lahjoita MobilePayllä</h1>
+
+  <!-- Kuva, joka toimii linkkinä MobilePay-lahjoitukseen -->
+  <a href="https://qr.mobilepay.fi/box/17b1bb4a-d3ee-4502-bfc7-5fe6871b1ecf/pay-in" target="_blank">
+    <img src="/static/outline-small@3x.png" alt="Lahjoita MobilePayllä" style="border: none; cursor: pointer;" />
+  </a>
+
+  <p>
+    Klikkaamalla yllä olevaa kuvaa voit lahjoittaa MobilePay-sovelluksen kautta. Kiitos tuestasi!
+  </p>
+  </section>
+
+  <section>
+    <h2>Kiitos tuestasi!</h2>
+    <p>
+      Olemme kiitollisia jokaisesta lahjoituksesta, joka auttaa meitä jatkamaan työtämme mielenterveyspalveluiden hyväksi. Voit myös jakaa tätä sivua sosiaalisessa mediassa rohkaistaksesi muitakin lahjoittamaan.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2024 Mielenterveys kuuluu kaikille. Kaikki oikeudet pidätetään.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 
 </html>
