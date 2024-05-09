@@ -4,10 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mielenterveys kuuluu kaikille - Support us</title>
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <title>Mental Health for All - Info</title>
 
   <!-- Site icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=2">
@@ -18,91 +15,140 @@
   <link rel="manifest" href="/icons/site.webmanifest?v=2">
   <link rel="mask-icon" href="/icons/safari-pinned-tab.svg?v=2" color="#000000">
   <link rel="shortcut icon" href="/icons/favicon.ico?v=2">
-  <meta name="apple-mobile-web-app-title" content="Mielenterveys kuuluu kaikille">
-  <meta name="application-name" content="Mielenterveys kuuluu kaikille">
+  <meta name="apple-mobile-web-app-title" content="Mental Health for All">
+  <meta name="application-name" content="Mental Health for All">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-config" content="/icons/browserconfig.xml?v=2">
   <meta name="theme-color" content="#4caf50">
 
+
   <!-- Meta tags added dynamically -->
   <meta name="description"
-    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
-  <meta property="og:title" content="Mielenterveys kuuluu kaikille" />
+    content="Join the protest at Senate Square on June 3, 2024, and demand changes in Finland's mental health services. Join us and show your support!" />
+  <meta property="og:title" content="Mental Health for All" />
   <meta property="og:description"
-    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+    content="Join the protest at Senate Square on June 3, 2024, and demand changes in Finland's mental health services. Join us and show your support!" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mielenterveyskaikille.fi/" />
-  <meta property="og:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
-  <meta name="twitter:title" content="Mielenterveys kuuluu kaikille" />
+  <meta property="og:url" content="https://mentalhealthforall.fi/" />
+  <meta property="og:image" content="https://mentalhealthforall.fi/static/mentalhealth1.svg" />
+  <meta name="twitter:title" content="Mental Health for All" />
   <meta name="twitter:description"
-    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
-  <meta name="twitter:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
+    content="Join the protest at Senate Square on June 3, 2024, and demand changes in Finland's mental health services. Join us and show your support!" />
+  <meta name="twitter:image" content="https://mentalhealthforall.fi/static/mentalhealth1.svg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Event",
-      "name": "Mielenterveys kuuluu kaikille",
+      "name": "Mental Health for All",
       "startDate": "2024-03-09T13:00:00",
       "endDate": "2024-03-09T17:00:00",
       "location": {
         "@type": "Place",
-        "name": "Senaatintori",
+        "name": "Senate Square",
         "address": ""
       }
     }
   </script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
   <script src="/static/js/autoheader.js" defer></script>
   <script src="/static/js/footer.js" defer></script>
-
-  <!-- Custom CSS for thermometer meter -->
-  <style>
-    .thermometer {
-      width: 100px;
-      height: 300px;
-      border: 2px solid #000;
-      position: relative;
-      display: inline-block;
-      margin: 20px;
-      background-color: #f2f2f2;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .mercury {
-      width: 100%;
-      background-color: #ff3333;
-      position: absolute;
-      bottom: 0;
-      transition: height 0.5s ease;
-    }
-
-    .amount-raised {
-      text-align: center;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-  </style>
+  <link href="/static/css/info.css" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Main content section -->
+  <style>
+    .highlight {
+      font-weight: bold;
+      color: #4caf50;
+      /* A vibrant green to emphasize important parts */
+    }
+
+    section {
+      padding: 20px;
+      background-color: #f5f5f5;
+      /* Light gray background for readability */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      /* Adding shadow for depth */
+    }
+
+    h2 {
+      color: #333;
+      /* Dark gray for strong visibility */
+      font-size: 1.5em;
+      text-align: center;
+      /* Centering the main title */
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #666;
+      /* Medium gray for regular text */
+      line-height: 1.6;
+      /* Line height for better readability */
+      margin-bottom: 15px.
+    }
+
+    h3 {
+      color: #333;
+      /* Dark gray for heading */
+      font-size: 1.2em;
+      margin-bottom: 10px.
+    }
+
+    a {
+      color: #4caf50;
+      /* Use same green for consistency */
+      text-decoration: underline.
+    }
+
+    a:hover {
+      text-decoration: underline.
+    }
+
+    .donation-info {
+      border: 1px solid #ddd;
+      /* Light border for separation */
+      padding: 10px;
+      background-color: #fff;
+      /* White background for inner sections */
+      border-radius: 4px.
+    }
+  </style>
+
   <section>
+    <h2>Mental Health for All! - Protest on June 3, 2024</h2>
+    <p>
+      Be a part of something big! Join us at Senate Square on June 3, 2024, and demand better mental health services for all Finns. It will be a peaceful, alcohol-free event where people of all ages can raise awareness of the mental health crisis and advocate for change.
+    </p>
+
+    <h3>Where does my donation go?</h3>
+    <p>
+      Every donation goes directly toward organizing the protest. If there's money left over, it will be donated directly to mental health organizations. With your support, we can create real change and bring hope to those who need it.
+      <br>
+      Expenses include communication and social media marketing, sound systems, and other technical arrangements. Even a small amount helps us a lot, as we rely on volunteers.
+    </p>
+
+    <h3>How can I donate?</h3>
+    <p class="donation-info">
+      Donating is easy! You can make a bank transfer to the following account number:
+      <br>
+      - Account number: <br><strong>FI29 5723 0221 1114 74</strong> <br>(account holder: Jaana Kauppinen)
+      <br>
+      Or you can use MobilePay:
+      <strong><a href="https://qr.mobilepay.fi/box/17b1bb4a-d3ee-4502-bfc7-5fe6871b1ecf/pay-in">8750DF</a></strong>
+    </p>
+
+    <p>
+      The permit number for this small collection is: <strong>RA/2024/788</strong>. <br>Every donation greatly helps the protest!
+    </p>
   </section>
 
-  <!-- Bootstrap JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <!-- Custom Script -->
-  <script>
-    // Add functionality to the donate button
-    document.querySelector('.donate-btn').addEventListener('click', function () {
-      window.location.href = 'https://qr.mobilepay.fi/box/65c143a8-5556-411e-b396-8e1a50387b0f/pay-in';
-    });
-  </script>
 </body>
 
 </html>
