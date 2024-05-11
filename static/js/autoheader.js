@@ -166,6 +166,8 @@ function createNavbarElements(nav, config) {
         },
     };
 
+    collapseDiv.appendChild(navbarLinks);
+
     Object.keys(languageConfig).forEach((language) => {
         const languageButton = document.createElement("button");
         languageButton.textContent = languageConfig[language].name_in_lang[language];
@@ -174,7 +176,6 @@ function createNavbarElements(nav, config) {
         collapseDiv.appendChild(languageButton);
     });
 
-    collapseDiv.appendChild(navbarLinks);
     nav.appendChild(collapseDiv);
 }
 
