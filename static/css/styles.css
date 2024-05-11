@@ -173,3 +173,18 @@ p {
   max-width: 100%;
   height: auto;
 }
+
+.language-button {
+  /* Add your specific styling here */
+  background-color: #007bff; /* Example background color */
+  color: white; /* Example text color */
+  border: none; /* Example border */
+  padding: 10px 20px; /* Example padding */
+  border-radius: 5px; /* Example border radius */
+  cursor: pointer; /* Example cursor */
+}
+
+.language-button:hover {
+  /* Add your specific hover styling here */
+  background-color: #0056b3; /* Example hover background color */
+}

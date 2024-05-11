@@ -169,7 +169,7 @@ function createNavbarElements(nav, config) {
     Object.keys(languageConfig).forEach((language) => {
         const languageButton = document.createElement("button");
         languageButton.textContent = languageConfig[language].name_in_lang[language];
-        languageButton.classList.add("btn", "btn-primary", "language-button");
+        languageButton.classList.add("language-button"); // Add a class for styling
         languageButton.addEventListener("click", () => switchLanguage(language));
         collapseDiv.appendChild(languageButton);
     });
