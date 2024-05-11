@@ -105,19 +105,14 @@ function createHeader(config) {
     return header;
 }
 
-// Create navbar elements
+    // Create navbar elements
 function createNavbarElements(nav, config) {
     // Navbar Brand Link
     const brandLink = document.createElement("a");
-    brandLink.href = "https://mielenterveyskaikille.fi/";
+    brandLink.href = config.brandHref || "/";
     brandLink.classList.add("navbar-brand"); // Add navbar-brand class to maintain styling
+    brandLink.textContent = config.brandText || "Brand"; // Set the brand text
     nav.appendChild(brandLink);
-
-    // Navbar Brand Image
-    const brand = document.createElement("img");
-    brand.src = "/static/mielenterveyskaikille-04.svg";
-    brand.alt = "Mielenterveys kuuluu kaikille logo"; // Provide alternative text for accessibility
-    brandLink.appendChild(brand);
 
     // Navbar Toggler Button
     const togglerButton = document.createElement("button");
@@ -128,11 +123,31 @@ function createNavbarElements(nav, config) {
     togglerButton.setAttribute("aria-controls", "navbarSupportedContent");
     togglerButton.setAttribute("aria-expanded", "false");
     togglerButton.setAttribute("aria-label", "Toggle navigation");
-    togglerButton.innerHTML =
-        config.togglerButtonIcon || '<span class="navbar-toggler-icon">☰</span>';
+    togglerButton.innerHTML = config.togglerButtonIcon || '<span class="navbar-toggler-icon">☰</span>';
     nav.appendChild(togglerButton);
 
-    // Language switch buttons
+    // Navbar Collapse Div
+    const collapseDiv = document.createElement("div");
+    collapseDiv.className = "collapse navbar-collapse";
+    collapseDiv.id = "navbarSupportedContent";
+
+    // Navbar Links
+    const navbarLinks = document.createElement("ul");
+    navbarLinks.className = "navbar-nav mr-auto";
+
+    // Loop through the links array and create menu items
+    config.links.forEach(link => {
+        const menuItem = document.createElement("li");
+        menuItem.className = "nav-item";
+        const linkElement = document.createElement("a");
+        linkElement.textContent = link.text;
+        linkElement.href = link.href;
+        linkElement.className = "nav-link";
+        menuItem.appendChild(linkElement);
+        navbarLinks.appendChild(menuItem);
+    });
+
+    // Append language switch buttons
     const languageConfig = {
         FI: {
             url: "/",
@@ -146,11 +161,14 @@ function createNavbarElements(nav, config) {
 
     Object.keys(languageConfig).forEach((language) => {
         const languageButton = document.createElement("button");
-        languageButton.textContent = language;
-        languageButton.classList += "language-button";
+        languageButton.textContent = languageConfig[language].name_in_lang[language];
+        languageButton.classList.add("btn", "btn-primary", "language-button");
         languageButton.addEventListener("click", () => switchLanguage(language));
-        nav.appendChild(languageButton);
+        collapseDiv.appendChild(languageButton);
     });
+
+    collapseDiv.appendChild(navbarLinks);
+    nav.appendChild(collapseDiv);
 }
 
 // Redirect based on user's preferred language
