@@ -111,7 +111,13 @@ function createNavbarElements(nav, config) {
     const brandLink = document.createElement("a");
     brandLink.href = config.brandHref || "/";
     brandLink.classList.add("navbar-brand"); // Add navbar-brand class to maintain styling
-    brandLink.textContent = config.brandText || "Brand"; // Set the brand text
+
+    // Navbar Brand Image (SVG)
+    const brandImg = document.createElement("img");
+    brandImg.src = "static/mielenterveyskaikille-04.svg";
+    brandImg.alt = config.brandText || "Brand"; // Set the alt text for accessibility
+    brandLink.appendChild(brandImg);
+
     nav.appendChild(brandLink);
 
     // Navbar Toggler Button
