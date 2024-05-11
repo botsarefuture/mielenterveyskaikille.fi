@@ -109,6 +109,7 @@ function createHeader(config) {
 function createNavbarElements(nav, config) {
     // Navbar Brand Link
     const brandLink = document.createElement("a");
+    brandLink.style = "background: white; padding: 0 0 0 0;"
     brandLink.href = config.brandHref || "/";
     brandLink.classList.add("navbar-brand"); // Add navbar-brand class to maintain styling
 
@@ -120,6 +121,9 @@ function createNavbarElements(nav, config) {
     brandLink.appendChild(brandImg);
 
     nav.appendChild(brandLink);
+    const rowchange = document.createElement("br")
+
+    nav.appendChild(rowchange);
 
     // Navbar Toggler Button
     const togglerButton = document.createElement("button");
