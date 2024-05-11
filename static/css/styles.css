@@ -176,7 +176,7 @@ p {
 
 .language-button {
   /* Add your specific styling here */
-  background-color: #007bff; /* Example background color */
+  background-color: var(--green); /* Example background color */
   color: white; /* Example text color */
   border: none; /* Example border */
   padding: 10px 20px; /* Example padding */
@@ -186,5 +186,5 @@ p {
 
 .language-button:hover {
   /* Add your specific hover styling here */
-  background-color: #0056b3; /* Example hover background color */
+  background-color: var(--neon-green); /* Example hover background color */
 }
