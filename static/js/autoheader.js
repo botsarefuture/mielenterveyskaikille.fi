@@ -106,17 +106,17 @@ function createHeader(config) {
 
 // Create navbar elements
 function createNavbarElements(nav, config) {
-  // Navbar Brand
-  const brand = document.createElement("h1");
-  brand.className = "navbar-brand";
-  brand.style = "color: white; max-width: 100%;";
-  const brandSpan = document.createElement("span");
-  brandSpan.style = "color: var(--red);";
-  brandSpan.textContent = "KUULUU KAIKILLE!";
-  brand.appendChild(document.createTextNode("MIELENTERVEYS "));
-  brand.appendChild(brandSpan);
-  brand.style.fontFamily = "'Anton', sans-serif;";
-  nav.appendChild(brand);
+    // Navbar Brand Link
+    const brandLink = document.createElement("a");
+    brandLink.href = "https://mielenterveyskaikille.fi/";
+    brandLink.classList.add("navbar-brand"); // Add navbar-brand class to maintain styling
+    nav.appendChild(brandLink);
+
+    // Navbar Brand Image
+    const brand = document.createElement("img");
+    brand.src = "/static/mielenterveyskaikille-04.svg";
+    brand.alt = "Mielenterveys kuuluu kaikille logo"; // Provide alternative text for accessibility
+    brandLink.appendChild(brand);
 
   // Navbar Toggler Button
   const togglerButton = document.createElement("button");
