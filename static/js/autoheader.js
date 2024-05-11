@@ -94,8 +94,7 @@ function createHeader(config) {
   const header = document.createElement("header");
   header.style = "text-align: center; background-color: black;"; // Add background color style
   const nav = document.createElement("nav");
-  nav.className =
-    config.navbarClass || "navbar navbar-expand-lg bg-dark container-fluid";
+  nav.className = config.navbarClass || "navbar navbar-expand-lg bg-dark container-fluid";
   nav.style = "display: flex; justify-content: center;"; // Center the navbar items horizontally
 
   // Create navbar elements
@@ -128,12 +127,22 @@ function createNavbarElements(nav, config) {
   togglerButton.setAttribute("aria-controls", "navbarSupportedContent");
   togglerButton.setAttribute("aria-expanded", "false");
   togglerButton.setAttribute("aria-label", "Toggle navigation");
-  togglerButton.innerHTML =
-    config.togglerButtonIcon || '<span class="navbar-toggler-icon">☰</span>';
+  togglerButton.innerHTML = config.togglerButtonIcon || '<span class="navbar-toggler-icon">☰</span>';
   nav.appendChild(togglerButton);
 
-  // Other navbar elements like collapse div, language switch buttons, etc.
-  // (Omitted for brevity)
+  // Language switch buttons
+  const languageConfig = {
+    FI: { url: "/", name_in_lang: { FI: "Suomeksi", EN: "In Finnish", SV: "På Finska" } },
+    EN: { url: "/en/", name_in_lang: { FI: "Englanniksi", EN: "In English", SV: "På Engelska" } },
+  };
+
+  Object.keys(languageConfig).forEach((language) => {
+    const languageButton = document.createElement("button");
+    languageButton.textContent = language;
+    languageButton.classList += "language-button";
+    languageButton.addEventListener("click", () => switchLanguage(language));
+    nav.appendChild(languageButton);
+  });
 }
 
 // Redirect based on user's preferred language
@@ -152,26 +161,21 @@ function redirectBasedOnPreferredLanguage(config) {
 function switchLanguage(language) {
   const currentLang = window.location.pathname.split("/")[1]; // Get the current language from the URL
   const languageConfig = {
-    FI: {
-      url: "/",
-      name_in_lang: { FI: "Suomeksi", EN: "In Finnish", SV: "På Finska" },
-    },
-    EN: {
-      url: "/en/",
-      name_in_lang: { FI: "Englanniksi", EN: "In English", SV: "På Engelska" },
-    },
+    FI: { url: "/", name_in_lang: { FI: "Suomeksi", EN: "In Finnish", SV: "På Finska" } },
+    EN: { url: "/en/", name_in_lang: { FI: "Englanniksi", EN: "In English", SV: "På Engelska" } },
   };
 
-  let targetUrl = languageConfig[language]["url"];
+  let targetUrl = languageConfig[language]?.url;
+
+  if (!targetUrl) {
+    console.error("Invalid target URL for language:", language);
+    return; // Exit function if target URL is invalid
+  }
 
   if (currentLang !== "en") {
-    window.location.pathname = replacePathname(
-      `${targetUrl}${window.location.pathname}`
-    );
+    window.location.pathname = replacePathname(`${targetUrl}${window.location.pathname}`);
   } else {
-    window.location.pathname = replacePathname(
-      window.location.pathname.replace(currentLang, targetUrl)
-    );
+    window.location.pathname = replacePathname(window.location.pathname.replace(currentLang, targetUrl));
   }
 
   // IF EVERYTHING WORKS, NOTHING HAPPENS BEYOND THIS LINE
@@ -195,6 +199,7 @@ function isHeaderAdded() {
 document.addEventListener("DOMContentLoaded", tryLoad);
 
 // Loop to ensure header is added
-while (isHeaderAdded === false) {
-  tryLoad();
-}
+do {
+      tryLoad();
+    
+} while (isHeaderAdded() == false);
