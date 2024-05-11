@@ -115,7 +115,7 @@ function createNavbarElements(nav, config) {
 
     // Navbar Brand Image (SVG)
     const brandImg = document.createElement("img");
-    brandImg.src = "static/mielenterveyskaikille-03.svg";
+    brandImg.src = "/static/mielenterveyskaikille-03.svg";
     brandImg.classList.add("brand-image"); // Add a class for styling
     brandImg.alt = config.brandText || "Brand"; // Set the alt text for accessibility
     brandLink.appendChild(brandImg);
