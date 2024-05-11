@@ -167,3 +167,9 @@ p {
     height: auto;
     border-radius: 10px; /* Border radius for the image */
 }
+
+.brand-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
