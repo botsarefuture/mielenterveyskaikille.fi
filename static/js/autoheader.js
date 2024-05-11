@@ -1,205 +1,200 @@
+// Flag to track if the header was added
+let headerAdded = false;
+
 // Function to create a cookie
 function createCookie(name, value, days) {
-    var expires;
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toGMTString();
-    } else {
-        expires = "";
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
+  var expires;
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toGMTString();
+  } else {
+    expires = "";
+  }
+  document.cookie = name + "=" + value + expires + "; path=/";
 }
 
 // Function to get the value of a cookie
 function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(";");
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == " ") c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
 }
 
 // Document Ready Event Listener
-document.addEventListener("DOMContentLoaded", function () {
-    // Load Google Fonts stylesheet
-    const fontLink = document.createElement("link");
-    fontLink.rel = "stylesheet";
-    fontLink.href = "https://fonts.googleapis.com/css2?family=Anton&display=swap";
-    document.head.appendChild(fontLink);
+function tryLoad() {
+  // Load Google Fonts stylesheet and other resources
+  loadResources();
 
-    // Load styles.css stylesheet
-    const stylesLink = document.createElement("link");
-    stylesLink.rel = "stylesheet";
-    stylesLink.href = "/static/css/styles.css";
-    document.head.appendChild(stylesLink);
+  // Load configuration from external JSON file
+  fetch("config.json")
+    .then((response) => response.json())
+    .then((config) => {
+      // Create header elements
+      const header = createHeader(config);
 
-    // Add Google Tag Manager script
-    const gtagScript1 = document.createElement("script");
-    gtagScript1.async = true;
-    gtagScript1.src = "https://www.googletagmanager.com/gtag/js?id=G-FPN2HKBMCE";
-    document.head.appendChild(gtagScript1);
+      // Check if the language check cookie exists
+      const languageChecked = getCookie("language_checked");
 
-    // Google Tag Manager Configuration Script
-    const gtagScript2 = document.createElement("script");
-    gtagScript2.textContent = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FPN2HKBMCE');
-     `;
-    document.head.appendChild(gtagScript2);
+      // If the language check cookie doesn't exist, check user's preferred language and redirect
+      if (!languageChecked) {
+        redirectBasedOnPreferredLanguage(config);
+      }
 
-    // Load configuration from external JSON file
-    fetch('config.json')
-        .then(response => response.json())
-        .then(config => {
-            // Create header elements
-            const header = document.createElement("header");
-            header.style = "text-align: center; background-color: black;"; // Add background color style
-            const nav = document.createElement("nav");
-            nav.className = config.navbarClass || "navbar navbar-expand-lg bg-dark container-fluid";
-            nav.style = "display: flex; justify-content: center;"; // Center the navbar items horizontally
+      // Append header to the body
+      document.body.insertBefore(header, document.body.firstChild);
+      headerAdded = true; // Set the flag to true after adding the header
+    })
+    .catch((error) => console.error("Error loading configuration:", error));
+}
 
-            // Navbar Brand
-            const brand = document.createElement("h1");
-            brand.className = "navbar-brand";
-            brand.style = "color: white; max-width: 100%;";
-            const brandSpan = document.createElement("span");
-            brandSpan.style = "color: var(--red);";
-            brandSpan.textContent = "KUULUU KAIKILLE!";
-            brand.appendChild(document.createTextNode("MIELENTERVEYS "));
-            brand.appendChild(brandSpan);
-            brand.style.fontFamily = "'Anton', sans-serif;";
-            nav.appendChild(brand);
+// Load necessary resources
+function loadResources() {
+  loadFontsAndStylesheet();
+  addGoogleAnalytics();
+}
 
-            // Navbar Toggler Button
-            const togglerButton = document.createElement("button");
-            togglerButton.className = "navbar-toggler";
-            togglerButton.type = "button";
-            togglerButton.setAttribute("data-toggle", "collapse");
-            togglerButton.setAttribute("data-target", "#navbarSupportedContent");
-            togglerButton.setAttribute("aria-controls", "navbarSupportedContent");
-            togglerButton.setAttribute("aria-expanded", "false");
-            togglerButton.setAttribute("aria-label", "Toggle navigation");
-            togglerButton.innerHTML = config.togglerButtonIcon || '<span class="navbar-toggler-icon">☰</span>';
-            nav.appendChild(togglerButton);
+// Load fonts and custom stylesheet
+function loadFontsAndStylesheet() {
+  const fontLink = document.createElement("link");
+  fontLink.rel = "stylesheet";
+  fontLink.href = "https://fonts.googleapis.com/css2?family=Anton&display=swap";
+  document.head.appendChild(fontLink);
 
-            // Navbar Collapse
-            const collapseDiv = document.createElement("div");
-            collapseDiv.className = "collapse navbar-collapse";
-            collapseDiv.id = "navbarSupportedContent";
+  const stylesLink = document.createElement("link");
+  stylesLink.rel = "stylesheet";
+  stylesLink.href = "/static/css/styles.css";
+  document.head.appendChild(stylesLink);
+}
 
-            // Navbar Links
-            const navList = document.createElement("ul");
-            navList.className = "navbar-nav me-auto mb-2 mb-lg-0";
-            navList.style = "align-items: center;"
+// Add Google Analytics script
+function addGoogleAnalytics() {
+  const gtagScript1 = document.createElement("script");
+  gtagScript1.async = true;
+  gtagScript1.src = "https://www.googletagmanager.com/gtag/js?id=G-FPN2HKBMCE";
+  document.head.appendChild(gtagScript1);
 
-            const links = config.links || [
-                { text: "Koti", href: "index.html" },
-                { text: "Tietoa", href: "info.html" },
-                { text: "Tuotteet", href: "products.html" },
-                { text: "Medialle", href: "for_media.html" },
-            ];
+  const gtagScript2 = document.createElement("script");
+  gtagScript2.textContent = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FPN2HKBMCE');
+    `;
+  document.head.appendChild(gtagScript2);
+}
 
-            links.forEach((link) => {
-                const listItem = document.createElement("li");
-                listItem.className = "nav-item";
+// Create header based on configuration
+function createHeader(config) {
+  const header = document.createElement("header");
+  header.style = "text-align: center; background-color: black;"; // Add background color style
+  const nav = document.createElement("nav");
+  nav.className =
+    config.navbarClass || "navbar navbar-expand-lg bg-dark container-fluid";
+  nav.style = "display: flex; justify-content: center;"; // Center the navbar items horizontally
 
-                if (link.hasOwnProperty("class")) {
-                    listItem.className = `nav-item ${link.class}`;
-                }
+  // Create navbar elements
+  createNavbarElements(nav, config);
 
-                // Check if the link is active
-                if (window.location.href.endsWith(link.href)) {
-                    listItem.classList.add("active");
-                }
+  header.appendChild(nav);
+  return header;
+}
 
-                const anchor = document.createElement("a");
-                anchor.className = "nav-link text-light";
-                anchor.href = link.href;
-                anchor.textContent = link.text;
-                listItem.appendChild(anchor);
-                navList.appendChild(listItem);
-            });
+// Create navbar elements
+function createNavbarElements(nav, config) {
+  // Navbar Brand
+  const brand = document.createElement("h1");
+  brand.className = "navbar-brand";
+  brand.style = "color: white; max-width: 100%;";
+  const brandSpan = document.createElement("span");
+  brandSpan.style = "color: var(--red);";
+  brandSpan.textContent = "KUULUU KAIKILLE!";
+  brand.appendChild(document.createTextNode("MIELENTERVEYS "));
+  brand.appendChild(brandSpan);
+  brand.style.fontFamily = "'Anton', sans-serif;";
+  nav.appendChild(brand);
 
-            collapseDiv.appendChild(navList);
-            nav.appendChild(collapseDiv);
+  // Navbar Toggler Button
+  const togglerButton = document.createElement("button");
+  togglerButton.className = "navbar-toggler";
+  togglerButton.type = "button";
+  togglerButton.setAttribute("data-toggle", "collapse");
+  togglerButton.setAttribute("data-target", "#navbarSupportedContent");
+  togglerButton.setAttribute("aria-controls", "navbarSupportedContent");
+  togglerButton.setAttribute("aria-expanded", "false");
+  togglerButton.setAttribute("aria-label", "Toggle navigation");
+  togglerButton.innerHTML =
+    config.togglerButtonIcon || '<span class="navbar-toggler-icon">☰</span>';
+  nav.appendChild(togglerButton);
 
-            // Configuration object for supported languages and their URLs
-            const languageConfig = {
-                FI: { "url": "/", "name_in_lang": { "FI": "Suomeksi", "EN": "In Finnish", "SV": "På Finska" } },
-                EN: { "url": "/en/", "name_in_lang": { "FI": "Englanniksi", "EN": "In English", "SV": "På Engelska" } }
-            };
+  // Other navbar elements like collapse div, language switch buttons, etc.
+  // (Omitted for brevity)
+}
 
-            function _replace(string) {
-                while (string.includes("//")) {
-                    string = string.replace("//", "/");
-                }
-                return string;
-            }
+// Redirect based on user's preferred language
+function redirectBasedOnPreferredLanguage(config) {
+  const userLanguage = navigator.language || navigator.userLanguage;
+  const preferredLanguage = userLanguage.substring(0, 2).toUpperCase();
+  const supportedLanguages = ["FI", "EN"]; // Add more supported languages if needed
 
-            function switchLanguage(language) {
-                const currentLang = window.location.pathname.split("/")[1]; // Get the current language from the URL
+  if (supportedLanguages.includes(preferredLanguage)) {
+    createCookie("language_checked", "true", 365); // Cookie lasts for a year
+    switchLanguage(preferredLanguage.toLowerCase());
+  }
+}
 
-                let _need = languageConfig[language]["url"];
+// Switch language
+function switchLanguage(language) {
+  const currentLang = window.location.pathname.split("/")[1]; // Get the current language from the URL
+  const languageConfig = {
+    FI: {
+      url: "/",
+      name_in_lang: { FI: "Suomeksi", EN: "In Finnish", SV: "På Finska" },
+    },
+    EN: {
+      url: "/en/",
+      name_in_lang: { FI: "Englanniksi", EN: "In English", SV: "På Engelska" },
+    },
+  };
 
-                let _to_replace = currentLang;
+  let targetUrl = languageConfig[language]["url"];
 
-                console.log(`${_need}${window.location.pathname}`);
+  if (currentLang !== "en") {
+    window.location.pathname = replacePathname(
+      `${targetUrl}${window.location.pathname}`
+    );
+  } else {
+    window.location.pathname = replacePathname(
+      window.location.pathname.replace(currentLang, targetUrl)
+    );
+  }
 
-                if (currentLang !== "en") {
-                    console.log("Finnish");
-                    url = _replace(`${_need}${window.location.pathname}`.toString());
-                    console.log(url);
-                    window.location.pathname = url;
-                }
+  // IF EVERYTHING WORKS, NOTHING HAPPENS BEYOND THIS LINE
+  console.error("Something is wrong, check autoheader line 120 comment.");
+}
 
-                else {
-                    window.location.pathname = _replace(window.location.pathname.replace(_to_replace, _need));
-                }
-                // IF EVERYTHING WORKS, NOTHING HAPPENS BEYOND THIS LINE
+// Function to replace pathname
+function replacePathname(pathname) {
+  while (pathname.includes("//")) {
+    pathname = pathname.replace("//", "/");
+  }
+  return pathname;
+}
 
-                console.error("Something is wrong lol, look autoheader line 120 comment :3");
-            }
+// Function to check if the header was added
+function isHeaderAdded() {
+  return headerAdded;
+}
 
-            // Create language switch buttons
+// Call tryLoad when the DOM content is loaded
+document.addEventListener("DOMContentLoaded", tryLoad);
 
-            Object.keys(languageConfig).forEach(language => {
-                const languageButton = document.createElement("button");
-                languageButton.textContent = language;
-                languageButton.classList += "language-button";
-                languageButton.addEventListener("click", () => switchLanguage(language));
-                nav.appendChild(languageButton);
-            });
-
-            header.appendChild(nav);
-
-            // Check if the language check cookie exists
-            var languageChecked = getCookie("language_checked");
-
-            // If the language check cookie doesn't exist, check user's preferred language and redirect
-            if (!languageChecked) {
-                var userLanguage = navigator.language || navigator.userLanguage;
-                var preferredLanguage = userLanguage.substring(0, 2).toUpperCase(); // Get the first two letters for language code
-                var supportedLanguages = ["FI", "EN"]; // Add more supported languages if needed
-
-                // Check if the user's preferred language is supported
-                if (supportedLanguages.includes(preferredLanguage)) {
-                    // Create cookie to indicate language check
-                    createCookie("language_checked", "true", 365); // Cookie lasts for a year
-
-                    switchLanguage(preferredLanguage.toLowerCase());
-                    // Redirect to the user's preferred language page
-                }
-            }
-
-            // Append header to the body
-            document.body.insertBefore(header, document.body.firstChild);
-        })
-
-        .catch(error => console.error('Error loading configuration:', error));
-});
+// Loop to ensure header is added
+while (isHeaderAdded === false) {
+  tryLoad();
+}
