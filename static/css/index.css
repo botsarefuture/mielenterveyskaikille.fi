@@ -38,20 +38,20 @@ nav ul li a:hover {
 .hero {
     background-color: #4caf50;
     color: #fff;
-    padding: 100px 0;
+    padding: 60px 20px;
     text-align: center;
 }
 
 .hero-title {
     font-family: 'Anton', sans-serif;
-    font-size: 80px;
+    font-size: 40px;
     margin-bottom: 20px;
     text-transform: uppercase;
 }
 
 .hero-subtitle {
-    font-size: 32px;
-    margin-bottom: 40px;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .cta-buttons {
@@ -61,23 +61,23 @@ nav ul li a:hover {
 /* About Section */
 .about {
     background-color: #1a1a1a;
-    padding: 100px 0;
+    padding: 60px 20px;
 }
 
 .section-title {
-    font-size: 48px;
+    font-size: 28px;
     margin-bottom: 20px;
     color: #4caf50;
 }
 
 .section-subtitle {
-    font-size: 36px;
+    font-size: 18px;
     margin-bottom: 20px;
     color: #4caf50;
 }
 
 .section-text {
-    font-size: 24px;
+    font-size: 16px;
     line-height: 1.6;
     color: #ccc;
 }
@@ -91,23 +91,23 @@ nav ul li a:hover {
 }
 
 .countdown-item {
-    margin: 0 10px;
+    margin: 0 5px;
     text-align: center;
 }
 
 .countdown-value {
-    font-size: 56px;
+    font-size: 24px;
     font-weight: bold;
     color: #4caf50;
 }
 
 .countdown-label {
-    font-size: 24px;
+    font-size: 14px;
     color: #777;
 }
 
 .countdown-expired {
-    font-size: 36px;
+    font-size: 20px;
     color: #ff0000;
 }
 
@@ -115,9 +115,9 @@ nav ul li a:hover {
 .btn-primary {
     background-color: #4caf50;
     border: none;
-    padding: 20px 40px;
-    font-size: 24px;
-    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
     text-transform: uppercase;
     color: #fff;
     transition: background-color 0.3s ease;
@@ -140,9 +140,9 @@ nav ul li a:hover {
 .facebook-btn {
     background-color: #3b5998;
     border: none;
-    padding: 20px 40px;
-    font-size: 24px;
-    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
     color: #fff;
     transition: background-color 0.3s ease;
 }
@@ -156,9 +156,9 @@ nav ul li a:hover {
     background-color: #f43665;
     /* Red color */
     border: none;
-    padding: 20px 40px;
-    font-size: 24px;
-    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
     color: #fff;
     transition: background-color 0.3s ease;
 }
@@ -170,7 +170,7 @@ nav ul li a:hover {
 
 /* Footer Styles */
 footer {
-    background-color: #1a1a1a;
+    background-color: #333;
     /* Dark background color */
     color: #fff;
     /* Light text color */
@@ -179,7 +179,7 @@ footer {
 }
 
 footer p {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     /* Bottom margin for the paragraph */
 }
 
