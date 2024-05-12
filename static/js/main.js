@@ -25,7 +25,7 @@ const updateCountdown = () => {
         </div>
         <div class="countdown-item">
             <div class="countdown-value">${seconds}</div>
-            <div class="countdown-label">Sekunttia</div>
+            <div class="countdown-label">Sekuntia</div>
         </div>
     `;
 
