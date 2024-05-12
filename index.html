@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mielenterveys kuuluu kaikille</title>
 
+    <script src="/static/js/autoheader.js" defer></script>
+
+
     <!-- Site icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=2">
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png?v=2">
@@ -21,7 +24,7 @@
     <meta name="msapplication-config" content="/icons/browserconfig.xml?v=2">
     <meta name="theme-color" content="#4caf50">
 
-    <!-- Meta tags added dynamically -->
+    <!-- Meta tags -->
     <meta name="description"
         content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
     <meta property="og:title" content="Mielenterveys kuuluu kaikille" />
@@ -36,79 +39,110 @@
     <meta name="twitter:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
     <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
-    <script src="/static/js/autoheader.js" defer></script>
-    <link rel="stylesheet" href="/static/css/countdown.css">
-    <script src="/static/js/footer.js" defer></script>
-    <script src="/static/js/countdown.js" defer></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Custom Scripts -->
+    <script src="/static/js/main.js" defer></script>
 </head>
 
 <body>
-    <section>
-        <h1 style="color: black; font-size: 40px; max-width: 100%;">MIELENTERVEYS <span>KUULUU KAIKILLE!</span></h1>
-        <h2 style="font-family: 'Anton', sans-serif;">mielenosoituksen alkuun</h2>
+    <style>
+        /* Custom CSS for Mielenterveys kuuluu kaikille site */
+.hero {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
 
-        <div id="al">
-            <!-- Aika-osio -->
-            <br>
-            <div class="time-box" style="display: none;">
-                <div class="time-label" id="months">0</div>
-                <div class="time-label">Kuukautta</div>
-            </div>
-            <div class="time-box">
-                <div class="time-label" id="days">0</div>
-                <div class="time-label">Päivää</div>
-            </div>
-            <div class="time-box">
-                <div class="time-label" id="hours">0</div>
-                <div class="time-label">Tuntia</div>
-            </div>
-            <div class="time-box">
-                <div class="time-label" id="minutes">0</div>
-                <div class="time-label">Minuuttia</div>
-            </div>
-            <div class="time-box">
-                <div class="time-label" id="seconds">0</div>
-                <div class="time-label">Sekuntia</div>
-            </div>
+.hero-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
 
-            <br>
-            <br>
-            <div>
-                <a style="color: rgb(0, 0, 0);">Jos käytät Facebookia, tuethan meitä klikkaamalla tapahtumaa ja valitsemalla Kiinnostunut tai Osallistun.</a>
-                <a class="btn btn-primary" href="https://fb.me/e/xe2Wt4Nqa" style="color: rgb(0, 0, 0);">Facebook-tapahtuma</a>
+.hero-subtitle {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.cta-buttons {
+    margin-top: 40px;
+}
+
+.about {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.section-text {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.section-subtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+    </style>
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">MIELENTERVEYS <span>KUULUU KAIKILLE!</span></h1>
+            <h2 class="hero-subtitle">Liity mukaan mielenosoitukseen!</h2>
+
+            <!-- Countdown Timer -->
+            <div id="countdown" class="countdown"></div>
+
+            <!-- Call to Action Buttons -->
+            <div class="cta-buttons">
+                <a href="https://fb.me/e/xe2Wt4Nqa" class="btn btn-primary">Osallistu Facebookissa</a>
+                <a href="https://mielenterveyskaikille.fi/donate" class="btn btn-success">Lahjoita</a>
             </div>
-
-            <section class="section-frame">
-                <img src="/static/front.JPG" style="max-width: 100%; height: auto;" />
-            </section>
-
-            <h3 style="color: black;">Mielenterveyspalvelut ovat kriisissä!</h3>
-            <p>
-                <br>Apua ei saada ajoissa. Tämän näkee esimerkiksi siitä, että vuosittain tapahtuu arviolta <strong>70 000</strong> itsemurhayritystä ja <strong>1000</strong> itsemurhaa.
-                <br>Lisäksi liian moni joutuu kamppailemaan yksin vaikeuksien keskellä ilman riittävää apua ja tukea.
-            </p>
-
-            <h4 style="color: black;">Taistellaan yhdessä mielenterveyden puolesta - mielenterveyskriisiä vastaan!</h4>
-            <p>Tule mukaan mielenosoitukseen: <br> <strong>Senaatintorilla on ohjelmaa 3.6.2024 klo 16 alkaen</strong></p>
-            <p>Marssi kohti Hakaniementoria lähtee kello 16:45, mutta ohjelmaa on tarjolla jo aiemmin!</p>
-            <p>Hakaniementorilla ohjelmaa on kello 18 asti</p>
-
-            <p style="margin-top: 5px;">Klikkaa itsesi meidän facebook-tapahtumaamme alla olevasta napista!</p>
-            <a class="btn btn-primary" href="https://fb.me/e/xe2Wt4Nqa">Facebook-tapahtuma</a>
-            <br>
-            <!-- Lahjoita-painike -->
-            <p style="margin-top: 5px;">Jos vain voit, lahjoita mielenosoitukselle! Jokainen euro auttaa valtavasti!</p>
-            <a class="btn btn-success" href="https://mielenterveyskaikille.fi/donate">Lisätietoja lahjoittamisvaihtoehdoista & lahjoittamaan</a> 
-            <br>
         </div>
     </section>
 
+    <section class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/static/front.JPG" alt="Mielenterveys kuuluu kaikille" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="section-title">Mielenterveyspalvelut ovat kriisissä!</h3>
+                    <p class="section-text">
+                        Apua ei saada ajoissa. Vuosittain tapahtuu arviolta <strong>70 000</strong> itsemurhayritystä ja
+                        <strong>1000</strong> itsemurhaa. Liian moni joutuu kamppailemaan yksin vaikeuksien keskellä ilman
+                        riittävää apua ja tukea.
+                    </p>
+                    <h4 class="section-subtitle">Taistellaan yhdessä mielenterveyden puolesta!</h4>
+                    <p class="section-text">
+                        Tule mukaan mielenosoitukseen Senaatintorilla 3.6.2024 klo 16 alkaen. Marssi kohti Hakaniementoria
+                        lähtee kello 16:45, mutta ohjelmaa on tarjolla jo aiemmin!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <!-- Custom JS -->
+    <script src="/static/js/countdown.js" defer></script>
 </body>
 
 </html>
