@@ -1,0 +1,243 @@
+/* Custom CSS for Mielenterveys kuuluu kaikille site */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    background-color: #4caf50;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.cta-buttons {
+    margin-top: 40px;
+}
+
+/* About Section */
+.about {
+    background-color: #fff;
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #4caf50;
+}
+
+.section-subtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4caf50;
+}
+
+.section-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Countdown Timer */
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.countdown-item {
+    margin: 0 10px;
+    text-align: center;
+}
+
+.countdown-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.countdown-label {
+    font-size: 16px;
+    color: #777;
+}
+
+.countdown-expired {
+    font-size: 24px;
+    color: #ff0000;
+}
+
+/* Call to Action Buttons */
+.btn-primary {
+    background-color: #4caf50;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+.btn-success {
+    background-color: #5cb85c;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #4cae4c;
+}
+
+/* Facebook Button */
+.facebook-btn {
+    background-color: #3b5998;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.facebook-btn:hover {
+    background-color: #2d4373;
+}
+
+/* Donate Button */
+.btn-donate {
+    background-color: #f43665;
+    /* Red color */
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-donate:hover {
+    background-color: #d32f2f;
+    /* Darker shade of red on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    /* Dark background color */
+    color: #fff;
+    /* Light text color */
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+    /* Bottom margin for the paragraph */
+}
+
+footer ul {
+    list-style: none;
+    /* Remove default list style */
+    padding: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    /* Display list items horizontally */
+    margin-right: 10px;
+    /* Right margin between list items */
+}
+
+footer ul li a {
+    color: #fff;
+    /* Link text color */
+    text-decoration: none;
+    /* Remove underline from links */
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+    /* Underline links on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    /* Dark background color */
+    color: #fff;
+    /* Light text color */
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+    /* Bottom margin for the paragraph */
+}
+
+.social-icons {
+    margin-top: 20px;
+    /* Top margin for the social icons */
+}
+
+.social-icons a {
+    display: inline-block;
+    /* Display social icons inline */
+    margin: 0 10px;
+    /* Margin between social icons */
+    color: #fff;
+    /* Icon color */
+}
+
+.social-icons a:hover {
+    color: #ffd700;
+    /* Icon color on hover */
+}
