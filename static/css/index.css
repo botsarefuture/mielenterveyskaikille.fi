@@ -3,6 +3,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: #1a1a1a;
     color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header Section */
@@ -112,7 +114,10 @@ nav ul li a:hover {
 }
 
 /* Call to Action Buttons */
-.btn-primary {
+.btn-primary,
+.btn-success,
+.facebook-btn,
+.btn-donate {
     background-color: #4caf50;
     border: none;
     padding: 12px 24px;
@@ -123,81 +128,115 @@ nav ul li a:hover {
     transition: background-color 0.3s ease;
 }
 
-.btn-primary:hover {
-    background-color: #45a049;
-}
-
-.btn-success {
-    background-color: #5cb85c;
-    border: none;
-}
-
-.btn-success:hover {
-    background-color: #4cae4c;
-}
-
-/* Facebook Button */
-.facebook-btn {
-    background-color: #3b5998;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 5px;
-    color: #fff;
-    transition: background-color 0.3s ease;
-}
-
-.facebook-btn:hover {
-    background-color: #2d4373;
-}
-
-/* Donate Button */
-.btn-donate {
-    background-color: #f43665;
-    /* Red color */
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 5px;
-    color: #fff;
-    transition: background-color 0.3s ease;
-}
-
+.btn-primary:hover,
+.btn-success:hover,
+.facebook-btn:hover,
 .btn-donate:hover {
-    background-color: #d32f2f;
-    /* Darker shade of red on hover */
+    background-color: #45a049;
 }
 
 /* Footer Styles */
 footer {
     background-color: #333;
-    /* Dark background color */
     color: #fff;
-    /* Light text color */
     padding: 20px 0;
     text-align: center;
 }
 
 footer p {
     margin-bottom: 10px;
-    /* Bottom margin for the paragraph */
 }
 
 .social-icons {
     margin-top: 20px;
-    /* Top margin for the social icons */
 }
 
 .social-icons a {
     display: inline-block;
-    /* Display social icons inline */
     margin: 0 10px;
-    /* Margin between social icons */
     color: #fff;
-    /* Icon color */
 }
 
 .social-icons a:hover {
     color: #ffd700;
-    /* Icon color on hover */
+}
+
+/* Media Queries for Mobile Devices */
+@media only screen and (max-width: 600px) {
+    /* Header Section */
+    header {
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin-right: 10px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 30px 20px;
+    }
+
+    .hero-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .cta-buttons {
+        margin-top: 20px;
+    }
+
+    /* About Section */
+    .about {
+        padding: 30px 20px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .section-text {
+        font-size: 12px;
+    }
+
+    /* Countdown Timer */
+    .countdown {
+        margin-bottom: 20px;
+    }
+
+    .countdown-value {
+        font-size: 18px;
+    }
+
+    .countdown-label {
+        font-size: 10px;
+    }
+
+    .countdown-expired {
+        font-size: 14px;
+    }
+
+    /* Call to Action Buttons */
+    .btn-primary,
+    .btn-success,
+    .facebook-btn,
+    .btn-donate {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }
