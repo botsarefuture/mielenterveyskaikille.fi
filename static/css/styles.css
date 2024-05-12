@@ -151,6 +151,10 @@ p {
   border-color: var(--red-light); /* Change border color on hover */
 }
 
+.section {
+  max-width: 100%;
+}
+
 .section-frame {
   border: 2px solid #000000; /* Changed border color */
   padding: 5px;
