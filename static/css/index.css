@@ -100,7 +100,7 @@ nav ul li a:hover {
 .countdown-value {
     font-size: 24px;
     font-weight: bold;
-    color: #4caf50;
+    /*color: #4caf50;*/
 }
 
 .countdown-label {

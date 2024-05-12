@@ -13,19 +13,19 @@ const updateCountdown = () => {
     document.getElementById('countdown').innerHTML = `
         <div class="countdown-item">
             <div class="countdown-value">${days}</div>
-            <div class="countdown-label">Days</div>
+            <div class="countdown-label">Päivää</div>
         </div>
         <div class="countdown-item">
             <div class="countdown-value">${hours}</div>
-            <div class="countdown-label">Hours</div>
+            <div class="countdown-label">Tuntia</div>
         </div>
         <div class="countdown-item">
             <div class="countdown-value">${minutes}</div>
-            <div class="countdown-label">Minutes</div>
+            <div class="countdown-label">Minuuttia</div>
         </div>
         <div class="countdown-item">
             <div class="countdown-value">${seconds}</div>
-            <div class="countdown-label">Seconds</div>
+            <div class="countdown-label">Sekunttia</div>
         </div>
     `;
 
