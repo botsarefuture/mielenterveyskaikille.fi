@@ -244,9 +244,10 @@ function isHeaderAdded() {
 }
 
 // Call tryLoad when the DOM content is loaded
-document.addEventListener("DOMContentLoaded", tryLoad);
+document.addEventListener("DOMContentLoaded", function () {
+    //// Loop to ensure header is added
+    while (isHeaderAdded() == false) {
+        tryLoad();
+    }
+});
 
-//// Loop to ensure header is added
-//while (isHeaderAdded() == false) {
-//    tryLoad();
-//}
