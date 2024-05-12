@@ -47,3 +47,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// Epic Animation
+const heroTitle = document.querySelector('.hero-title');
+const heroSubtitle = document.querySelector('.hero-subtitle');
+
+heroTitle.style.transform = 'rotate(360deg)';
+heroSubtitle.style.transform = 'rotate(-360deg)';
+heroTitle.style.transition = 'transform 2s ease-in-out';
+heroSubtitle.style.transition = 'transform 2s ease-in-out';

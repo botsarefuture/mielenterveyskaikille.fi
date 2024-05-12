@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mielenterveys kuuluu kaikille</title>
 
-    <script src="/static/js/autoheader.js" defer></script>
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/styles.css">
 
     <!-- Site icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=2">
@@ -23,58 +23,209 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="/icons/browserconfig.xml?v=2">
     <meta name="theme-color" content="#4caf50">
-
-    <!-- Meta tags -->
-    <meta name="description"
-        content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
-    <meta property="og:title" content="Mielenterveys kuuluu kaikille" />
-    <meta property="og:description"
-        content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mielenterveyskaikille.fi/" />
-    <meta property="og:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
-    <meta name="twitter:title" content="Mielenterveys kuuluu kaikille" />
-    <meta name="twitter:description"
-        content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
-    <meta name="twitter:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/static/css/styles.css">
-
-    <!-- Custom Scripts -->
-    <script src="/static/js/main.js" defer></script>
-    <script src="/static/js/footer.js" defer></script>
 </head>
 
 <body>
     <style>
         /* Custom CSS for Mielenterveys kuuluu kaikille site */
-        
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    background-color: #4caf50;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.cta-buttons {
+    margin-top: 40px;
+}
+
+/* About Section */
+.about {
+    background-color: #fff;
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #4caf50;
+}
+
+.section-subtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4caf50;
+}
+
+.section-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Countdown Timer */
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.countdown-item {
+    margin: 0 10px;
+    text-align: center;
+}
+
+.countdown-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.countdown-label {
+    font-size: 16px;
+    color: #777;
+}
+
+.countdown-expired {
+    font-size: 24px;
+    color: #ff0000;
+}
+
+/* Call to Action Buttons */
+.btn-primary {
+    background-color: #4caf50;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+.btn-success {
+    background-color: #5cb85c;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #4cae4c;
+}
+
+/* Facebook Button */
+.facebook-btn {
+    background-color: #3b5998;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.facebook-btn:hover {
+    background-color: #2d4373;
+}
+
+/* Donate Button */
+.btn-donate {
+    background-color: #f43665; /* Red color */
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-donate:hover {
+    background-color: #d32f2f; /* Darker shade of red on hover */
+}
+
+
     </style>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/info">Tietoa</a></li>
+                <li><a href="/demands">Vaatimukset</a></li>
+                <li><a href="/supporters">Tukijat</a></li>
+                <li><a href="/contacts">Yhteystiedot</a></li>
+                <li><a href="/donate">Lahjoita</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">MIELENTERVEYS <span style="color: black;">KUULUU KAIKILLE!</span></h1>
-            <h2 class="hero-subtitle">Liity mukaan mielenosoitukseen!</h2>
+            <h2 class="hero-subtitle">Tule mukaan mielenosoitukseen!</h2>
 
             <!-- Countdown Timer -->
             <div id="countdown" class="countdown"></div>
 
             <!-- Call to Action Buttons -->
             <div class="cta-buttons">
-                <a href="https://fb.me/e/xe2Wt4Nqa" class="btn btn-primary">Osallistu Facebookissa</a>
-                <a href="https://mielenterveyskaikille.fi/donate" class="btn btn-success">Lahjoita</a>
+                <a href="https://fb.me/e/xe2Wt4Nqa" class="btn btn-primary facebook-btn">Osallistu Facebookissa</a>
+                <a href="https://mielenterveyskaikille.fi/donate" class="btn btn-success btn-donate">Lahjoita</a>
             </div>
         </div>
     </section>
 
-    <section class="about">
+    <section id="about" class="about">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -96,6 +247,17 @@
             </div>
         </div>
     </section>
+
+    <!--<section id="cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Call to Action Section</h2>
+                    <p>Add your call to action content here...</p>
+                </div>
+            </div>
+        </div>
+    </section>-->
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
