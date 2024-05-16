@@ -1,0 +1,32 @@
+{
+  "navbarClass": "navbar navbar-expand-lg container-fluid",
+  "brandHref": "/",
+  "brandText": "MIELENTERVEYS KUULUU KAIKILLE",
+  "togglerButtonIcon": "<span class='navbar-toggler-icon'>☰</span>",
+  "links": [
+    {
+      "text": "Hemma",
+      "href": "/sv/"
+    },
+    {
+      "text": "Kraven",
+      "href": "/sv/demands"
+    },
+    {
+      "text": "Info",
+      "href": "/sv/info"
+    },
+    {
+      "text": "Contacts",
+      "href": "/en/contacts"
+    },
+    {
+      "text": "Supporters",
+      "href": "/en/supporters"
+    },
+    {
+      "text": "Donate",
+      "href": "/en/donate"
+    }
+  ]
+}

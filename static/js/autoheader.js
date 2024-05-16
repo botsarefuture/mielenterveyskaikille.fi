@@ -168,6 +168,10 @@ function createNavbarElements(nav, config) {
             url: "/en/",
             name_in_lang: { FI: "Englanniksi", EN: "In English", SV: "På Engelska" },
         },
+        SV: {
+            url: "/sv/",
+            name_in_lang: { FI: "Ruotsiksi", EN: "In Swedish", SV: "På Svenska"}
+        }
     };
 
     collapseDiv.appendChild(navbarLinks);
@@ -187,7 +191,7 @@ function createNavbarElements(nav, config) {
 function redirectBasedOnPreferredLanguage(config) {
     const userLanguage = navigator.language || navigator.userLanguage;
     const preferredLanguage = userLanguage.substring(0, 2).toUpperCase();
-    const supportedLanguages = ["FI", "EN"]; // Add more supported languages if needed
+    const supportedLanguages = ["FI", "EN", "SV"]; // Add more supported languages if needed
 
     if (supportedLanguages.includes(preferredLanguage)) {
         createCookie("language_checked", "true", 365); // Cookie lasts for a year
@@ -207,6 +211,10 @@ function switchLanguage(language) {
             url: "/en/",
             name_in_lang: { FI: "Englanniksi", EN: "In English", SV: "På Engelska" },
         },
+        SV: {
+            url: "/sv/",
+            name_in_lang: { FI: "Ruotsiksi", EN: "In Swedish", SV: "På Svenska"}
+        }
     };
 
     let targetUrl = languageConfig[language]?.url;
