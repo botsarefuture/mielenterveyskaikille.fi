@@ -238,6 +238,12 @@ footer p {
          font-size: 14px;
      }
      
+     /* Email Subscription Form */
+     #subscribe-form input[type="email"],
+     #subscribe-form button {
+         font-size: 14px;
+     }
+     
     /* Call to Action Buttons */
     .btn-primary,
     .btn-success,
