@@ -45,7 +45,6 @@
         <nav>
             <ul>
                 <li><a href="/info">Tietoa</a></li>
-                <li><a href="/program">Ohjelma</a></li>
                 <li><a href="/demands">Vaatimukset</a></li>
                 <li><a href="/supporters">Tukijat</a></li>
                 <li><a href="/contacts">Yhteystiedot</a></li>
@@ -56,16 +55,17 @@
 
     <section class="hero">
         <div class="container">
-            <h2 class="hero-subtitle">Helsingissä 3.6.2024</h2>
+            <h2 class="hero-subtitle">Yhteisö mielenterveyden puolesta!</h2>
             <h1 class="hero-title">MIELENTERVEYS <span style="color: black;">KUULUU KAIKILLE!</span></h1>
-            <h2 class="hero-subtitle">Tule mukaan mielenosoitukseen!</h2>
+            <h2 class="hero-subtitle">Tule mukaan!</h2>
 
             <!-- Countdown Timer -->
-            <div id="countdown" class="countdown"></div>
+            <!--<div id="countdown" class="countdown"></div>-->
 
             <!-- Call to Action Buttons -->
             <div class="cta-buttons">
-                <a href="https://fb.me/e/xe2Wt4Nqa" class="btn btn-primary facebook-btn">Osallistu Facebookissa</a>
+                <!--<a href="https://fb.me/e/xe2Wt4Nqa" class="btn btn-primary facebook-btn">Osallistu Facebookissa</a>-->
+                <a href="#join-list" class="btn btn-success">Liity sähköpostilistalle</a>
                 <a href="https://mielenterveyskaikille.fi/donate" class="btn btn-success btn-donate">Lahjoita</a>
             </div>
         </div>
@@ -90,14 +90,28 @@
                         </p>
                         <h4 class="section-subtitle" style="color: black;">Taistellaan yhdessä mielenterveyden puolesta!
                         </h4>
-                        <p class="section-text">
+                        <!--<p class="section-text">
                             Tule mukaan mielenosoitukseen Senaatintorilla 3.6.2024 klo 16 alkaen. Marssi kohti
                             Hakaniementoria
                             lähtee kello 16:45, mutta ohjelmaa on tarjolla jo aiemmin!
+                        </p>-->
+                        <p class="section-text">
+                            Tule mukaan ainulaatuiseen kansalaisyhteisöön, joka toimii mielenterveyden puolesta!
+<br>
+                            Liity sähköpostilistalle, niin pidämme sinut ajantasalla tavoista osallistua!
                         </p>
-                        <div class="cta-buttons">
-                            <a href="https://mielenterveyskaikille.fi/program" class="btn btn-success btn-donate">Ohjelma</a>
+
+                        <!-- Email List Subscription Form -->
+                        <div class="container" style="max-width: 400px; margin: 0 auto;">
+                            <h2>Liity sähköpostilistalle</h2>
+                            <form id="subscribe-form">
+                                <label for="email">Sähköpostiosoite:</label>
+                                <input type="email" id="email" name="email" required>
+                                <button type="submit" class="btn btn-success">Tilaa</button>
+                            </form>
+                            <div id="message"></div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -124,6 +138,41 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Custom JS -->
+    <script>
+        const subscribeForm = document.getElementById('subscribe-form');
+        const messageElement = document.getElementById('message');
+
+        subscribeForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(subscribeForm);
+            const email = formData.get('email');
+
+            // Replace with your actual signup API endpoint URL
+            const apiUrl = 'https://list.mielenterveyskaikille.fi/signup';
+
+            fetch(apiUrl, {
+                method: 'POST',
+                body: JSON.stringify({ email, "list_id": "665efa5162ed8b94723f9e2b" }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    messageElement.textContent = data.error;
+                } else {
+                    messageElement.textContent = data.message;
+                    subscribeForm.reset(); // Clear form after successful submission
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+                messageElement.textContent = 'An error occurred. Please try again later.';
+            });
+        });
+    </script>
 </body>
 
 </html>
