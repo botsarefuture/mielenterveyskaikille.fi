@@ -97,27 +97,25 @@
                         </p>-->
                         <p class="section-text">
                             Tule mukaan ainulaatuiseen kansalaisyhteisöön, joka toimii mielenterveyden puolesta!
-<br><br>
+<br>
                             Liity sähköpostilistalle, niin pidämme sinut ajantasalla tavoista osallistua!
                         </p>
-
-                        <!-- Email List Subscription Form -->
-                        <div class="container" style="max-width: 400px; margin: 0 auto;" >
-                            <h2>Liity sähköpostilistalle</h2>
+                        <!-- Email Subscription Form -->
+                        <div id="join-list" class="subscribe-section">
+                            <h4 class="section-subtitle">Liity sähköpostilistalle:</h4>
                             <form id="subscribe-form">
                                 <label for="email">Sähköpostiosoite:</label>
                                 <input type="email" id="email" name="email" required>
                                 <button type="submit" class="btn btn-success">Tilaa</button>
+                                <div id="message"></div>
                             </form>
-                            <div id="message"></div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer Section -->
     <footer>
         <p>© 2024 Mielenterveys kuuluu kaikille</p>
@@ -141,16 +139,16 @@
     <script>
         const subscribeForm = document.getElementById('subscribe-form');
         const messageElement = document.getElementById('message');
-
+        
         subscribeForm.addEventListener('submit', (event) => {
             event.preventDefault();
-
+        
             const formData = new FormData(subscribeForm);
             const email = formData.get('email');
-
+        
             // Replace with your actual signup API endpoint URL
             const apiUrl = 'https://list.mielenterveyskaikille.fi/signup';
-
+        
             fetch(apiUrl, {
                 method: 'POST',
                 body: JSON.stringify({ email, "list_id": "665efa5162ed8b94723f9e2b" }),
@@ -169,7 +167,7 @@
             })
             .catch(error => {
                 console.error('Error submitting form:', error);
-                messageElement.textContent = 'An error occurred. Please try again later.';
+                messageElement.textContent = 'Virhe tilatessa. Yritä uudelleen myöhemmin.';
             });
         });
     </script>
