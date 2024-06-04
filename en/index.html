@@ -142,7 +142,7 @@
         const email = formData.get('email');
     
         // Replace with your actual signup API endpoint URL
-        const apiUrl = 'https://list.mielenterveyskaikille.fi.fi/signup';
+        const apiUrl = 'https://list.mielenterveyskaikille.fi/signup';
     
         fetch(apiUrl, {
             method: 'POST',
@@ -162,7 +162,7 @@
         })
         .catch(error => {
             console.error('Error submitting form:', error);
-            messageElement.textContent = 'Error subscribing. Please try again later.';
+            messageElement.textContent = 'Virhe tilatessa. Yritä uudelleen myöhemmin.';
         });
     });
 </script>

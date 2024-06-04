@@ -84,6 +84,15 @@ nav ul li a:hover {
     margin: 0 10px;
 }
 
+.cta-buttons .btn {
+    background-color: #ff5722; /* Change to desired background color */
+    color: #fff; /* Change to desired text color */
+}
+
+.cta-buttons .btn:hover {
+    background-color: #f4511e; /* Change to desired background color on hover */
+}
+
 /* About Section */
 .about {
     background-color: #fff;
