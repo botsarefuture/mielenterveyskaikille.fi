@@ -300,14 +300,14 @@ nav {
 
 footer {
     padding: 50px 0 auto;
+    background: linear-gradient(45deg, #ff0018, #ff8c00, #ffee00, #00811f, #0044ff, #760089);
+    text-align: center; /* Keskitä teksti */
 }
 
-.pride-banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 100%;
-    background: linear-gradient(45deg, #ff0018, #ff8c00, #ffee00, #00811f, #0044ff, #760089);
-    color: white;
+.footer-text {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.7); /* Taustaväri */
+    padding: 20px; /* Lisää tilaa sisällölle */
+    border-radius: 10px; /* Pyöristä kulmat */
+    color: #000; /* Tekstin väri */
 }
