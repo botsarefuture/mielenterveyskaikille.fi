@@ -132,14 +132,14 @@ nav ul li a:hover {
 }
 
 #subscribe-form input[type="email"] {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
+    max-width: 100%;
+    padding: 10px 24px;
+    border: 1px solid #ddd; /* Border property */
     border-radius: 4px;
-    box-sizing: border-box;
     font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-top: 10px;
 }
 
 #subscribe-form button {
