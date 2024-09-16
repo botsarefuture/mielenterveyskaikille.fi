@@ -21,7 +21,6 @@
   <meta name="msapplication-config" content="/icons/browserconfig.xml?v=2">
   <meta name="theme-color" content="#4caf50">
 
-
   <!-- Meta tags added dynamically -->
   <meta name="description"
     content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
@@ -50,90 +49,99 @@
       }
     }
   </script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
   <script src="/static/js/autoheader.js" defer></script>
   <script src="/static/js/footer.js" defer></script>
   <link href="/static/css/info.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-gray-800 text-white">
+    <nav class="container mx-auto py-4">
+      <ul class="flex space-x-4">
+        <li><a href="/info" class="hover:underline">Tietoa</a></li>
+        <li><a href="/demands" class="hover:underline">Vaatimukset</a></li>
+        <li><a href="/supporters" class="hover:underline">Tukijat</a></li>
+        <li><a href="/contacts" class="hover:underline">Yhteystiedot</a></li>
+        <li><a href="/donate" class="hover:underline">Lahjoita</a></li>
+        <li>
+          <div class="inline-block ml-4">
+            <a href="?lang=fi" class="hover:underline">FI</a> |
+            <a href="?lang=en" class="hover:underline">EN</a> |
+            <a href="?lang=sv" class="hover:underline">SV</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
+  <!-- Hero Section -->
+  <section class="relative text-white py-20">
+    <img src="/static/images/36_f.png" alt="Hero Photo" class="absolute inset-0 w-full h-full object-cover">
+    <div class="relative container mx-auto text-center px-4 py-20 bg-black bg-opacity-50">
+      <h1 class="text-4xl font-bold mb-4">Yhdessä mielenterveyspalveluiden puolesta!</h1>
+      <p class="text-xl mb-8">Tule mukaan vaatimaan muutosta ja tukea mielenterveyspalveluiden parantamiseen.</p>
+      <a href="https://mielenterveyskaikille.fi/ilmoittaudu" class="bg-orange-500 text-white py-2 px-6 rounded hover:bg-orange-600">Ilmoittaudu nyt</a>
+    </div>
+  </section>
+  
+  
 
-  <section>
-    <h2>Mielenterveys kuuluu kaikille! - mielenosoitus 3.6.2024</h2>
-    <p class="fore">
+  <section class="container mx-auto p-4">
+    <h2 class="text-2xl font-bold mb-4">Mielenterveys kuuluu kaikille! - mielenosoitus 3.6.2024</h2>
+    <p class="mb-4">
       Mielenterveys kuuluu kaikille -mielenosoitus on rauhanomainen ja
       päihteetön koko perheen tapahtuma ja mielenilmaus, jossa vaaditaan
       investointeja ja toimia mielenterveyskriisin ratkaisemiseksi.
     </p>
 
-    <h3 class="question">Kenelle?</h3>
-    <p>
+    <h3 class="text-xl font-semibold mb-2">Kenelle?</h3>
+    <p class="mb-4">
       Toivotamme kaikki hoivaa, rauhaa, väkivallattomuutta ja ihmisoikeuksia
       kunnioittavat tahot tervetulleeksi osoittamaan yhdessä mieltä
       mielenterveyden puolesta. Tervetuloa kaikki tavalliset ihmiset, perheet,
       järjestöt, yhdistykset, verkostot ja ammattikunnat sekä yrittäjät. Sekä
-      tietysti<strong> mielenterveysongelmista kärsivät!</strong>
+      tietysti <strong class="font-bold">mielenterveysongelmista kärsivät!</strong>
     </p>
-    <p>
+    <p class="mb-4">
       Mielenterveys kuuluu kaikille -mielenosoitus on kansalaisten tapa
       kertoa, että pahoinvoinnin kierre on katkaistava. Vaadimme hallitukselta
       mittavia investointeja hyvinvointiin ja poliittisia toimia
       mielenterveysongelmien ratkaisemiseksi.
     </p>
 
-    <h3 class="question">Missä?</h3>
-    <p>
-      Mielenterveys kuuluu kaikille -mielenosoitus järjestetään Helsingissä. Marssimme Senaatintorilta Hakaniementorille, missä mielenosoitus päättyy. Sen jälkeen jatkot järjestetään <a href="https://lapinlahdenlahde.fi/">Lapinlahden Lähteellä</a>. 
+    <h3 class="text-xl font-semibold mb-2">Missä?</h3>
+    <p class="mb-4">
+      Mielenterveys kuuluu kaikille -mielenosoitus järjestetään Helsingissä. Marssimme Senaatintorilta Hakaniementorille, missä mielenosoitus päättyy. Sen jälkeen jatkot järjestetään <a href="https://lapinlahdenlahde.fi/" class="text-teal-600 hover:underline">Lapinlahden Lähteellä</a>.
       Paikallisia satelliittimielenosoituksia kannustetaan järjestämään samaan aikaan ympäri Suomen.
     </p>
 
-    <h3 class="question">Milloin?</h3>
-    <p>Maanantaina 3.6.2024. Mielenosoitus alkaa Senaatintorilla kello 16:00</p>
+    <h3 class="text-xl font-semibold mb-2">Milloin?</h3>
+    <p class="mb-4">Maanantaina 3.6.2024. Mielenosoitus alkaa Senaatintorilla kello 16:00</p>
 
-    <h3 class="question">Miksi?</h3>
-    <p>
+    <h3 class="text-xl font-semibold mb-2">Miksi?</h3>
+    <p class="mb-4">
       Vähintään joka viides suomalainen kokee vuoden aikana mielenterveyden
       häiriöitä ja joka viides sairastuu elämänsä aikana masennukseen.
-      Nykyään jo yli puolet kaikista työkyvyttömyyseläkkeistä on myönnetty
-      mielenterveyden ja käyttäytymisen häiriöiden vuoksi. Mielenterveysongelmien
-      yleistyminen kuvastaa muutosta yhteiskunnassa. Jos kehityksen suuntaa
-      halutaan muuttaa, on tärkeä puuttua muun muassa politiikkaan, työoloihin
-      ja sellaisiin yhteiskuntarakenteisiin, jotka lisäävät ihmisten henkistä
-      kuormitusta.
-    </p>
-    <p>
-      Kuitenkaan 2000-luvulla mielenterveyspalveluihin ei ole satsattu samassa
-      määrin kuin muuhun terveydenhuoltoon. Mielenterveyspalvelujen osuus
-      terveydenhuollon käyttömenoista on ollut laskusuunnassa koko 2000-luvun,
-      ja oli vuonna 2021 enää 4,5 prosenttia kaikista käyttömenoista.
-      Psykiatrinen hoito saa yhä pienemmän siivun erikoissairaanhoidon
-      rahoituksesta. [1]
-    </p>
-    <p>
-      WHO on todennut että hyvä mielenterveys edistää myös hyvää fyysistä
-      terveyttä sekä toisinpäin. Mielenterveys ja kansanterveys, ihmisoikeudet ja
-      sosioekonominen kehitys liittyvät erottamattomasti toisiinsa. Investointi
-      mielenterveyteen on investointi parempaan elämään ja tulevaisuuteen
-      meille kaikille. [2]
-    </p>
-    <p>
-      Mielenosoituksessa vaaditaan hallitukselta mittavia investointeja
-      hyvinvointiin ja konkreettisia poliittisia toimia mielenterveysongelmien
-      ratkaisemiseksi.
+      Mielenterveyden ongelmat ovat valtava yhteiskunnallinen haaste, johon
+      tarvitaan tehokkaita ratkaisuja ja merkittäviä investointeja.
     </p>
 
-    <p>[1] <a href="https://mieli.fi/yhteiskunta/mielenterveys-suomessa/tilastotietoa-mielenterveydesta/"
-        target="_blank">Tilastotietoa mielenterveydestä - Mieli ry</a></p>
-    <p>[2] <a
-        href="https://www.who.int/news/item/17-06-2022-who-highlights-urgent-need-to-transform-mental-health-and-mental-health-care"
-        target="_blank">WHO highlights urgent need to transform mental health and mental health care - WHO</a></p>
+    <h3 class="text-xl font-semibold mb-2">Miten?</h3>
+    <p class="mb-4">
+      Tervetuloa! Voit osallistua marssiin tai olla paikalla Hakaniementorilla. Jos et pääse
+      paikan päälle, voit tukea tapahtumaa jakamalla tietoa ja osallistumalla
+      verkossa. Mielenosoituksessa noudatamme rauhanomaista ja väkivallatonta
+      toimintatapaa.
+    </p>
   </section>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Mielenosoitukset.fi - Mielenosoituksien mullistaja.</p>
+    </div>
+  </footer>
 </body>
 
 </html>

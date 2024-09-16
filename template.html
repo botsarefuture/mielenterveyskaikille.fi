@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mielenterveys kuuluu kaikille</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Site Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=2" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="194x194" href="/icons/favicon-194x194.png?v=2" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-chrome-192x192.png?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png?v=2" />
+    <link rel="manifest" href="/icons/site.webmanifest?v=2" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg?v=2" color="#000000" />
+    <link rel="shortcut icon" href="/icons/favicon.ico?v=2" />
+    <meta name="apple-mobile-web-app-title" content="Mielenterveys kuuluu kaikille" />
+    <meta name="application-name" content="Mielenterveys kuuluu kaikille" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-config" content="/icons/browserconfig.xml?v=2" />
+    <meta name="theme-color" content="#4caf50" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPN2HKBMCE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-FPN2HKBMCE');
+    </script>
+</head>
+
+<body class="font-sans bg-white text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-gray-800 text-white">
+        <nav class="container mx-auto py-4">
+            <ul class="flex flex-wrap space-x-4">
+                <li><a href="/info" class="hover:underline">Tietoa</a></li>
+                <li><a href="/demands" class="hover:underline">Vaatimukset</a></li>
+                <li><a href="/supporters" class="hover:underline">Tukijat</a></li>
+                <li><a href="/contacts" class="hover:underline">Yhteystiedot</a></li>
+                <li><a href="/donate" class="hover:underline">Lahjoita</a></li>
+                <li class="ml-4">
+                    <div class="flex space-x-2">
+                        <a href="?lang=fi" class="hover:underline">FI</a>
+                        <span>|</span>
+                        <a href="?lang=en" class="hover:underline">EN</a>
+                        <span>|</span>
+                        <a href="?lang=sv" class="hover:underline">SV</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero bg-green-500 text-white py-12">
+        <div class="container mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4" data-lang-fi="Yhteisö mielenterveyden puolesta!" data-lang-en="Community for Mental Health!" data-lang-sv="Gemenskap för mental hälsa!">
+                Yhteisö mielenterveyden puolesta!
+            </h2>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4" data-lang-fi="MIELENTERVEYS <span class='text-black'>KUULUU KAIKILLE!</span>" data-lang-en="MENTAL HEALTH <span class='text-black'>BELONGS TO EVERYONE!</span>" data-lang-sv="MENTAL HÄLSA <span class='text-black'>TILLHÖR ALLA!</span>">
+                MIELENTERVEYS <span class="text-black">KUULUU KAIKILLE!</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-semibold" data-lang-fi="Tule mukaan!" data-lang-en="Join us!" data-lang-sv="Kom med!">
+                Tule mukaan!
+            </h2>
+            <div class="mt-8 flex justify-center gap-4">
+                <a href="#join-list" class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition">Tilaa uutiskirjeemme</a>
+                <a href="https://mielenterveyskaikille.fi/donate" class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition">Lahjoita</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12">
+        <div class="container mx-auto flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0">
+            <div class="flex-1">
+                <img src="/static/front.JPG" alt="Mielenterveys kuuluu kaikille" class="w-full h-auto rounded shadow-lg" />
+            </div>
+            <div class="flex-1 text-center md:text-left">
+                <h3 class="text-2xl font-semibold mb-4 text-black" data-lang-fi="Mielenterveyspalvelut ovat kriisissä!" data-lang-en="Mental health services are in crisis!" data-lang-sv="Mentalvårdstjänster är i kris!">
+                    Mielenterveyspalvelut ovat kriisissä!
+                </h3>
+                <p class="text-lg mb-4" data-lang-fi="Apua ei saada ajoissa. Vuosittain tapahtuu arviolta <strong>70 000</strong> itsemurhayritystä ja <strong>1000</strong> itsemurhaa. Liian moni joutuu kamppailemaan yksin, ilman riittävää apua ja tukea." data-lang-en="Help is not available in time. Annually, an estimated <strong>70,000</strong> suicide attempts and <strong>1,000</strong> suicides occur. Too many people have to struggle alone without adequate help and support." data-lang-sv="Hjälp är inte tillgänglig i tid. Årligen uppskattas <strong>70 000</strong> självmordsförsök och <strong>1 000</strong> självmord inträffa. För många måste kämpa ensam utan tillräcklig hjälp och stöd.">
+                    Apua ei saada ajoissa. Vuosittain tapahtuu arviolta <strong>70 000</strong> itsemurhayritystä ja <strong>1000</strong> itsemurhaa. Liian moni joutuu kamppailemaan yksin, ilman riittävää apua ja tukea.
+                </p>
+                <h4 class="text-xl font-semibold mb-4 text-black" data-lang-fi="Taistellaan yhdessä mielenterveyden puolesta!" data-lang-en="Let's fight together for mental health!" data-lang-sv="Låt oss kämpa tillsammans för mental hälsa!">
+                    Taistellaan yhdessä mielenterveyden puolesta!
+                </h4>
+                <p class="text-lg mb-4" data-lang-fi="Tule mukaan ainulaatuiseen kansalaisyhteisöön, joka toimii mielenterveyden puolesta!<br><br>Tilaa uutiskirje, niin pidämme sinut ajantasalla tavoista osallistua!" data-lang-en="Join a unique civic community that works for mental health!<br><br>Subscribe to our newsletter, and we'll keep you updated on ways to participate!" data-lang-sv="Gå med i en unik medborgargemenskap som arbetar för mental hälsa!<br><br>Prenumerera på vårt nyhetsbrev så håller vi dig uppdaterad om sätt att delta!">
+                    Tule mukaan ainulaatuiseen kansalaisyhteisöön, joka toimii mielenterveyden puolesta!<br /><br />Tilaa uutiskirje, niin pidämme sinut ajantasalla tavoista osallistua!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Mielenterveys kuuluu kaikille. All rights reserved.</p>
+            <p><a href="/privacy" class="hover:underline">Tietosuoja</a> | <a href="/terms" class="hover:underline">Käyttöehdot</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

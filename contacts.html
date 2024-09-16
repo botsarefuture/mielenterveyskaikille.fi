@@ -22,181 +22,79 @@
   <meta name="theme-color" content="#4caf50">
 
   <!-- Meta tags added dynamically -->
-  <meta name="description"
-    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta name="description" content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
   <meta property="og:title" content="Mielenterveys kuuluu kaikille" />
-  <meta property="og:description"
-    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta property="og:description" content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mielenterveyskaikille.fi/" />
   <meta property="og:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
   <meta name="twitter:title" content="Mielenterveys kuuluu kaikille" />
-  <meta name="twitter:description"
-    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta name="twitter:description" content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
   <meta name="twitter:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "Mielenterveys kuuluu kaikille",
-      "startDate": "2024-03-09T13:00:00",
-      "endDate": "2024-03-09T17:00:00",
-      "location": {
-        "@type": "Place",
-        "name": "Senaatintori",
-        "address": ""
-      }
-    }
-  </script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
-  <script src="/static/js/autoheader.js" defer></script>
-  <script src="/static/js/footer.js" defer></script>
-  <link rel="stylesheet" href="/static/css/demands.css" />
 
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/static/css/demands.css" />
 </head>
 
-<body>
-  <style>
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      grid-auto-rows: minmax(150px, auto);
-      /* Automatically adjust row height */
-      gap: 20px;
-      padding: 20px;
-    }
+<body class="bg-gray-100">
 
-    .card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      /* Align content vertically */
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-    }
+  <!-- Hero Section -->
+  <section class="relative w-full h-64 bg-cover bg-center" style="background-image: url('https://example.com/your-photo.jpg');">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative flex items-center justify-center h-full text-white text-center px-4">
+      <h1 class="text-3xl md:text-5xl font-bold">Yhteystiedot</h1>
+    </div>
+  </section>
 
-    h3 {
-      color: black;
-    }
-
-    .role {
-      font-style: italic;
-      color: #555;
-    }
-
-    .filter-container {
-      display: flex;
-      justify-content: center;
-      /* Center horizontally */
-      align-items: center;
-      /* Center vertically */
-      margin-top: 30px;
-      /* Increase margin bottom to 30px */
-    }
-
-    .search-container {
-      display: flex;
-      align-items: center;
-      /* Center vertically */
-      border: 1px solid #ddd;
-      border-radius: 20px;
-      /* Adjust the border-radius to make it look circular */
-      padding: 10px 20px;
-      /* Adjust padding for better appearance */
-      background-color: white;
-      /* Set background color to white */
-    }
-
-    .search-container label {
-      margin-right: 10px;
-      /* Adjust margin between label and input */
-      color: black;
-      /* Set text color to black */
-      display: flex;
-      /* Use flexbox */
-      align-items: center;
-      /* Center vertically */
-      margin-bottom: 0;
-    }
-
-    .search-container input {
-      border: none;
-      /* Remove border of input */
-      outline: none;
-      /* Remove outline */
-      flex: 1;
-      /* Take up remaining space */
-      color: black;
-      /* Set text color to black */
-    }
-  </style>
-
-  <div class="filter-container">
-    <div class="search-container">
-      <label for="search-bar">Haku:</label>
-      <input type="text" id="search-bar" placeholder="Hae nimiä tai rooleja...">
+  <!-- Filter Container -->
+  <div class="flex justify-center items-center my-8">
+    <div class="flex items-center border border-gray-300 rounded-full px-4 py-2 bg-white">
+      <label for="search-bar" class="mr-2 text-black">Haku:</label>
+      <input type="text" id="search-bar" placeholder="Hae nimiä tai rooleja..." class="border-none outline-none flex-1 text-black">
     </div>
   </div>
 
-  <section class="grid-container">
-    <div class="card">
-      <h3>Verso Vuorenmaa</h3>
-      <p><span class="role">Rooli:</span> Ohjelma-, yhteistyö-, logistiikka-, moderaatio- ja nettisivukoordinaattori</p>
+  <!-- Grid Container -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+    <div class="bg-white border border-gray-300 rounded-lg shadow-lg p-4">
+      <h3 class="text-xl font-semibold text-black">Verso Vuorenmaa</h3>
+      <p><span class="italic text-gray-600">Rooli:</span> Ohjelma-, yhteistyö-, logistiikka-, moderaatio- ja nettisivukoordinaattori</p>
       <p>Olen helsinkiläinen nuori ja minulle on ADHD-tausta. Minulla on kokemusta mielenterveysongelmista sekä mielenterveyspalveluiden saamisen vaikeudesta.</p>
-      <p>Sähköposti: <a href="mailto:verso@mielenterveyskaikille.fi">verso@mielenterveyskaikille.fi</a></p>
-      <p>Puhelinnumero: <a href="tel:+358417472746">041 747 2746</a></p>
+      <p>Sähköposti: <a href="mailto:verso@mielenterveyskaikille.fi" class="text-blue-500">verso@mielenterveyskaikille.fi</a></p>
+      <p>Puhelinnumero: <a href="tel:+358417472746" class="text-blue-500">041 747 2746</a></p>
     </div>
-    <div class="card">
-      <h3>Minna Salonen</h3>
-      <p><span class="role">Rooli:</span> Ammattiyhdistys yhteistyö- ja facebook viestintäkoordinaattori</p>
-      <p>Olen helsinkiläinen sosiaalipsykologi ja koulutettu kokemusasiantuntija. Minua kiinnostavat erityisesti
-        työelämän mielenterveyskysymykset. Minulla on omakohtaista kokemusta masennuksesta.</p>
-      <p>Sähköposti: <a href="mailto:minna@mielenterveyskaikille.fi">minna@mielenterveyskaikille.fi</a></p>
+    <div class="bg-white border border-gray-300 rounded-lg shadow-lg p-4">
+      <h3 class="text-xl font-semibold text-black">Minna Salonen</h3>
+      <p><span class="italic text-gray-600">Rooli:</span> Ammattiyhdistys yhteistyö- ja facebook viestintäkoordinaattori</p>
+      <p>Olen helsinkiläinen sosiaalipsykologi ja koulutettu kokemusasiantuntija. Minua kiinnostavat erityisesti työelämän mielenterveyskysymykset. Minulla on omakohtaista kokemusta masennuksesta.</p>
+      <p>Sähköposti: <a href="mailto:minna@mielenterveyskaikille.fi" class="text-blue-500">minna@mielenterveyskaikille.fi</a></p>
     </div>
-    <div class="card">
-      <h3>Jaana Kauppinen</h3>
-      <p><span class="role">Rooli(t):</span> Tukirooli- ja rahoituskoordinaattori</p>
-      <p>Olen helsinkiläinen järjestöalan ammattilainen ja olen huolissani mielen hyvinvoinnin tilasta Suomessa. Uskon
-        vahvasti, että ratkaisuja löytyy, jos siihen on aitoa yhteistä tahtoa.</p>
-      <p>Sähköposti: <a href="mailto:jaana@mielenterveyskaikille.fi">jaana@mielenterveyskaikille.fi</a></p>
+    <div class="bg-white border border-gray-300 rounded-lg shadow-lg p-4">
+      <h3 class="text-xl font-semibold text-black">Jaana Kauppinen</h3>
+      <p><span class="italic text-gray-600">Rooli(t):</span> Tukirooli- ja rahoituskoordinaattori</p>
+      <p>Olen helsinkiläinen järjestöalan ammattilainen ja olen huolissani mielen hyvinvoinnin tilasta Suomessa. Uskon vahvasti, että ratkaisuja löytyy, jos siihen on aitoa yhteistä tahtoa.</p>
+      <p>Sähköposti: <a href="mailto:jaana@mielenterveyskaikille.fi" class="text-blue-500">jaana@mielenterveyskaikille.fi</a></p>
     </div>
-    <div class="card">
-      <h3>Sinna</h3>
-      <p><span class="role">Rooli(t):</span> Käännös-, kokemusviestintäkoordinaattori</p>
+    <div class="bg-white border border-gray-300 rounded-lg shadow-lg p-4">
+      <h3 class="text-xl font-semibold text-black">Sinna</h3>
+      <p><span class="italic text-gray-600">Rooli(t):</span> Käännös-, kokemusviestintäkoordinaattori</p>
       <p>Olen helsinkiläinen sosionomi ja minulla on kokemusta mielenterveyspalveluiden molemmilta puolilta, niin asiakkaan kuin ammattilaisenkin roolista. Toivon, että kaikki mielenterveyspalveluiden tilanteesta huolestuneet tarttuvat tilaisuuteen pitää aiheesta meteliä.</p>
-      <p>Sähköposti: <a href="mailto:sinna@mielenterveyskaikille.fi">sinna@mielenterveyskaikille.fi</a></p>
+      <p>Sähköposti: <a href="mailto:sinna@mielenterveyskaikille.fi" class="text-blue-500">sinna@mielenterveyskaikille.fi</a></p>
     </div>
-    <div class="card">
-      <h3>Eemil Friman</h3>
-      <p><span class="role">Rooli(t):</span> Jatkojen viestintäkoordinaattori</p>
-      <p>Sähköposti: <a href="mailto:eemil@mielenterveyskaikille.fi">eemil@mielenterveyskaikille.fi</a></p>
+    <div class="bg-white border border-gray-300 rounded-lg shadow-lg p-4">
+      <h3 class="text-xl font-semibold text-black">Eemil Friman</h3>
+      <p><span class="italic text-gray-600">Rooli(t):</span> Jatkojen viestintäkoordinaattori</p>
+      <p>Sähköposti: <a href="mailto:eemil@mielenterveyskaikille.fi" class="text-blue-500">eemil@mielenterveyskaikille.fi</a></p>
     </div>
-
     <!-- Add more contact cards as needed -->
   </section>
 
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-    // Filter contacts based on search input
-    $('#search-bar').on('keyup', function () {
-      var searchTerm = $(this).val().toLowerCase();
-      $('.card').each(function () {
-        var name = $(this).find('h3').text().toLowerCase();
-        var role = $(this).find('.role').text().toLowerCase();
-        if (name.includes(searchTerm) || role.includes(searchTerm)) {
-          $(this).show();
-        } else {
-          $(this).hide();
-        }
-      });
-    });
-  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 </body>
 
 </html>

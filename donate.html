@@ -21,19 +21,15 @@
   <meta name="msapplication-config" content="/icons/browserconfig.xml?v=2">
   <meta name="theme-color" content="#4caf50">
 
-
   <!-- Meta tags added dynamically -->
-  <meta name="description"
-    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta name="description" content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
   <meta property="og:title" content="Mielenterveys kuuluu kaikille" />
-  <meta property="og:description"
-    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta property="og:description" content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mielenterveyskaikille.fi/" />
   <meta property="og:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
   <meta name="twitter:title" content="Mielenterveys kuuluu kaikille" />
-  <meta name="twitter:description"
-    content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
+  <meta name="twitter:description" content="Osallistu mielenosoitukseen Senaatintorilla 3.6.2024 ja vaadi muutosta Suomen mielenterveyspalveluihin. Liity mukaan ja osoita tukesi!" />
   <meta name="twitter:image" content="https://mielenterveyskaikille.fi/static/mielenterveys1.svg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
@@ -50,114 +46,48 @@
       }
     }
   </script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
-  <script src="/static/js/autoheader.js" defer></script>
-  <script src="/static/js/footer.js" defer></script>
-  <link href="/static/css/info.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <style>
-    .highlight {
-      font-weight: bold;
-      color: #4caf50;
-      /* A vibrant green to emphasize important parts */
-    }
+<body class="bg-gray-100 text-gray-800">
 
-    section {
-      padding: 20px;
-      background-color: #f5f5f5;
-      /* Light gray background for readability */
-      border-radius: 8px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      /* Adding shadow for depth */
-    }
-
-    h2 {
-      color: #333;
-      /* Dark gray for strong visibility */
-      font-size: 1.5em;
-      text-align: center;
-      /* Centering the main title */
-      margin-bottom: 20px;
-    }
-
-    p {
-      color: #666;
-      /* Medium gray for regular text */
-      line-height: 1.6;
-      /* Line height for better readability */
-      margin-bottom: 15px;
-    }
-
-    h3 {
-      color: #333;
-      /* Dark gray for heading */
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    a {
-      color: #4caf50;
-      /* Use same green for consistency */
-      text-decoration: underline;
-      /* No underline for links */
-    }
-
-    a:hover {
-      text-decoration: underline;
-      /* Underline on hover for visual feedback */
-    }
-
-    .donation-info {
-      border: 1px solid #ddd;
-      /* Light border for separation */
-      padding: 10px;
-      background-color: #fff;
-      /* White background for inner sections */
-      border-radius: 4px;
-    }
-  </style>
-
-  <section>
-    <h2>Mielenterveys kuuluu kaikille! - Mielenosoitus 3.6.2024</h2>
-    <p>
+  <section class="p-6 bg-white rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold text-center text-gray-900 mb-6">Mielenterveys kuuluu kaikille! - Mielenosoitus 3.6.2024</h2>
+    <p class="text-gray-700 mb-4">
       Ole osa jotain suurta! Liity meidän kanssamme Senaatintorilla 3.6.2024 ja vaadi parempia mielenterveyspalveluja
       kaikille suomalaisille. Tiedossa on rauhanomainen, päihteetön tapahtuma, jossa kaikenikäiset voivat yhdessä nostaa
       tietoisuutta mielenterveyskriisistä ja edistää muutosta.
     </p>
 
-    <h3>Mihin lahjoitukseni käytetään?</h3>
-    <p>
+    <h3 class="text-xl font-semibold text-gray-900 mb-3">Mihin lahjoitukseni käytetään?</h3>
+    <p class="text-gray-700 mb-4">
       Jokainen lahjoitus menee suoraan mielenosoituksen järjestämiseen. Jos rahaa jää yli, se lahjoitetaan suoraan
       mielenterveysjärjestöille. Teidän tuellanne voimme luoda todellisen muutoksen ja tuoda toivoa niille, jotka sitä
       tarvitsevat.
-<br>
+      <br>
       Kuluja syntyy mm. Viestinnästä ja somemarkkinoinnista, äänentoistosta ja muun tekniikan järjestämiseen. Pienikin summa auttaa meitä paljon, sillä toimimme vapaaehtoisvoimin.
     </p>
 
-    <h3>Kuinka voin lahjoittaa?</h3>
-    <p class="donation-info">
+    <h3 class="text-xl font-semibold text-gray-900 mb-3">Kuinka voin lahjoittaa?</h3>
+    <p class="border border-gray-300 p-4 bg-white rounded-md mb-4">
       Lahjoittaminen on helppoa! Voit tehdä tilisiirron seuraavaan numeroon:
       <br>
       - Tilinumero: <br><strong>FI29 5723 0221 1114 74</strong> <br>(tilin omistaja: Jaana Kauppinen)
       <br>
       Tai voit käyttää MobilePay:tä:
-      <strong><a href="https://qr.mobilepay.fi/box/17b1bb4a-d3ee-4502-bfc7-5fe6871b1ecf/pay-in">8750DF</a></strong>
+      <strong><a href="https://qr.mobilepay.fi/box/17b1bb4a-d3ee-4502-bfc7-5fe6871b1ecf/pay-in" class="text-teal-600 underline">8750DF</a></strong>
     </p>
 
-    <p>
+    <p class="text-gray-700">
       Tämän pienkeräyksen lupanumero on: <strong>RA/2024/788</strong>. <br>Jokainen lahjoitus edesauttaa mielenosoitusta
       suuresti!
     </p>
   </section>
 
-
-
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/forms@0.5.0/dist/forms.min.js"></script>
+
 </body>
 
 </html>

@@ -1,187 +1,223 @@
 <!DOCTYPE html>
 <html lang="fi">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mielenterveys kuuluu kaikille</title>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/static/css/index.css">
+    <script src="/static/js/localization.js" defer></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Site icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=2">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png?v=2">
-    <link rel="icon" type="image/png" sizes="194x194" href="/icons/favicon-194x194.png?v=2">
-    <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-chrome-192x192.png?v=2">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png?v=2">
-    <link rel="manifest" href="/icons/site.webmanifest?v=2">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg?v=2" color="#000000">
-    <link rel="shortcut icon" href="/icons/favicon.ico?v=2">
-    <meta name="apple-mobile-web-app-title" content="Mielenterveys kuuluu kaikille">
-    <meta name="application-name" content="Mielenterveys kuuluu kaikille">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-config" content="/icons/browserconfig.xml?v=2">
-    <meta name="theme-color" content="#4caf50">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/icons/apple-touch-icon.png?v=2"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32x32.png?v=2"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="194x194"
+      href="/icons/favicon-194x194.png?v=2"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/icons/android-chrome-192x192.png?v=2"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16x16.png?v=2"
+    />
+    <link rel="manifest" href="/icons/site.webmanifest?v=2" />
+    <link
+      rel="mask-icon"
+      href="/icons/safari-pinned-tab.svg?v=2"
+      color="#000000"
+    />
+    <link rel="shortcut icon" href="/icons/favicon.ico?v=2" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Mielenterveys kuuluu kaikille"
+    />
+    <meta name="application-name" content="Mielenterveys kuuluu kaikille" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-config" content="/icons/browserconfig.xml?v=2" />
+    <meta name="theme-color" content="#4caf50" />
     <script src="/static/js/main.js" defer></script>
-    <script src="https://kit.fontawesome.com/60c01f192e.js" crossorigin="anonymous"></script>
-    <style>
-        .center-image {
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Email Subscription Form Styling */
-        .subscribe-section {
-            margin-top: 40px;
-        }
-
-        .subscribe-section h4 {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-
-        #subscribe-form {
-            text-align: center;
-        }
-
-        #subscribe-form input[type="email"] {
-            width: 100%;
-            max-width: 400px;
-            padding: 10px;
-            margin: 10px auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-
-        #subscribe-form button {
-            padding: 12px 24px;
-            margin: 10px auto;
-            border: none;
-            border-radius: 4px;
-            background-color: #4caf50;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            display: block;
-        }
-
-        #subscribe-form button:hover {
-            background-color: #45a049;
-        }
-
-        #message {
-            margin-top: 10px;
-            font-size: 16px;
-            color: #d9534f;
-        }
-
-        .language-switch {
-            display: inline-block;
-            margin-left: 20px;
-        }
-
-        .language-switch a {
-            margin: 0 5px;
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-        }
-
-        .language-switch a:hover {
-            text-decoration: underline;
-        }
-    </style>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPN2HKBMCE"></script>
+    <script
+      src="https://kit.fontawesome.com/60c01f192e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-FPN2HKBMCE"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-FPN2HKBMCE');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-FPN2HKBMCE");
     </script>
-</head>
+  </head>
 
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/info">Tietoa</a></li>
-                <li><a href="/demands">Vaatimukset</a></li>
-                <li><a href="/supporters">Tukijat</a></li>
-                <li><a href="/contacts">Yhteystiedot</a></li>
-                <li><a href="/donate">Lahjoita</a></li>
-                <li>
-                    <!-- Language Switch Buttons -->
-                    <div class="language-switch">
-                        <a href="?lang=fi">FI</a> | 
-                        <a href="?lang=en">EN</a> | 
-                        <a href="?lang=sv">SV</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+  <body class="font-sans bg-white text-gray-900">
+    <header class="bg-gray-800 text-white">
+      <nav class="container mx-auto py-4">
+        <ul class="flex space-x-4">
+          <li><a href="/info" class="hover:underline">Tietoa</a></li>
+          <li><a href="/demands" class="hover:underline">Vaatimukset</a></li>
+          <li><a href="/supporters" class="hover:underline">Tukijat</a></li>
+          <li><a href="/contacts" class="hover:underline">Yhteystiedot</a></li>
+          <li><a href="/donate" class="hover:underline">Lahjoita</a></li>
+          <li>
+            <div class="inline-block ml-4">
+              <a href="?lang=fi" class="hover:underline">FI</a> |
+              <a href="?lang=en" class="hover:underline">EN</a> |
+              <a href="?lang=sv" class="hover:underline">SV</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h2 class="hero-subtitle" data-lang-fi="Yhteisö mielenterveyden puolesta!" data-lang-en="Community for Mental Health!" data-lang-sv="Gemenskap för mental hälsa!">Yhteisö mielenterveyden puolesta!</h2>
-            <h1 class="hero-title" data-lang-fi="MIELENTERVEYS <span style='color: black;'>KUULUU KAIKILLE!</span>" data-lang-en="MENTAL HEALTH <span style='color: black;'>BELONGS TO EVERYONE!</span>" data-lang-sv="MENTAL HÄLSA <span style='color: black;'>TILLHÖR ALLA!</span>">MIELENTERVEYS <span style="color: black;">KUULUU KAIKILLE!</span></h1>
-            <h2 class="hero-subtitle" data-lang-fi="Tule mukaan!" data-lang-en="Join us!" data-lang-sv="Kom med!">Tule mukaan!</h2>
-
-            <!-- Call to Action Buttons -->
-            <div class="cta-buttons">
-                <a href="#join-list" class="btn btn-success" data-lang-fi="Tilaa uutiskirjeemme" data-lang-en="Subscribe to our newsletter" data-lang-sv="Prenumerera på vårt nyhetsbrev">Tilaa uutiskirjeemme</a>
-                <a href="https://mielenterveyskaikille.fi/donate" class="btn btn-success btn-donate" data-lang-fi="Lahjoita" data-lang-en="Donate" data-lang-sv="Donera">Lahjoita</a>
-            </div>
+    <section class="hero bg-green-500 text-white py-12">
+      <div class="container mx-auto text-center">
+        <h2
+          class="text-2xl md:text-3xl font-bold mb-4"
+          data-lang-fi="Yhteisö mielenterveyden puolesta!"
+          data-lang-en="Community for Mental Health!"
+          data-lang-sv="Gemenskap för mental hälsa!"
+        >
+          Yhteisö mielenterveyden puolesta!
+        </h2>
+        <h1
+          class="text-4xl md:text-5xl font-bold mb-4"
+          data-lang-fi="MIELENTERVEYS <span class='text-black'>KUULUU KAIKILLE!</span>"
+          data-lang-en="MENTAL HEALTH <span class='text-black'>BELONGS TO EVERYONE!</span>"
+          data-lang-sv="MENTAL HÄLSA <span class='text-black'>TILLHÖR ALLA!</span>"
+        >
+          MIELENTERVEYS <span class="text-black">KUULUU KAIKILLE!</span>
+        </h1>
+        <h2
+          class="text-2xl md:text-3xl font-semibold"
+          data-lang-fi="Tule mukaan!"
+          data-lang-en="Join us!"
+          data-lang-sv="Kom med!"
+        >
+          Tule mukaan!
+        </h2>
+        <div class="mt-8">
+          <a
+            href="#join-list"
+            class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition"
+            >Tilaa uutiskirjeemme</a
+          >
+          <a
+            href="https://mielenterveyskaikille.fi/donate"
+            class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition ml-4"
+            >Lahjoita</a
+          >
         </div>
+      </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="center-image">
-                        <img src="/static/front.JPG" alt="Mielenterveys kuuluu kaikille" class="image-fluid"
-                            style="max-width: 100%; height: auto;">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="text-center">
-                        <h3 class="section-title" style="color: black;" data-lang-fi="Mielenterveyspalvelut ovat kriisissä!" data-lang-en="Mental health services are in crisis!" data-lang-sv="Mentalvårdstjänster är i kris!">Mielenterveyspalvelut ovat kriisissä!</h3>
-                        <p class="section-text" data-lang-fi="Apua ei saada ajoissa. Vuosittain tapahtuu arviolta <strong>70 000</strong> itsemurhayritystä ja <strong>1000</strong> itsemurhaa. Liian moni joutuu kamppailemaan yksin, ilman riittävää apua ja tukea." data-lang-en="Help is not available in time. Annually, an estimated <strong>70,000</strong> suicide attempts and <strong>1,000</strong> suicides occur. Too many people have to struggle alone without adequate help and support." data-lang-sv="Hjälp är inte tillgänglig i tid. Årligen uppskattas <strong>70 000</strong> självmordsförsök och <strong>1 000</strong> självmord inträffa. För många måste kämpa ensam utan tillräcklig hjälp och stöd.">Apua ei saada ajoissa. Vuosittain tapahtuu arviolta <strong>70 000</strong> itsemurhayritystä ja <strong>1000</strong> itsemurhaa. Liian moni joutuu kamppailemaan yksin, ilman riittävää apua ja tukea.</p>
-                        <h4 class="section-subtitle" style="color: black;" data-lang-fi="Taistellaan yhdessä mielenterveyden puolesta!" data-lang-en="Let's fight together for mental health!" data-lang-sv="Låt oss kämpa tillsammans för mental hälsa!">Taistellaan yhdessä mielenterveyden puolesta!</h4>
-                        <p class="section-text" data-lang-fi="Tule mukaan ainulaatuiseen kansalaisyhteisöön, joka toimii mielenterveyden puolesta!<br><br>Tilaa uutiskirje, niin pidämme sinut ajantasalla tavoista osallistua!" data-lang-en="Join a unique civic community that works for mental health!<br><br>Subscribe to our newsletter, and we'll keep you updated on ways to participate!" data-lang-sv="Gå med i en unik medborgargemenskap som arbetar för mental hälsa!<br><br>Prenumerera på vårt nyhetsbrev så håller vi dig uppdaterad om sätt att delta!">Tule mukaan ainulaatuiseen kansalaisyhteisöön, joka toimii mielenterveyden puolesta!<br><br>Tilaa uutiskirje, niin pidämme sinut ajantasalla tavoista osallistua!</p>
-                        <!-- Email Subscription Form -->
-                        <div id="join-list" class="subscribe-section">
-                            <h4 class="section-subtitle" data-lang-fi="Tilaa uutiskirje" data-lang-en="Subscribe to our newsletter" data-lang-sv="Prenumerera på vårt nyhetsbrev">Tilaa uutiskirje</h4>
-                            <form id="subscribe-form">
-                                <label for="email" data-lang-fi="Sähköpostiosoite:" data-lang-en="Email address:" data-lang-sv="E-postadress:">Sähköpostiosoite:</label>
-                                <input type="email" id="email" name="email" required>
-                                <button type="submit" data-lang-fi="Tilaa" data-lang-en="Subscribe" data-lang-sv="Prenumerera">Tilaa</button>
-                            </form>
-                            <div id="message"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section id="about" class="py-12">
+        <div class="container mx-auto flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0">        <div class="flex-1">
+          <img
+            src="/static/front.JPG"
+            alt="Mielenterveys kuuluu kaikille"
+            class="w-full h-auto rounded shadow-lg"
+          />
         </div>
+        <div class="flex-1 text-center md:text-left mt-8 md:mt-0">
+          <h3
+            class="text-2xl font-semibold mb-4 text-black"
+            data-lang-fi="Mielenterveyspalvelut ovat kriisissä!"
+            data-lang-en="Mental health services are in crisis!"
+            data-lang-sv="Mentalvårdstjänster är i kris!"
+          >
+            Mielenterveyspalvelut ovat kriisissä!
+          </h3>
+          <p
+            class="text-lg mb-4"
+            data-lang-fi="Apua ei saada ajoissa. Vuosittain tapahtuu arviolta <strong>70 000</strong> itsemurhayritystä ja <strong>1000</strong> itsemurhaa. Liian moni joutuu kamppailemaan yksin, ilman riittävää apua ja tukea."
+            data-lang-en="Help is not available in time. Annually, an estimated <strong>70,000</strong> suicide attempts and <strong>1,000</strong> suicides occur. Too many people have to struggle alone without adequate help and support."
+            data-lang-sv="Hjälp är inte tillgänglig i tid. Årligen uppskattas <strong>70 000</strong> självmordsförsök och <strong>1 000</strong> självmord inträffa. För många måste kämpa ensam utan tillräcklig hjälp och stöd."
+          >
+            Apua ei saada ajoissa. Vuosittain tapahtuu arviolta
+            <strong>70 000</strong> itsemurhayritystä ja
+            <strong>1000</strong> itsemurhaa. Liian moni joutuu kamppailemaan
+            yksin, ilman riittävää apua ja tukea.
+          </p>
+          <h4
+            class="text-xl font-semibold mb-4 text-black"
+            data-lang-fi="Taistellaan yhdessä mielenterveyden puolesta!"
+            data-lang-en="Let's fight together for mental health!"
+            data-lang-sv="Låt oss kämpa tillsammans för mental hälsa!"
+          >
+            Taistellaan yhdessä mielenterveyden puolesta!
+          </h4>
+          <p
+            class="text-lg mb-4"
+            data-lang-fi="Tule mukaan ainulaatuiseen kansalaisyhteisöön, joka toimii mielenterveyden puolesta!<br><br>Tilaa uutiskirje, niin pidämme sinut ajantasalla tavoista osallistua!"
+            data-lang-en="Join a unique civic community that works for mental health!<br><br>Subscribe to our newsletter, and we'll keep you updated on ways to participate!"
+            data-lang-sv="Gå med i en unik medborgargemenskap som arbetar för mental hälsa!<br><br>Prenumerera på vårt nyhetsbrev så håller vi dig uppdaterad om sätt att delta!"
+          >
+            Tule mukaan ainulaatuiseen kansalaisyhteisöön, joka toimii
+            mielenterveyden puolesta!<br /><br />Tilaa uutiskirje, niin pidämme
+            sinut ajantasalla tavoista osallistua!
+          </p>
+          <div id="join-list" class="mt-8">
+            <h4
+              class="text-xl font-semibold mb-4"
+              data-lang-fi="Tilaa uutiskirje"
+              data-lang-en="Subscribe to our newsletter"
+              data-lang-sv="Prenumerera på vårt nyhetsbrev"
+            >
+              Tilaa uutiskirje
+            </h4>
+            <form
+              action="/subscribe"
+              method="post"
+              class="flex flex-col items-center"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="Sähköpostiosoite"
+                class="p-2 border border-gray-300 rounded w-full max-w-md mb-4"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition"
+              >
+                Tilaa
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-text">
-            <p data-lang-fi="Mukavaa pride-kuukautta kaikille!" data-lang-en="Happy Pride Month to everyone!" data-lang-sv="Glad Pride-månad till alla!">Mukavaa pride-kuukautta kaikille!</p>
-            <p>© 2024 Mielenterveys kuuluu kaikille</p>
-            <div class="social-icons">
-                <a href="https://instagram.com/mielenterveyskaikille/" target="_blank"><i class="fa-brands fa-instagram fa-2xl" aria-hidden="true" style="color: black;"></i></a>
-                <a href="https://facebook.com/mielenterveyskaikille/" target="_blank"><i class="fa-brands fa-facebook fa-2xl" aria-hidden="true" style="color: black;"></i></a>
-                <a href="https://tiktok.com/@mielenterveyskaikille/" target="_blank"><i class="fa-brands fa-tiktok fa-2xl" aria-hidden="true" style="color: black;"></i></a>
-                <a href="https://x.com/mtkaikille/" target="_blank"><i class="fa-brands fa-x-twitter fa-2xl" aria-hidden="true" style="color: black;"></i></a>
-            </div>
-        </div>
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 Mielenterveys kuuluu kaikille. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- Bootstrap JS -->
@@ -191,33 +227,32 @@
 
     <!-- Custom JS -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const lang = urlParams.get('lang') || 'fi'; // Default to Finnish if no lang parameter
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get("lang") || "fi"; // Default to Finnish if no lang parameter
 
-            // Function to update text content based on language
-            function updateLanguage(lang) {
-                document.querySelectorAll('[data-lang-fi]').forEach(element => {
-                    element.innerHTML = element.getAttribute(`data-lang-${lang}`);
-                });
-            }
+        // Function to update text content based on language
+        function updateLanguage(lang) {
+          document.querySelectorAll("[data-lang-fi]").forEach((element) => {
+            element.innerHTML = element.getAttribute(`data-lang-${lang}`);
+          });
+        }
 
-            // Update the page language on load
-            updateLanguage(lang);
+        // Update the page language on load
+        updateLanguage(lang);
 
-            // Event listeners for language switch buttons
-            document.querySelectorAll('.language-switch a').forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    const newLang = this.getAttribute('href').split('=')[1];
-                    updateLanguage(newLang);
-                    const newUrl = new URL(window.location);
-                    newUrl.searchParams.set('lang', newLang);
-                    window.history.pushState({}, '', newUrl);
-                });
-            });
+        // Event listeners for language switch buttons
+        document.querySelectorAll(".language-switch a").forEach((link) => {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const newLang = this.getAttribute("href").split("=")[1];
+            updateLanguage(newLang);
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set("lang", newLang);
+            window.history.pushState({}, "", newUrl);
+          });
         });
+      });
     </script>
-</body>
-
+  </body>
 </html>
